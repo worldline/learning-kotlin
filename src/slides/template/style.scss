@@ -72,6 +72,7 @@ blockquote {
   font-size: 0.8em;
   z-index: 2;
   .no-counter & { display: none; }
+  .impact & { display: none; }
 }
 
 // Additions
@@ -96,6 +97,10 @@ blockquote {
 
 .bottom-bar {
   background-color: $primary;
+  background-image: url(../assets/worldline_logo_white.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  min-height: 60px;
   color: $text-light;
   position: absolute;
   bottom: 0;
