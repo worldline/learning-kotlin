@@ -1,8 +1,23 @@
-# learning-kotlin
-Slides and exercises allowing to learn Kotlin!
+<div align=center>
+    <img src='src/slides/assets/kotlin_logo.png' alt='' />
+    <h1>Learning Kotlin!</h1>
+    <p>
+        <a href='https://travis-ci.org/worldline/learning-kotlin'>
+            <img src='https://travis-ci.org/worldline/learning-kotlin.svg?branch=master' alt='' />
+        </a>
+    </p>
+</div>
+
+## What?
+
+This repository contains a small module allowing to discover and learn the very basics of Kotlin. The goal of all this
+content is to give all the necessary information for a developer to start writting Kotlin code.
+
+You can access the slides from [here](https://worldline.github.io/learning-kotlin/).
+
+## To be moved:
 
 Slides made using: https://github.com/sinedied/backslide
 
 Commits using https://gitmoji.carloscuesta.me/
 
-Have a look at the result there: https://worldline.github.io/learning-kotlin/about.html
