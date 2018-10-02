@@ -9,9 +9,9 @@ layout: true
 
 # Learning Kotlin!
 
-* [About](01_about.html)
-* [Language](02_language.html)
-* [Tooling](03_tooling.html)
-* [Concepts](04_concepts.html)
-* [Getting Started](05_getting_started.html)
+* [About](./01_about.html)
+* [Language](./02_language.html)
+* [Tooling](./03_tooling.html)
+* [Concepts](./04_concepts.html)
+* [Getting Started](./05_getting_started.html)
 

@@ -43,4 +43,4 @@ TODO: Brief agenda of the training
 
 ---
 
-# [Let's go!](02_language.html)
+# [Let's go!](./02_language.html)
