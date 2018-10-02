@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "7"
 before_script:
-  - npm install -g backslide && npm i -g gitmoji-cli
+  - npm install -g backslide@2.1.0
 script:
   - cd src/slides/
   - bs e -o ../../docs
