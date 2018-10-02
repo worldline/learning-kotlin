@@ -1,5 +1,5 @@
 title: Learning Kotlin!
-class: animation-fade
+class: animation-fade, middle, center, responsive
 layout: true
 
 <!-- This slide will serve as the base layout for all your slides -->
@@ -41,3 +41,6 @@ TODO: Complete me
 
 TODO: Brief agenda of the training
 
+---
+
+# [Let's go!](02_language.html)
