@@ -169,3 +169,60 @@ fun main(){
 ```
 
 ---
+
+# Higher order functions
+
+```kotlin
+fun calculate(x: Int, y: Int, f: (Int, Int) -> Int) : Int{
+    return f(x, y)
+} // calculate takes a function as a paramter
+fun sum(x: Int, y: Int) = x + y
+fun main(){
+    println(calculate(9, 5, ::sum)) // 14
+    val f = {x: Int, y: Int -> x - y}
+    println(calculate(9, 5, f)) // 4
+    println(calculate(9, 5, { x, y -> x * y } )) // 45
+    // If the last parameter is function, we can close () erlier
+    println(calculate(9, 5) { x, y -> x * y } ) // 45
+}
+```
+
+---
+
+# Naive forEach implementation
+
+```kotlin
+// Unit means no return value (it is optionnal)
+fun naiveForEach(items: List<Int>, f: (Int) -> Unit){
+    for(item in items) f(item)
+} // Naive implementation of forEeach
+fun main(){
+    val numbers = listOf(1, 3, 5, -1)
+    naiveForEach(numbers) {
+        println(it * 10)
+    } // The it parameter is implcit for signle arg fun
+
+    // Kotlin defines a forEach method for collections
+    numbers.forEach { println(it * 100) }
+}
+```
+
+---
+
+# Extensions
+
+```kotlin
+// we can extend existing classes with functions
+fun String.makeQuestion() = this + " ?"
+// And getters / setters
+val Int.isPair get() = this % 2 == 0
+fun main(){
+    val s = "Are you OK"
+    val q = s.makeQuestion()
+    println("s: ${s}, q: ${q}")
+    // s: Are you OK, q: Are you OK ?
+    println(2.isPair) // true
+}
+```
+
+---
