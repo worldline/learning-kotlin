@@ -103,7 +103,7 @@ data class Potion(var hp: Int){
     fun consume(){
         hp -= 20 ;  timesConsumed += 1 // avoid multi. statements on same line
     } // member function
-} //data generates hash code + equals
+} //data generates hashCode, equals, copy and toString
 fun main(){
     val p1 = Potion(100)
     val p2 = Potion(80)
@@ -222,6 +222,73 @@ fun main(){
     println("s: ${s}, q: ${q}")
     // s: Are you OK, q: Are you OK ?
     println(2.isPair) // true
+}
+```
+
+---
+
+# [Null safety](https://kotlinlang.org/docs/reference/null-safety.html)
+
+```kotlin
+fun main(){
+    var s: String // vars must be initialized before using
+    // println(s) -> compile fails
+    s = "hello"
+    println(s) // ok
+    // s = null -> compile fails. Types are not nullable
+    val msg : String? = null // nullable types
+    println(msg)
+    // msg.reversed() // msg may be null -> compile ko
+    println(msg?.reversed()?.capitalize()) // return null if any part is null
+    println(msg!!.reversed()) // tell compiler to ignore null checks -> NPE
+}
+```
+
+---
+
+# [Null safety - part 2](https://kotlinlang.org/docs/reference/null-safety.html)
+
+```kotlin
+fun main(){
+    var nb: Int? = 2
+    // kotlin compiler known that nb is never null in else
+    val double = if( nb == null ) 0 else nb * 2
+    println(double)
+    // shortcut of prev if using ?: elvis operator
+    val triple = nb?.times(3) ?: 0 ; println(triple)
+    //safe cast return nullable and does not throw exception
+    val newNb = nb as? Long ;  println(newNb)
+    // Convert nullable list to non nullable one
+    val nullableList: List<Int?> = listOf(1, 2, null, 4)
+	val intList: List<Int> = nullableList.filterNotNull()
+    println(intList)
+}
+```
+
+---
+
+# Function with receiver
+
+```kotlin
+fun produce(init: MilkProducer.() -> Unit): MilkProducer {
+    val producer = MilkProducer()
+    producer.init()
+    return producer
+}
+class MilkProducer{
+    val isSuccessful = false
+    fun success(handler: MilkProducer.()-> Unit){
+        if(isSuccessful) handler()
+    }
+    fun failure(handler: MilkProducer.()->Unit){
+        if(!isSuccessful) handler()
+    }
+}
+fun main(){
+    produce {
+        success { println("Success !") }
+        failure { println("Failure !") }
+    }
 }
 ```
 
