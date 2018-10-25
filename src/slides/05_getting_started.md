@@ -267,6 +267,57 @@ fun main(){
 
 ---
 
+# Java <-> Kotlin ineroperability
+
+- Kotlin is designed with Java interoperability in mind
+- Kotlin code may require annotation to be called from Java
+- It is much more easier and natural to call Java from Kotli
+  - For example: Java getter and Setter is converter to Kotlin propoerty
+
+---
+
+# Java from Kotlin example
+
+```kotlin
+import java.util.*
+fun convertToArrayList(source: List<Int>): ArrayList<Int> {
+    // instantiate as in Java without 'new'
+    val list = ArrayList<Int>()
+    // 'for'-loops work for Java collections:
+    for (item in source) list.add(item)
+    // get and set are called
+    for (i in 0..source.size - 1) list[i] = source[i]
+    return list
+}
+fun main(){
+    val list = convertToArrayList(listOf(0, 2, -1))
+    println("list: ${list}. type: ${list::class.qualifiedName}")
+    //list: [0, 2, -1]. type: java.util.ArrayList
+}
+```
+
+---
+
+# Destructuring
+
+```kotlin
+// Destructuring allows to get different properties at once
+data class Result(val code:Int, val message:String)
+fun makeComputation():Result {
+    return Result(200, "Success")
+}
+fun main(){
+    // data class and Pair allows the following
+    val (code, message) = makeComputation()
+    println("code: ${code}. Message: ${message}")
+    // works also on maps
+    val map = mapOf(1 to "am", -1 to "stram", 5 to "gram")
+    for((k,v) in map) println("key: ${k}, value: ${v}")
+}
+```
+
+---
+
 # Function with receiver
 
 ```kotlin
@@ -293,3 +344,12 @@ fun main(){
 ```
 
 ---
+
+# Kotlin for Android
+
+- Kotlin simplifies Android development
+- [Kotlin extensions](https://kotlinlang.org/docs/tutorials/android-plugin.html) eliminate the need to use `findViewById`
+- _Note_: annotation dependencies are not the same than in Java
+- Links:
+  - [Getting started with Android and Kotlin](https://kotlinlang.org/docs/tutorials/kotlin-android.html)
+  - [Kotlin Android Extensions ](https://kotlinlang.org/docs/tutorials/android-plugin.html)
