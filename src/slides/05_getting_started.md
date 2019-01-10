@@ -353,3 +353,43 @@ fun main(){
 - Links:
   - [Getting started with Android and Kotlin](https://kotlinlang.org/docs/tutorials/kotlin-android.html)
   - [Kotlin Android Extensions ](https://kotlinlang.org/docs/tutorials/android-plugin.html)
+
+# Coroutines
+
+Requires maven dependency: org.jetbrains.kotlinx:kotlinx-coroutines-core
+
+```kotlin
+println("Start")
+// Start a coroutine
+GlobalScope.launch {
+    delay(1000)
+    println("Hello")
+}
+println("Stop")
+```
+
+This will crash
+
+```kotlin
+val c = AtomicLong()
+
+for (i in 1..1_000_000L)
+    thread(start = true) {
+        c.addAndGet(i)
+    }
+
+println(c.get())
+```
+
+With coroutines it does not crash
+
+```koltin
+val c = AtomicLong()
+
+for (i in 1..1_000_000L)
+    GlobalScope.launch {
+        c.addAndGet(i)
+    }
+
+println(c.get())
+```
