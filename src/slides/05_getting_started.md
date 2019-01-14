@@ -37,6 +37,10 @@ var b = "Hello" // Type is inferred
 - Use val as much as possible
 - _In kotlin, semi-colons are optionnal_
 
+<!---
+Author: Yassine BENABBAS
+--->
+
 ---
 
 # Functions
@@ -56,6 +60,10 @@ fun main(argv:Array<String>){
 }
 ```
 
+<!---
+Author: Yassine BENABBAS
+--->
+
 ---
 
 # Functions arguments
@@ -73,6 +81,10 @@ fun main(argv:Array<String>){
     //Konnichiwa. We are in 1/2018
 }
 ```
+
+<!---
+Author: Yassine BENABBAS
+--->
 
 ---
 
@@ -92,6 +104,10 @@ fun main(){
     // ash, your pokemon object is Pikachu@2ff4acd0
 }
 ```
+
+<!---
+Author: Yassine BENABBAS
+--->
 
 ---
 
@@ -113,6 +129,10 @@ fun main(){
 }
 ```
 
+<!---
+Author: Yassine BENABBAS
+--->
+
 ---
 
 # Control flow
@@ -132,6 +152,10 @@ fun main(){
 }
 ```
 
+<!---
+Author: Yassine BENABBAS
+--->
+
 ---
 
 # Control flow : when
@@ -149,6 +173,10 @@ fun main(){
     println(language) // Français
 }
 ```
+
+<!---
+Author: Yassine BENABBAS
+--->
 
 ---
 
@@ -168,6 +196,10 @@ fun main(){
 }
 ```
 
+<!---
+Author: Yassine BENABBAS
+--->
+
 ---
 
 # Higher order functions
@@ -186,6 +218,10 @@ fun main(){
     println(calculate(9, 5) { x, y -> x * y } ) // 45
 }
 ```
+
+<!---
+Author: Yassine BENABBAS
+--->
 
 ---
 
@@ -207,6 +243,10 @@ fun main(){
 }
 ```
 
+<!---
+Author: Yassine BENABBAS
+--->
+
 ---
 
 # Extensions
@@ -224,6 +264,10 @@ fun main(){
     println(2.isPair) // true
 }
 ```
+
+<!---
+Author: Yassine BENABBAS
+--->
 
 ---
 
@@ -243,6 +287,10 @@ fun main(){
     println(msg!!.reversed()) // tell compiler to ignore null checks -> NPE
 }
 ```
+
+<!---
+Author: Yassine BENABBAS
+--->
 
 ---
 
@@ -265,6 +313,10 @@ fun main(){
 }
 ```
 
+<!---
+Author: Yassine BENABBAS
+--->
+
 ---
 
 # Java <-> Kotlin ineroperability
@@ -273,6 +325,10 @@ fun main(){
 - Kotlin code may require annotation to be called from Java
 - It is much more easier and natural to call Java from Kotli
   - For example: Java getter and Setter is converter to Kotlin propoerty
+
+<!---
+Author: Yassine BENABBAS
+--->
 
 ---
 
@@ -296,6 +352,10 @@ fun main(){
 }
 ```
 
+<!---
+Author: Yassine BENABBAS
+--->
+
 ---
 
 # Destructuring
@@ -315,6 +375,10 @@ fun main(){
     for((k,v) in map) println("key: ${k}, value: ${v}")
 }
 ```
+
+<!---
+Author: Yassine BENABBAS
+--->
 
 ---
 
@@ -342,6 +406,10 @@ fun main(){
     }
 }
 ```
+
+<!---
+Author: Yassine BENABBAS
+--->
 
 ---
 
@@ -393,3 +461,7 @@ for (i in 1..1_000_000L)
 
 println(c.get())
 ```
+
+<!---
+Author: Yassine BENABBAS
+--->
