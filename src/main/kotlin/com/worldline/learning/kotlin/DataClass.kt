@@ -3,7 +3,7 @@ package com.worldline.learning.kotlin.dataclass
 // Data classes define the hashCode and equals methods
 // TODO: read the test class DataClassTest and launch tests -> what happened ?
 // TODO: Define the PokemonTrainer class as a data class and run the tests agais -> what happens
-data class PokemonTrainer(val name:String, var numberOfBadges:Int)
+class PokemonTrainer(val name:String, var numberOfBadges:Int)
 
 fun main(){
     val pierre = PokemonTrainer("Pierre", 1)
