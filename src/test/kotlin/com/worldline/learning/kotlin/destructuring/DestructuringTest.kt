@@ -1,4 +1,4 @@
-package com.worldline.learning.kotlin
+package com.worldline.learning.kotlin.destructuring
 
 import org.junit.Test
 import kotlin.test.assertEquals

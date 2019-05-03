@@ -1,4 +1,4 @@
-package com.worldline.learning.kotlin
+package com.worldline.learning.kotlin.destructuring
 
 data class Pokemon(
     val name: String,
