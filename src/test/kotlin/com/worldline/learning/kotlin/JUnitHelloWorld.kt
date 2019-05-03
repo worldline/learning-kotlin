@@ -3,10 +3,11 @@ package com.worldline.learning.kotlin
 import org.junit.Test
 import kotlin.test.assertTrue
 
-class Exercise1Test {
+class JUnitHelloWorld {
 
     @Test
-    fun testFoo() {
+    fun testHello() {
+        println("Hello from JUnit!")
         assertTrue(true)
     }
 
