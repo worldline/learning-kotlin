@@ -17,6 +17,18 @@ class: impact
 
 # Language & History!
 
+- Developed by JetBreains
+- Unveiled in July 2011
+- Google I/O 2017: first-class support fir Kotlon on Android
+- [Google I/O 2019: Kotlin is the preferred language for Android development](https://techcrunch.com/2019/05/07/kotlin-is-now-googles-preferred-language-for-android-app-development/)
+
+---
+
+# Some features
+
+- Object oriented, functional
+- Global functions
+
 ---
 
 ![](assets/kotlin_homepage.png)
