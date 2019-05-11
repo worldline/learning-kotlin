@@ -12,12 +12,12 @@ class DestructuringTest {
         val roucool = Pokemon(name = "Roucool", experience = 100)
         val salameche = Pokemon(name = "Salameche", experience = 300)
 
-        // TODO: this should work below
-        val (weak, strong) = weakestAndStrongest(
-            arrayOf(pikachu, ratata, roucool, salameche)
-        )
-        assertEquals(weak, roucool)
-        assertEquals(strong, salameche)
+        // TODO: this should work below remove the comment and then fix the example
+        //val (weak, strong) = weakestAndStrongest(
+        //    arrayOf(pikachu, ratata, roucool, salameche)
+        //)
+        //assertEquals(weak, roucool)
+        //assertEquals(strong, salameche)
     }
 
 }
