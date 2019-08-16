@@ -8,7 +8,7 @@ class PokemonTrainer(val name:String, var numberOfBadges:Int)
 fun main(){
     val pierre = PokemonTrainer("Pierre", 1)
     // A data class allows destructring its components
-    // TODO: retrive the name and numberOfBadges properties into constants and display them in the console
+    // TODO: retrieve the name and numberOfBadges properties into constants and display them in the console
     // val (name, numberOfBadges) = pierre
 
     // Data classes can be cloned using the copy() function
