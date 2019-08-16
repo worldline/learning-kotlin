@@ -36,13 +36,4 @@ class DrinkMixer {
     }
 }
 
-// TODO create a singletin DrinkDispenser that has these methods: putDrink(Drink), List<Drink> allAvailableDrinks() and pickLastDrink():Drink
-//  Syntax: object SingletonName { ... } }
 
-// TODO uncomment to test you code
-//DrinkDispenser.putDrink(ObjectExpressions01.Drink(100))
-//DrinkDispenser.putDrink(ObjectExpressions01.Drink(50))
-//DrinkDispenser.putDrink(ObjectExpressions01.Drink(70))
-//println(DrinkDispenser.allAvailableDrinks().size) // 3
-//DrinkDispenser.putDrink(ObjectExpressions01.pickLastDrink())
-//println(DrinkDispenser.allAvailableDrinks().size) // 2
