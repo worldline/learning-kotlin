@@ -10,10 +10,10 @@ fun main() {
     val ratata = Pokemon(name = "Ratata", experience = 20)
     val roucool = Pokemon(name = "Roucool", experience = 25)
 
-    // TODO: this should work below
-    val (weak, strong) = weakestAndStrongest(arrayOf(pikachu, ratata, roucool))
-    println("My weakest pokemon is: $weak")
-    println("My strongest pokemon is: $strong")
+    // TODO: this should work below remove the comment and then fix the code
+    //val (weak, strong) = weakestAndStrongest(arrayOf(pikachu, ratata, roucool))
+    //println("My weakest pokemon is: $weak")
+    //println("My strongest pokemon is: $strong")
 
 }
 
