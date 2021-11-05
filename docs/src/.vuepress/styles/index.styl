@@ -1,0 +1,78 @@
+figcaption {
+    text-align: center;
+    font-size: 80%;
+    font-style: italic;
+}
+
+.cols {
+    display: flex;
+}
+
+.col {
+    flex: 1;
+    padding: 0 0.5em;
+
+    .fit {
+        flex-grow: 0 0 min-content;
+    }
+
+    .fill {
+        flex-grow: 1 1 auto;
+    }
+}
+
+.center {
+    text-align: center
+
+    & > * {
+        margin: auto
+    }
+}
+
+.demo {
+    padding: 1.25rem;
+    overflow: auto;
+    border-radius: 6px;
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+
+    ul, p { margin: 0 }
+}
+
+#app .sidebar-links > li {
+    margin-top: 0;
+}
+
+#app .sidebar-links a.sidebar-link {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* Vue live styles */
+.theme-default-content pre.VueLive-error {
+    text-align: left;
+    background-color: #eee;
+}
+
+.VueLive-squiggles-wrapper {
+    display: none;
+}
+
+// Style alternatif
+/*
+#app .navbar {
+    background-color: #3eaf7c;
+}
+
+#app .navbar .site-name,
+#app .navbar .links .dropdown-title {
+    color: white;
+}
+
+#app .navbar .links {
+    background: transparent;
+}
+*/
+
+.action-button {
+    background: red;
+}
