@@ -24,7 +24,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "shelljs": "^0.8.4",
     "vuepress": "^1.8.2"
   },
   "dependencies": {

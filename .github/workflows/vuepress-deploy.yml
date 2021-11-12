@@ -1,0 +1,17 @@
+name: Deploy to ghpages
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: vuepress-deploy
+        uses: jenkey2011/vuepress-deploy@master
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          TARGET_REPO: worldline/learning-kotlin
+          TARGET_BRANCH: gh_pages
+          BUILD_SCRIPT: cd docs && npm ci && npm run build
+          BUILD_DIR: docs/.vuepress/dist/
