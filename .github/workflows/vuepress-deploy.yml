@@ -14,4 +14,4 @@ jobs:
           TARGET_REPO: worldline/learning-kotlin
           TARGET_BRANCH: gh_pages
           BUILD_SCRIPT: cd docs && npm ci && npm run build
-          BUILD_DIR: docs/.vuepress/dist/
+          BUILD_DIR: src/.vuepress/dist/
