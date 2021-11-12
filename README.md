@@ -55,8 +55,8 @@ You can access the slides from [here](https://worldline.github.io/learning-kotli
   - Ktor
   - Kotest
 - Kotlin and Mobile development (Y)
-- Kotlin multiplaform (Y)
-  - Kotlin multiplaform mobile
+- Kotlin multiplatform (Y)
+  - Kotlin multiplatform mobile
   - Other targets and possibilities (WASM, Jetpackcompose, etc.)
 - To go further
 
