@@ -9,7 +9,7 @@ module.exports = {
 
 		"/fr/": {
 			lang: "fr-FR",
-			title: "Apprendre Kotlin en profondeur",
+			title: "Apprendre Kotlin",
 			description: "Une formation d'introduction à Kotlin",
 		},
 	},
@@ -26,8 +26,13 @@ module.exports = {
 					"/",
           "/presentation/",
           "/tooling/",
-          "/concepts/",
-          "/getting-started/",
+          "/kotlin/",
+          "/kotlin-and-java/",
+          "/advanced-kotlin/",
+          "/backend-development/",
+          "/mobile-development/",
+          "/multiplatform/",
+          "/to-go-futher/",
 				],
 			},
 

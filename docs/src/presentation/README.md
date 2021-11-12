@@ -4,4 +4,6 @@
 
 ## Language & History
 
+## Features comparison with other languages
+
 ## Some features

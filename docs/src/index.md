@@ -1,22 +1,26 @@
 ---
 home: true
 heroImage: ./kotlin_logo.png
-tagline: A beginner's guide to the a modern programming language
+tagline: A beginner's guide to a modern programming language
 actionText: Get started →
 actionLink: /presentation/
 features:
-  - title: feature1
+  - title: Start with Kotlin
     details: lorem
-  - title: feature2
+  - title: Basic syntax
     details: lorem
-  - title: feature3
+  - title: Exemple
     details: lorem
 footer: Worldline, 2021
 ---
 
+::: tip
+This training is also available in [French](/fr/) / Cette formation est aussi disponible en [Français](/fr/)
+:::
+
 ## Prerequisites
 
-- TO DO
+- Basic knowledge of object-oriented language like Java
 - Prepare your dev environment and install stuff before the session (see [Tooling section](tooling))
 
 ## Useful links
