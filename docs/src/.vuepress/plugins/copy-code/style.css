@@ -1,0 +1,45 @@
+.code-copy {
+  color: #aaa;
+  display: inline-block;
+  cursor: pointer;
+}
+
+div[class*="language-"] pre .code-copy {
+  position: absolute;
+  z-index: 1000;
+  top: 32px;
+  right: 5px;
+  width: 24px;
+  height: 24px;
+  appearance: none;
+  border: 0;
+  background-color: transparent;
+  background-image: url('./copy.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+
+div[class*="language-"] pre:hover .code-copy {
+  opacity: 0.75;
+}
+
+div[class*="language-"] pre:hover .code-copy:focus {
+  outline: none;
+  opacity: 1;
+}
+
+.code-copy:focus::after {
+  content: "Copied !";
+  display: block;
+  position: absolute;
+  right: 28px;
+  top: 0;
+  color: #aaa;
+  line-height: 24px;
+}
+
+.content pre,
+.content pre[class*=language-] {
+  overflow-y: hidden;
+}
