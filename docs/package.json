@@ -1,0 +1,33 @@
+{
+  "name": "learning-kotlin",
+  "version": "0.0.1",
+  "description": "Angular training session",
+  "authors": [
+    {
+      "name": "Sylvain Pollet-Villard",
+      "email": "sylvain.polletvillard@worldline.com"
+    },
+    {
+      "name": "Yassine Bennabas",
+      "email": "yassine.bennabas@worldline.com"
+    },
+    {
+      "name": "Quentin Carpentier",
+      "email": "quentin.carpentier@worldline.com"
+    }
+  ],
+  "repository": "github.com/worldline/learning-kotlin",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src",
+    "deploy": "node ./deploy.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "shelljs": "^0.8.4",
+    "vuepress": "^1.8.2"
+  },
+  "dependencies": {
+    "vuepress-plugin-global-toc": "^1.0.1"
+  }
+}
