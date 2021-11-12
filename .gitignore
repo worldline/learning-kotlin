@@ -21,7 +21,6 @@
 .idea/vcs.xml
 .idea/.name
 .idea/codeStyles
-.gitignore
 
 # Generated files
 .idea/**/contentModel.xml
