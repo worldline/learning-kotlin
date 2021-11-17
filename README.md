@@ -48,6 +48,7 @@ You can access the slides from [here](https://worldline.github.io/learning-kotli
   - Interoperbility and mixing with Java
 - Advanced Kotlin (JM / Q)
   - Coroutines
+  - Flow (ARO)
   - Typesafe builder (JM)
 - Kotlin and backend development (JM)
   - JPA
