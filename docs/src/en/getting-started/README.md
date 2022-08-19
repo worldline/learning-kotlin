@@ -1,22 +1,5 @@
 # Getting Started
 
-Kotlin is an object oriented langiage with functional features
-
-## Variables
-
-```kotlin
-var a: Int = 0 // variable
-a = 23
-
-val b: String = "Hello" // immutable variable
-b = "World" //error
-
-var b = "Hello" // Type is inferred
-```
-
-- Use val as much as possible
-- _In kotlin, semi-colons are optionnal_
-
 ## Functions
 
 ```kotlin
