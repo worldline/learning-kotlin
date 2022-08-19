@@ -1,7 +1,7 @@
 {
   "name": "learning-kotlin",
   "version": "0.0.1",
-  "description": "Angular training session",
+  "description": "Kotlin training session",
   "authors": [
     {
       "name": "Sylvain Pollet-Villard",
@@ -24,9 +24,11 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "vuepress": "^1.8.2"
-  },
-  "dependencies": {
-    "vuepress-plugin-global-toc": "^1.0.1"
+    "@types/node": "^18.7.6",
+    "@vuepress/plugin-docsearch": "^2.0.0-beta.49",
+    "@vuepress/plugin-nprogress": "^2.0.0-beta.49",
+    "@vuepress/plugin-pwa": "^2.0.0-beta.49",
+    "@vuepress/plugin-search": "^2.0.0-beta.49",
+    "vuepress": "^v2.0.0-beta.49"
   }
 }
