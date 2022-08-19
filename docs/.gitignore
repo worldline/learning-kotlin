@@ -118,5 +118,5 @@ dist
 .pnp.*
 
 .vscode/
-.vuepress/.temp
-.vuepress/.cache
+.vuepress/.temp/
+.vuepress/.cache/
