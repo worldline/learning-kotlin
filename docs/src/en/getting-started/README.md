@@ -17,12 +17,6 @@ var b = "Hello" // Type is inferred
 - Use val as much as possible
 - _In kotlin, semi-colons are optionnal_
 
-<!---
-Author: Yassine BENABBAS
---->
-
----
-
 ## Functions
 
 ```kotlin

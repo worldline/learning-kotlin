@@ -2,8 +2,10 @@
 home: true
 heroImage: ./kotlin_logo.png
 tagline: A beginner's guide to a modern programming language
-actionText: Get started →
-actionLink: /presentation/
+actions:
+  - text: Débuter →
+    link: /fr/presentation/
+    type: primary
 features:
   - title: Bien commencer avec Kotlin
     details: lorem
@@ -27,7 +29,3 @@ This training is also available in [English](/) / Cette formation est aussi disp
 
 - [Documentation officielle Kotlin](https://kotlinlang.org/docs/home.html)
 - [Dépôt Github de la formation](https://github.com/worldline/learning-kotlin)
-
-## Plan de la formation
-
-<GlobalTableOfContents />

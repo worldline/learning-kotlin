@@ -16,11 +16,10 @@
       "email": "quentin.carpentier@worldline.com"
     }
   ],
-  "repository": "github.com/worldline/learning-kotlin",
+  "repository": "https://github.com/worldline/learning-kotlin",
   "scripts": {
     "dev": "vuepress dev src",
-    "build": "vuepress build src",
-    "deploy": "node ./deploy.js"
+    "build": "vuepress build src"
   },
   "license": "MIT",
   "devDependencies": {

@@ -30,8 +30,7 @@ module.exports = {
   theme: defaultTheme({
     locales: {
       "/en/": {
-        selectText: "Language",
-        label: "English",
+        selectLanguageName: "English",
         sidebar: [
           "/en/",
           "/en/presentation/",
@@ -47,8 +46,7 @@ module.exports = {
       },
 
       "/fr/": {
-        selectText: "Langue",
-        label: "Français",
+        selectLanguageName: "Français",
         sidebar: ["/fr/"],
       },
     },
@@ -57,7 +55,7 @@ module.exports = {
   plugins: [
     searchPlugin({
       locales: {
-        "/": {
+        "/en/": {
           placeholder: "Search",
         },
         "/fr/": {

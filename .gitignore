@@ -173,3 +173,4 @@ $RECYCLE.BIN/
 db-data/
 
 .tmp/
+.vscode/
