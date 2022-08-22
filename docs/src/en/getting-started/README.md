@@ -1,38 +1,5 @@
 # Getting Started
 
-## Functions
-
-```kotlin
-// Functions can be declared outside of classes
-fun sum(x:Int, y:Int) : Int {
-    return x + y
-} // function definition
-
-//One line function
-fun mult(x:Int, y: Int) = x * y
-
-fun main(argv:Array<String>){
-    val a = sum(2, 1) // call sum function
-    println(mult(a, y = 8)) // we can name parameters
-}
-```
-
-## Functions arguments
-
-```kotlin
-fun greet(year: Int = 2018, month: Int = 1,
-          message: String = "Hello") : String {
-    return "${message}. We are in ${month}/${year}"
-}
-
-fun main(argv:Array<String>){
-    println(greet(2017, 10, "Bonjour")) //Bonjour. We are in 10/2017
-    println(greet()) //Hello. We are in 1/2018
-    println(greet(2018, message = "Konnichiwa"))
-    //Konnichiwa. We are in 1/2018
-}
-```
-
 ## Classes
 
 ```kotlin
@@ -68,72 +35,6 @@ fun main(){
 }
 ```
 
-## Control flow
-
-```kotlin
-fun main(){
-    var n = 2
-    var isPair = if ( n % 2 == 0 ){
-        true
-    }else{
-        false
-    } // If statements can return a value
-    println(isPair)
-    n = 11
-    isPair = if( n % 2 == 0) true else false
-    println(isPair)
-}
-```
-
-## Control flow : when
-
-```kotlin
-fun main(){
-    val greeting = "Bonjour"
-    // when is a more powerful switch
-    // It works also on strings
-    val language = when(greeting){
-       "Bonjour","salut" -> "Français"
-        "Good morning" -> "English"
-        else -> "Unknown"
-    }
-    println(language) // Français
-}
-```
-
-## Control flow: loops
-
-```kotlin
-fun main(){
-    for (i in 1..3) println(i) // single line
-	for (i in 6 downTo 0 step 2) println(i)
-    for (msg in arrayOf("Hello", "world")) {
-    	println(msg)
-	}
-    var x = 2
-    while (x > 0) {
-    	x--
-	}
-}
-```
-
-## Higher order functions
-
-```kotlin
-fun calculate(x: Int, y: Int, f: (Int, Int) -> Int) : Int{
-    return f(x, y)
-} // calculate takes a function as a paramter
-fun sum(x: Int, y: Int) = x + y
-fun main(){
-    println(calculate(9, 5, ::sum)) // 14
-    val f = {x: Int, y: Int -> x - y}
-    println(calculate(9, 5, f)) // 4
-    println(calculate(9, 5, { x, y -> x * y } )) // 45
-    // If the last parameter is function, we can close () erlier
-    println(calculate(9, 5) { x, y -> x * y } ) // 45
-}
-```
-
 ## Naive forEach implementation
 
 ```kotlin
@@ -165,69 +66,6 @@ fun main(){
     println("s: ${s}, q: ${q}")
     // s: Are you OK, q: Are you OK ?
     println(2.isPair) // true
-}
-```
-
-## [Null safety](https://kotlinlang.org/docs/reference/null-safety.html)
-
-```kotlin
-fun main(){
-    var s: String // vars must be initialized before using
-    // println(s) -> compile fails
-    s = "hello"
-    println(s) // ok
-    // s = null -> compile fails. Types are not nullable
-    val msg : String? = null // nullable types
-    println(msg)
-    // msg.reversed() // msg may be null -> compile ko
-    println(msg?.reversed()?.capitalize()) // return null if any part is null
-    println(msg!!.reversed()) // tell compiler to ignore null checks -> NPE
-}
-```
-
-## [Null safety - part 2](https://kotlinlang.org/docs/reference/null-safety.html)
-
-```kotlin
-fun main(){
-    var nb: Int? = 2
-    // kotlin compiler known that nb is never null in else
-    val double = if( nb == null ) 0 else nb * 2
-    println(double)
-    // shortcut of prev if using ?: elvis operator
-    val triple = nb?.times(3) ?: 0 ; println(triple)
-    //safe cast return nullable and does not throw exception
-    val newNb = nb as? Long ;  println(newNb)
-    // Convert nullable list to non nullable one
-    val nullableList: List<Int?> = listOf(1, 2, null, 4)
-	val intList: List<Int> = nullableList.filterNotNull()
-    println(intList)
-}
-```
-
-## Java <-> Kotlin ineroperability
-
-- Kotlin is designed with Java interoperability in mind
-- Kotlin code may require annotation to be called from Java
-- It is much more easier and natural to call Java from Kotli
-  - For example: Java getter and Setter is converter to Kotlin propoerty
-
-## Java from Kotlin example
-
-```kotlin
-import java.util.*
-fun convertToArrayList(source: List<Int>): ArrayList<Int> {
-    // instantiate as in Java without 'new'
-    val list = ArrayList<Int>()
-    // 'for'-loops work for Java collections:
-    for (item in source) list.add(item)
-    // get and set are called
-    for (i in 0..source.size - 1) list[i] = source[i]
-    return list
-}
-fun main(){
-    val list = convertToArrayList(listOf(0, 2, -1))
-    println("list: ${list}. type: ${list::class.qualifiedName}")
-    //list: [0, 2, -1]. type: java.util.ArrayList
 }
 ```
 
