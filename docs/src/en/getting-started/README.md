@@ -1,39 +1,3 @@
-# Getting Started
-
-## Classes
-
-```kotlin
-open class Pokemon // class with default constructor
-class PokemonTrainer(val name: String, val pokemon: Pokemon)
-
-// classes are final by default. Open allows to inherit
-class Pikachu(val Watts: Int) : Pokemon()
-
-fun main(){
-    val pika = Pikachu(2000) // type inferred
-    val ash = PokemonTrainer("ash", pika)
-    println("${ash.name}, your pokemon object is $pika")
-    // ash, your pokemon object is Pikachu@2ff4acd0
-}
-```
-
-## Classes 2
-
-```kotlin
-data class Potion(var hp: Int){
-    var timesConsumed = 0 // define member variable
-    fun consume(){
-        hp -= 20 ;  timesConsumed += 1 // avoid multi. statements on same line
-    } // member function
-} //data generates hashCode, equals, copy and toString
-fun main(){
-    val p1 = Potion(100)
-    val p2 = Potion(80)
-    println(p1 == p2) // false
-    p1.consume() // call member function
-    println(p1 == p2) // true even if timesConsumed !=
-}
-```
 
 ## Naive forEach implementation
 
@@ -53,21 +17,6 @@ fun main(){
 }
 ```
 
-## Extensions
-
-```kotlin
-// we can extend existing classes with functions
-fun String.makeQuestion() = this + " ?"
-// And getters / setters
-val Int.isPair get() = this % 2 == 0
-fun main(){
-    val s = "Are you OK"
-    val q = s.makeQuestion()
-    println("s: ${s}, q: ${q}")
-    // s: Are you OK, q: Are you OK ?
-    println(2.isPair) // true
-}
-```
 
 ## Destructuring
 
