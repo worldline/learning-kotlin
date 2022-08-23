@@ -1,11 +1,10 @@
 # Presentation of Kotlin
 
-Kotlin a programming language developed 
+Kotlin is a modern programming language developed by JetBrains.
 
-## What is Kotlin?
-
-## Language & History
-
-## Features comparison with other languages
+## History
 
 ## Some features
+
+- It targets many languages and frameworks: JVM, JS, Android, iOS, etc.
+- Kotlin native compiles kotlin code to native code.

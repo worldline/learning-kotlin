@@ -32,15 +32,10 @@ module.exports = {
       "/en/": {
         selectLanguageName: "English",
         sidebar: [
-          "/en/",
           "/en/presentation/",
-          "/en/tooling/",
-          "/en/kotlin/",
-          "/en/kotlin-and-java/",
-          "/en/advanced-kotlin/",
+          "/en/kotlin-features/",
           "/en/backend-development/",
-          "/en/mobile-development/",
-          "/en/multiplatform/",
+          "/en/front-development/",
           "/en/to-go-futher/",
         ],
       },
