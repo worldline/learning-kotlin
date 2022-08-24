@@ -1,10 +1,11 @@
-# Kotlin features
+# Kotlin language features
 
-Kotlin is an object oriented langiage with functional features.
+Kotlin is an object oriented language with functional features.
+This chapter covers important and relevant features of the language slit into three levels: basic, intermediate, and advanced.
 
 ## Basic features
 
-### Basic constructs (varabiles, control flow)
+### Basic constructs (variables, control flow)
 
 - Kotlin is statically typed and supports implicit typing.
   - *Static* typing: types cannot change on runtime (it is the opposite of dynamic typing).
@@ -124,7 +125,7 @@ Kotlin allows to write concise OOP code and has the following features:
 - Sealed classes and interfaces cannot be extended or implemented by third parties.
 
 ::: warning do not define accessors unless needed
-As opposed to Java, Kolin has a better support for properties and allows to add accessors later without refactoring the code that calls these properties.
+As opposed to Java, Kotlin supports properties natively and allows to add accessors later without refactoring the code that calls these properties.
 Thus, by default, just define the name of properties without accessors and use them directly.
 :::
 
