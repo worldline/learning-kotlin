@@ -3,7 +3,7 @@ import { searchPlugin } from "@vuepress/plugin-search";
 import { nprogressPlugin } from "@vuepress/plugin-nprogress";
 import { pwaPlugin } from "@vuepress/plugin-pwa";
 
-module.exports = {
+export default {
   base: "/learning-kotlin/",
   locales: {
     "/en/": {
@@ -60,5 +60,6 @@ module.exports = {
     }),
     nprogressPlugin(),
     pwaPlugin({}),
+    "@snippetors/vuepress-plugin-tabs",
   ],
 };
