@@ -36,6 +36,7 @@ export default {
           "/en/kotlin-features/",
           "/en/backend-development/",
           "/en/front-development/",
+          "/en/kotlin-features-advanced/",
           "/en/to-go-futher/",
         ],
       },
