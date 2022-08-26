@@ -13,8 +13,9 @@ For example, this tutorial shows [how to use nodejs with kotlin](https://medium.
 - Download the archive, unzip it, and open it with IntelliJ
 - Create a  `models` package and add to it a `Customer` data class with these fields immutable properties `id: String, firstName: String, lastName: String, email: String`.
 - Annotate the class with `@Serializable`
-- Create a new package routes and add to it a file `CustomerRoutes.kt`.
-- Define the missing endpoints of the provided code below.
+- Create a new package routes and add to it a file `CustomerRoutes.kt` that will contain the code for the `/customer` endpoint.
+- The code below provides the implementation of some endpoints. Please implement the remaining ones.
+- To enable the route call `customerRouting()` in the routing configuration file located in `plugins/Routing.kt`.
 - For simplicity, use a global in-memory list of customers `val customerStorage = mutableListOf<Customer>()`.
 - Run the server by running the main method.
 - Test the api on the IDE by using an http file or using any other client
@@ -49,6 +50,18 @@ fun Route.customerRouting() {
         delete("{id?}") {
 
         }
+    }
+}
+```
+
+:::
+
+::: details plugins/Routing.kt
+
+```kotlin
+fun Application.configureRouting() {
+    routing {
+        customerRouting()
     }
 }
 ```
