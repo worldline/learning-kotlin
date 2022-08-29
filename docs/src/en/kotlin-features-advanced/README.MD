@@ -1,4 +1,3 @@
-
 # Advanced Kotlin features
 
 ## Delegated properties

@@ -6,6 +6,3 @@ import androidx.compose.ui.res.painterResource
 actual fun getPlatformName(): String {
     return "Desktop"
 }
-
-@Composable
-actual fun getLogoPainter() = painterResource("logo.png")
