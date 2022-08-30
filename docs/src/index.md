@@ -7,12 +7,12 @@ actions:
     link: /en/presentation/
     type: primary
 features:
-  - title: Start with Kotlin
-    details: lorem
-  - title: Basic syntax
-    details: lorem
-  - title: Exemple
-    details: lorem
+  - title: Language features
+    details: null safetry, extenesions, …
+  - title: Backend development
+    details: ktor, spring, …
+  - title: Frontend development
+    details: compose, KMP, …
 footer: Worldline, 2021
 ---
 

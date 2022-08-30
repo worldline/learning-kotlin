@@ -25,16 +25,12 @@ Kotlin is a modern programming language developed by JetBrains.
 
 ## Some numbers and facts
 
-This section mostly targets Java developers to motivate them to switch to, or try Kotlin.
-
-[Amyra Sheldon](https://medium.com/predict/8-stats-and-fact-you-should-know-about-kotlin-in-2021-b41133a1834) shares interesting facts:
+[Source: Amyra Sheldon](https://medium.com/predict/8-stats-and-fact-you-should-know-about-kotlin-in-2021-b41133a1834)
 
 - As of 2022, Kotlin is used by 7.8% of the industry experts.
 - According to StackOverflow, Kotlin was the 4th most beloved language in 2020 with 62.9% votes.
 - Kotlin is now listed among the top 20 programming languages by Redmonk.
 - Kotlin is among the top 3 languages that most businesses are planning to migrate their apps to in 2022.
-- In January 2022, Kotlin released version 1.4, and the next one will come in June 2022
-- With Kotlin Multiplatform, now it is possible to build cross-platform apps using Kotlin.
 - Kotlin is used by global companies like Google, NetFlix, Amazon, Trello, and more.
 - Pinterest and Uber are among the companies that migrated their apps to Kotlin from Java.
 
@@ -47,10 +43,10 @@ Please find more statics here:
 
 ## Why switch from Java to Kotlin
 
-Here are some arguments that motivate switching from Java (version 17 at the time of writing) to Kotlin.
+Here are some arguments that motivate switching from Java (version 17 LTS at the time of writing) to Kotlin.
 
 - Kotlin supports more targets than Java.
-- Kotlin has compile time null-safety.
+- Kotlin has compile time null-safety (Java Optionals are runtime wrappers for nullable values).
 - Kotlin strings support interpolation.
 - Casting in Kotlin is smart.
 - Kotlin functional programming features are better. It even allows to define Type-Safe builders and DSLs.
