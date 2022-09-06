@@ -2,6 +2,7 @@ import { defaultTheme } from "@vuepress/theme-default";
 import { searchPlugin } from "@vuepress/plugin-search";
 import { nprogressPlugin } from "@vuepress/plugin-nprogress";
 import { pwaPlugin } from "@vuepress/plugin-pwa";
+import { seoPlugin } from "vuepress-plugin-seo2";
 
 export default {
   base: "/learning-kotlin/",
@@ -62,6 +63,8 @@ export default {
     }),
     nprogressPlugin(),
     pwaPlugin({}),
-    "@snippetors/vuepress-plugin-tabs",
+    seoPlugin({
+      hostname: "https://worldline.github.io/learning-kotlin",
+    }),
   ],
 };
