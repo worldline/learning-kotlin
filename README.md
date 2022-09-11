@@ -18,7 +18,7 @@ You can access the lecture from [here](https://worldline.github.io/learning-kotl
 
 ## To be moved:
 
-Slides made using: https://github.com/sinedied/backslide
+Couse made using [vuepress](https://vuepress.vuejs.org/) 
 
 Commits using https://gitmoji.carloscuesta.me/
 
