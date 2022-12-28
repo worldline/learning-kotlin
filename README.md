@@ -1,12 +1,5 @@
-<div align=center>
-    <img src='src/slides/assets/kotlin_logo.png' alt='' />
-    <h1>Learning Kotlin!</h1>
-    <p>
-        <a href='https://travis-ci.org/worldline/learning-kotlin'>
-            <img src='https://travis-ci.org/worldline/learning-kotlin.svg?branch=master' alt='' />
-        </a>
-    </p>
-</div>
+# Learning Kotlin
+![deploy status](https://github.com/worldline/learning-kotlin/actions/workflows/vuepress-deploy.yml/badge.svg)
 
 ## What?
 
@@ -18,7 +11,7 @@ You can access the lecture from [here](https://worldline.github.io/learning-kotl
 
 ## To be moved:
 
-Slides made using: https://github.com/sinedied/backslide
+Couse made using [vuepress](https://vuepress.vuejs.org/) 
 
 Commits using https://gitmoji.carloscuesta.me/
 
