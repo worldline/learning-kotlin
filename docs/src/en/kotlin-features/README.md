@@ -57,7 +57,7 @@ The next section talk about *null safety*.
 In a nutshell, *null safety* is a compiler feature that eliminates the infamous *Null pointer exception* or *npe*.
 The Kotlin compiler reports errors and warnings when we manipulate nullable (also called optional) values. Here is a list of null safety features provided by Kotlin:
 
-- All types are non-nullable by default; we cannot assign `nulll` to a variable or an argument.
+- All types are non-nullable by default; we cannot assign `null` to a variable or an argument.
   - For example, this code fails `var s: String = null`.
 - A type can be made nullable by suffixing it with a *?*. For example: `var s: String? = null`.
 - Kotlin forbids calling a method or a property of a non-nullable type, unless we do one of these possibilities:

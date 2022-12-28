@@ -9,7 +9,7 @@ import org.jetbrains.compose.web.renderComposable
 fun main() {
     renderComposable(rootElementId = "root") {
         Div({ style { padding(25.px) } }) {
-            var expanded by remember { mutableStateOf(false) }
+            var expanded by remember { mutableStateOf(false) }ja
             Button(
                 attrs = {
                     onClick { expanded = !expanded }
