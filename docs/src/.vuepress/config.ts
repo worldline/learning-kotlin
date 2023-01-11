@@ -3,8 +3,9 @@ import { searchPlugin } from "@vuepress/plugin-search";
 import { nprogressPlugin } from "@vuepress/plugin-nprogress";
 import { pwaPlugin } from "@vuepress/plugin-pwa";
 import { seoPlugin } from "vuepress-plugin-seo2";
+import { defineUserConfig } from "vuepress";
 
-export default {
+export default defineUserConfig({
   base: "/learning-kotlin/",
   locales: {
     "/en/": {
@@ -45,26 +46,34 @@ export default {
 
       "/fr/": {
         selectLanguageName: "Français",
-        sidebar: ["/fr/"],
+        sidebar: [
+          "/fr/presentation/",
+          "/fr/kotlin-features/",
+          "/fr/backend-development/",
+          "/fr/front-development/",
+          "/fr/other-technologies/",
+          "/fr/kotlin-features-advanced/",
+          "/fr/to-go-futher/",
+        ],
       },
     },
   }),
 
   plugins: [
-    searchPlugin({
-      locales: {
-        "/en/": {
-          placeholder: "Search",
-        },
-        "/fr/": {
-          placeholder: "Rechercher",
-        },
-      },
-    }),
-    nprogressPlugin(),
-    pwaPlugin({}),
+    // searchPlugin({
+    //   locales: {
+    //     "/en/": {
+    //       placeholder: "Search",
+    //     },
+    //     "/fr/": {
+    //       placeholder: "Rechercher",
+    //     },
+    //   },
+    // }),
+    // nprogressPlugin(),
+    // pwaPlugin({}),
     seoPlugin({
       hostname: "https://worldline.github.io/learning-kotlin",
     }),
   ],
-};
+});
