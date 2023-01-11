@@ -25,7 +25,7 @@ jobs:
 
       # run build script
       - name: Build VuePress site
-        run: cd docs && npm run docs:build
+        run: cd docs && npm install && npm run docs:build
 
       # please check out the docs of the workflow for more details
       # @see https://github.com/crazy-max/ghaction-github-pages
