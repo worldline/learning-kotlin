@@ -19,7 +19,7 @@
   "repository": "https://github.com/worldline/learning-kotlin",
   "scripts": {
     "dev": "vuepress dev src",
-    "build": "vuepress build src"
+    "docs:build": "vuepress build src"
   },
   "license": "MIT",
   "devDependencies": {
