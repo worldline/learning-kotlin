@@ -8,8 +8,8 @@ This chapter covers important and relevant features of the language slit into ba
 ### Basic constructs (variables, control flow)
 
 - Kotlin is statically typed and supports implicit typing.
-  - *Static* typing: types cannot change on runtime (it is the opposite of dynamic typing).
-  - *Implicit* typing: the compiler can infer the type whenever possible.
+  - _Static_ typing: types cannot change on runtime (it is the opposite of dynamic typing).
+  - _Implicit_ typing: the compiler can infer the type whenever possible.
 - `var` creates mutable variables.
 - `val` creates immutable variables or constants.
 - Semi-colons are optional.
@@ -20,7 +20,7 @@ This chapter covers important and relevant features of the language slit into ba
   - The ternary operator is not available but the `if` statement replaces-it.
 - for-each is the only type of for loop available.
 - Object oriented programming is supported as in Java with some additional features such as extensions.
-- The compiler supports *Null Safety*. It allows to write code free from null pointer errors with a compile time guarantee.
+- The compiler supports _Null Safety_. It allows to write code free from null pointer errors with a compile time guarantee.
 - Functional programming is supported (Higher-order functions and functions as 1st class items, etc.).
 
 ::: tip Use val by default
@@ -38,7 +38,7 @@ In the this section, the terms 'argument' and 'parameter' are used interchangeab
 Functions in Kotlin have the following features:
 
 - Declaration: `fun functionName(arg1: type1 = defaultvalue1, ...) : retunrType`.
-- Call a function by passing the value in the declaration order. 
+- Call a function by passing the value in the declaration order.
   - Use argument labels for more clarity, however, it also allows for arbitrary ordering of arguments.
 - Optional arguments have a default value and can be omitted during the call.
 - Functions are first class items or citizen: they can be assigned to a variable, passed as a function parameter, or returned from a function.
@@ -50,21 +50,21 @@ Functions in Kotlin have the following features:
 
 [:arrow_forward: this code](https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS43LjEwIiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiIsIm5vbmVNYXJrZXJzIjp0cnVlLCJ0aGVtZSI6ImlkZWEiLCJjb2RlIjoiLy8gRnVuY3Rpb25zIGNhbiBiZSBkZWNsYXJlZCBvdXRzaWRlIG9mIGNsYXNzZXNcbmZ1biBzdW0oeDpJbnQsIHk6SW50KSA6IEludCB7XG4gICAgcmV0dXJuIHggKyB5XG59IC8vIGZ1bmN0aW9uIGRlZmluaXRpb25cblxuLy9PbmUgbGluZSBmdW5jdGlvblxuZnVuIG11bHQoeDpJbnQsIHk6IEludCkgPSB4ICogeVxuXG5mdW4gZ3JlZXQoeWVhcjogSW50ID0gMjAxOCwgbW9udGg6IEludCA9IDEsXG4gICAgICAgICAgbWVzc2FnZTogU3RyaW5nID0gXCJIZWxsb1wiKSA6IFN0cmluZyB7XG4gICAgcmV0dXJuIFwiJHttZXNzYWdlfS4gV2UgYXJlIGluICR7bW9udGh9LyR7eWVhcn1cIlxufVxuXG5mdW4gY2FsY3VsYXRlKHg6IEludCwgeTogSW50LCBmOiAoSW50LCBJbnQpIC0+IEludCkgOiBJbnR7XG4gICAgcmV0dXJuIGYoeCwgeSlcbn0gLy8gY2FsY3VsYXRlIHRha2VzIGEgZnVuY3Rpb24gYXMgYSBwYXJhbXRlclxuXG5mdW4gbWFpbihhcmd2OkFycmF5PFN0cmluZz4pe1xuICAgIHZhbCBhID0gc3VtKDIsIDEpIC8vIGNhbGwgc3VtIGZ1bmN0aW9uXG4gICAgcHJpbnRsbihtdWx0KGEsIHkgPSA4KSkgLy8gd2UgY2FuIG5hbWUgcGFyYW1ldGVyc1xuICAgIFxuICAgIHByaW50bG4oZ3JlZXQoMjAxNywgMTAsIFwiQm9uam91clwiKSkgLy9Cb25qb3VyLiBXZSBhcmUgaW4gMTAvMjAxN1xuICAgIHByaW50bG4oZ3JlZXQoKSkgLy9IZWxsby4gV2UgYXJlIGluIDEvMjAxOFxuICAgIHByaW50bG4oZ3JlZXQoMjAxOCwgbWVzc2FnZSA9IFwiS29ubmljaGl3YVwiKSlcbiAgICBcbiAgICBwcmludGxuKGNhbGN1bGF0ZSg5LCA1LCA6OnN1bSkpIC8vIDE0XG4gICAgLy8gZnVuY3Rpb25zIGNhbiBiZSBkZWNsYXJlZCBmcm9tIHdpdGhpbiBvdGhlciBmdW5jdGlvbnNcbiAgICB2YWwgZiA9IHt4OiBJbnQsIHk6IEludCAtPiB4IC0geX1cbiAgICBwcmludGxuKGNhbGN1bGF0ZSg5LCA1LCBmKSlcbiAgICBcbiAgICBmdW4gZGl2aWRlKHg6SW50LCB5OiBJbnQpID0geCAvIHlcbiAgICBwcmludGxuKGNhbGN1bGF0ZSg5LCA1LCA6OmRpdmlkZSkpXG4gICAgXG4gICAgcHJpbnRsbihjYWxjdWxhdGUoOSwgNSwgeyB4LCB5IC0+IHggKiB5IH0gKSkgLy8gNDVcbiAgICAvLyBJZiB0aGUgbGFzdCBwYXJhbWV0ZXIgaXMgZnVuY3Rpb24sIHdlIGNhbiBjbG9zZSAoKSBlcmxpZXJcbiAgICBwcmludGxuKGNhbGN1bGF0ZSg5LCA1KSB7IHgsIHkgLT4geCAqIHkgfSApIC8vIDQ1XG59In0=) highlights the above features.
 
-The next section talk about *null safety*.
+The next section talk about _null safety_.
 
 ### Null safety
 
-In a nutshell, *null safety* is a compiler feature that eliminates the infamous *Null pointer exception* or *npe*.
+In a nutshell, _null safety_ is a compiler feature that eliminates the infamous _Null pointer exception_ or _npe_.
 The Kotlin compiler reports errors and warnings when we manipulate nullable (also called optional) values. Here is a list of null safety features provided by Kotlin:
 
 - All types are non-nullable by default; we cannot assign `null` to a variable or an argument.
   - For example, this code fails `var s: String = null`.
-- A type can be made nullable by suffixing it with a *?*. For example: `var s: String? = null`.
+- A type can be made nullable by suffixing it with a _?_. For example: `var s: String? = null`.
 - Kotlin forbids calling a method or a property of a non-nullable type, unless we do one of these possibilities:
-  - Use optional chaining with the *?* suffix.
-  - Provide a default value with the elvis *?:* operator.
+  - Use optional chaining with the _?_ suffix.
+  - Provide a default value with the elvis _?:_ operator.
   - Smart-cast the nullable into a non-nullable.
-  - Use the *!!* operator that eliminates compiler checks. This should never be used.
+  - Use the _!!_ operator that eliminates compiler checks. This should never be used.
 
 ::: danger Never unwrap with !!
 
@@ -129,8 +129,8 @@ Kotlin allows to write concise OOP code and has the following features:
 - Kotlin enables the `public` access level by default.
 - The equality operator `==` calls `equals()` (as opposed to Java which uses reference equality).
 - A **companion object** contains static methods and properties.
-- **Extensions** add function and properties to existing classes. 
-  - :bulb: They replace inheritance in many situations. 
+- **Extensions** add function and properties to existing classes.
+  - :bulb: They replace inheritance in many situations.
   - For example, we can add functions to the String class instead of creating a new `StringUtils` class.
 - Sealed classes and interfaces cannot be extended or implemented by third parties.
 
@@ -162,7 +162,7 @@ However, they have the [following constraints](https://kotlinlang.org/docs/data-
 
 ### Functional programming
 
-#### Genereal concepts
+#### General concepts
 
 Functional programming revolves around [these concepts](https://www.geeksforgeeks.org/functional-programming-paradigm): pure functions, recursion, referential transparency, immutable variables, functions as first-class citizens, and higher-order functions.
 
@@ -177,7 +177,7 @@ Let's briefly explain these concepts:
 
 #### Kotlin and functional programming
 
-Kotlin is not a pure functional languages but it supports some features. 
+Kotlin is not a pure functional languages but it supports some features.
 For example, Kotlin does not have compile time verification of pure functions, but it provides immutable collections through the [kotlinx.collections.immutable](https://github.com/Kotlin/kotlinx.collections.immutable) library.
 
 ::: warning listOf generates read-only lists, which are not immutable
@@ -212,7 +212,7 @@ This favors readable code which is easy to debug an maintain.
 - Kotlin code may require some annotations to be called from Java.
 - It is possible to mix Java and Kotlin in the same project.
 - JetBrain's IntelliJ and Android Studio can convert to Kotlin when pasting java code.
-- Kotlin generates Java records by annotating a data class with `@JvmRecord` and targeting JVM 16, among other requirement [listed here](https://kotlinlang.org/docs/jvm-records.html). 
+- Kotlin generates Java records by annotating a data class with `@JvmRecord` and targeting JVM 16, among other requirement [listed here](https://kotlinlang.org/docs/jvm-records.html).
 - It is much more easier and natural to call Java from Kotlin.
   - For example: Java accessors are converted to Kotlin properties.
 
