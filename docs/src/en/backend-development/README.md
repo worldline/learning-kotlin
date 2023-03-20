@@ -5,8 +5,13 @@ Many frameworks officially support Kotlin: [Spring](https://spring.io/blog/2017/
 In addition to that, Kotlin is theoretically compatible with any framework that targets the JVM or JS. For example, this tutorial shows [how to use nodejs with Kotlin](https://medium.com/@touskar/une-application-nodejs-avec-kotlin-1969994fb1d2).
 However, frameworks that do not officially support Kotlin may require some tweaking to use it.
 
+## Ktor
 
-## PW: develop an API with Ktor
+Ktor is a cross-platform Kotlin library for building both HTTP clients and servers.
+This makes Ktor a useful library to learn for both front-end developers for its HTTP client capabilities and backend-development for its HTTP server capabilities.
+In the following, we'll create a REST API with Ktor server.
+
+### PW: develop an API with Ktor
 
 - Create a project on [start.ktor.io](https://start.ktor.io/) with the following plugins: ContentNegotiation, kotlinx.serialization, and Routing.
 - Click on "Generate project".
@@ -84,7 +89,6 @@ lambdaA {
 }
 ```
 
-
 [This code runs another example](https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS43LjEwIiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiIsIm5vbmVNYXJrZXJzIjp0cnVlLCJ0aGVtZSI6ImlkZWEiLCJjb2RlIjoiaW1wb3J0IGtvdGxpbi5yYW5kb20uUmFuZG9tXG5cbi8vIHJldHVybiB3aXRoIGltcGxpY2l0IGxhYmVsc1xuXG5mdW4gbWFpbigpIHtcbiAgIHZhbCBrb3RsaW4gPSBcIvCfmYJcIlxuICAga290bGluLmxldCB7XG4gICAgICAgaXQuYXBwbHkge1xuXHRcdFx0dmFsIHJhbmRvbUludCA9IFJhbmRvbS5uZXh0SW50KDAsIDEwMClcbiAgICAgICAgICAgIHByaW50bG4ocmFuZG9tSW50KVxuICAgICAgICAgICAgaWYgKHJhbmRvbUludCA+IDUwKSByZXR1cm5AYXBwbHkgZWxzZSByZXR1cm5AbGV0XG4gICAgICAgfVxuICAgICAgIHByaW50bG4oXCJpbnQgbGV0IGFmdGVyIGFwcGx5XCIpXG4gICB9XG59In0=).
 
 :::
@@ -147,20 +151,41 @@ DELETE http://127.0.0.1:8080/customer/500
 
 :::
 
-
 [This page has detailed steps](https://ktor.io/docs/creating-http-apis.html)
+
+## Spring framework
+
+Spring is a famous framework for developing server-side applications: APIs, server generated web pages, microservices, etc.
+It relies on the the Java ecosystem to build and run, thus making it compatible with Kotlin.
+Even better, Spring officially supports Kotlin.
+It even allows in start a new project with Kotlin and Gradle-Kotlin.
+In the next section, we'll use this starter to recreate our above REST API with Spring.
 
 ## PW: develop the same API with Spring Boot
 
 - Create a project on [https://start.spring.io/](https://start.spring.io/) with the following dependencies: Spring Web and Spring Boot DevTools.
-- Choose Kotlin as the language.
+- Choose Kotlin as the language and Kotlin-Grade as the project manager.
 - Click on "Generate". Download the archive, unzip it, and open the project with IntelliJ (preferably) or VSCode.
   - For VSCode, install a [Kotlin extension](https://marketplace.visualstudio.com/search?term=kotlin&target=VSCode&category=All%20categories&sortBy=Relevance) and [Spring Boot Extension Pack](https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-boot-dev-pack) ( :warning: Spring extension do not seem to support kotlin).
+- Check that plugins part `build.gradle.kts` uses the latest version of Kotlin. Here is what is should look like with with Kotlin _1.8.10_:
+
+```kt
+plugins {
+	id("org.springframework.boot") version "3.0.4"
+	id("io.spring.dependency-management") version "1.1.0"
+	kotlin("jvm") version "1.8.10"
+	kotlin("plugin.spring") version "1.8.10"
+}
+```
+
 - Create the same `Customer` data class in the `model` package withotut the `@Serializable` annotation.
 - Create a `controller` package that contains a `CustomerController` class.
   - :bulb: In Spring, Rest controllers serve the purpose of Ktor routes, where a controller defines a Rest resource.
 - Define the same endpoints as in the previous PW.
-- Run and test the API. IntelliJ already provides run configurations for spring boot projects.
+- Run and test the API by running.
+  - On Powershell: `.\gradlew.bat bootRun`
+  - Any Unix shell: `.\gradlew bootRun`
+  - IntelliJ already provides run configurations for spring boot projects.
 
 ::: details MessageController.kt
 
@@ -186,11 +211,6 @@ class CustomerController {
 
 :::
 
-::: tip Check that you're using the latest version of Kotlin
-On a maven project, The tag `kotlin.version` in `pom.xml` configures the Kotlin version used in the project.
-Please change it to the latest version.
-:::
-
 ::: tip Models or model package ? plural or not ?
 
 Both are ok as long as you follow the same convention in the project.
@@ -209,3 +229,7 @@ These official tutorials go even further:
 - [This tutorial from kotlinlang](https://kotlinlang.org/docs/jvm-spring-boot-restful.html) shows how to create a RESTful web service with a database using Spring Boot.
 - [This one from spring.io](https://spring.io/guides/tutorials/spring-boot-kotlin/) show how to build a web application with Spring Boot and Kotlin.
 - [Quarkus and kotlin](https://quarkus.io/guides/kotlin)
+
+## Links and references
+
+- [mockmvc kotlin dsl](https://www.baeldung.com/kotlin/mockmvc-kotlin-dsl)

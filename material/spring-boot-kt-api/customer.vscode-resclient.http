@@ -1,0 +1,53 @@
+@base_customer_url = http://localhost:8080/customer
+
+POST {{base_customer_url}}
+Content-Type: application/json
+
+{
+  "id": "100",
+  "firstName": "Jane",
+  "lastName": "Smith",
+  "email": "jane.smith@company.com"
+}
+
+
+###
+POST {{base_customer_url}}
+Content-Type: application/json
+
+{
+  "id": "200",
+  "firstName": "John",
+  "lastName": "Smith",
+  "email": "john.smith@company.com"
+}
+
+###
+POST {{base_customer_url}}
+Content-Type: application/json
+
+{
+  "id": "300",
+  "firstName": "Mary",
+  "lastName": "Smith",
+  "email": "mary.smith@company.com"
+}
+
+
+###
+GET {{base_customer_url}}
+Accept: application/json
+
+###
+GET {{base_customer_url}}/200
+Accept: application/json
+
+###
+GET {{base_customer_url}}/500
+Accept: application/json
+
+###
+DELETE {{base_customer_url}}/100
+
+###
+DELETE {{base_customer_url}}/500

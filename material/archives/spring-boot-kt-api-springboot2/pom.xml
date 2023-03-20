@@ -15,7 +15,7 @@
 	<description>Demo project for Spring Boot with kotlin</description>
 	<properties>
 		<java.version>17</java.version>
-		<kotlin.version>1.7.10</kotlin.version>
+		<kotlin.version>1.8.10</kotlin.version>
 	</properties>
 	<dependencies>
 		<dependency>
