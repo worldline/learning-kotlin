@@ -161,10 +161,11 @@ Even better, Spring officially supports Kotlin.
 It even allows in start a new project with Kotlin and Gradle-Kotlin.
 In the next section, we'll use this starter to recreate our above REST API with Spring.
 
-## PW: develop the same API with Spring Boot
+### PW: Spring boot part 1 - develop the same API with Spring Boot
 
-- Create a project on [https://start.spring.io/](https://start.spring.io/) with the following dependencies: Spring Web and Spring Boot DevTools.
+- Create a project on [start.spring.io (also called Spring initializr)](https://start.spring.io/) with the following dependencies: Spring Web and Spring Boot DevTools.
 - Choose Kotlin as the language and Kotlin-Grade as the project manager.
+- Add these dependencies: **Spring Web** and **Spring Boot DevTools**.
 - Click on "Generate". Download the archive, unzip it, and open the project with IntelliJ (preferably) or VSCode.
   - For VSCode, install a [Kotlin extension](https://marketplace.visualstudio.com/search?term=kotlin&target=VSCode&category=All%20categories&sortBy=Relevance) and [Spring Boot Extension Pack](https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-boot-dev-pack) ( :warning: Spring extension do not seem to support kotlin).
 - Check that plugins part `build.gradle.kts` uses the latest version of Kotlin. Here is what is should look like with with Kotlin _1.8.10_:
@@ -179,15 +180,16 @@ plugins {
 ```
 
 - Create the same `Customer` data class in the `model` package withotut the `@Serializable` annotation.
-- Create a `controller` package that contains a `CustomerController` class.
-  - :bulb: In Spring, Rest controllers serve the purpose of Ktor routes, where a controller defines a Rest resource.
+- Create a `controller` package that contains a `CustomerController` class which provides a CRUD using a global list. You can find a skeleton below.
+  - :bulb: In Spring, Rest controllers serve the purpose of Ktor routes, where a controller defines a REST resource.
 - Define the same endpoints as in the previous PW.
-- Run and test the API by running.
+- Start the REST API server by running:
   - On Powershell: `.\gradlew.bat bootRun`
   - Any Unix shell: `.\gradlew bootRun`
   - IntelliJ already provides run configurations for spring boot projects.
+- Please test the endpoints with a REST client. You can find http files here in [JetBrains format](https://github.com/worldline/learning-kotlin/blob/main/material/spring-boot-kt-api/customer.jetbrains.http) or [VSCode's REST Client extension](https://github.com/worldline/learning-kotlin/blob/main/material/spring-boot-kt-api/customer.vscode-resclient.http)
 
-::: details MessageController.kt
+::: details CustomerController.kt
 
 ```kotlin
 val store = mutableListOf<Customer>()
@@ -217,6 +219,49 @@ Both are ok as long as you follow the same convention in the project.
 
 :::
 
+### PW: Spring boot part 2 - adding a database
+
+Let's go a little bit further by storing data in a database and writing some tests.
+
+We'll use the H2 in-memory database for the sake of simplicity, since it does not require a server to run.
+Classes will mapped to database tables with JPA annotations.
+The database API we'll be using is called `CrudRepository`.
+It is a lightweight API that provides common CRUD features by just defining an interface.
+
+On the testing side, we'll see two different syntaxes.
+The default one that is more familiar with Java style and the DSL one which is more readable and more familiar with Kotlin developers.
+
+- Create a new Spring project using [Spring initializr](https://start.spring.io/) with Kotlin and the following dependencies: Spring Data JPA, H2 Database, Spring Boot DevTools, Spring Web
+- Open the project and add this class in the `model` package `@Entity class Product(@Id @GeneratedValue var id: Long? = null, var name: String, var price: Int)`. This single defines the class as well as the minimal JPA annotations (`@Entity`, `@Id` and `@GeneratedValue`) to generate the corresponding table.
+- In the `repository` package, declare the `ProductRepository` interface as follows `interface ProductRepository: CrudRepository<Product, Long>`. This is enough for Spring to generate an implementation with common features as we'll see later.
+- In the controller package, create a `ProductController` class that is mapped to `/product` and injects the with `@Autowired`. Reply to `@Get` as follows.
+
+```kt
+@RestController
+@RequestMapping("/product")
+class ProductController(@Autowired val productRepository: ProductRepository) {
+    @GetMapping fun getAll() = productRepository.findAll()
+}
+```
+
+- Let's run the project. Before running the project, we need to add a plugin that allows Kotlin classes to generate a default constructor `id("org.jetbrains.kotlin.plugin.jpa") version "1.8.10"`. The plugins should look as follows:
+
+```js
+plugins {
+    id("org.jetbrains.kotlin.plugin.jpa") version "1.8.10"
+	id("org.springframework.boot") version "3.0.4"
+	id("io.spring.dependency-management") version "1.1.0"
+	kotlin("jvm") version "1.8.10"
+	kotlin("plugin.spring") version "1.8.10"
+}
+```
+
+- As an exercise, implement these endpoints: POST a single product, DELETE by id (`/product/{id}`) and GET by id (`/product/{id}`).
+  - Hint: `ProductController` already provides the necessary methods.
+- Call the different endpoints with a REST client.
+
+### PW: Spring boot part 2 - adding tests
+
 ### Completed projects
 
 - [ktor Rest API](https://github.com/worldline/learning-kotlin/tree/master/material/ktor-api)
@@ -233,3 +278,5 @@ These official tutorials go even further:
 ## Links and references
 
 - [mockmvc kotlin dsl](https://www.baeldung.com/kotlin/mockmvc-kotlin-dsl)
+- [spring-boot-kotlin tutorial](https://spring.io/guides/tutorials/spring-boot-kotlin/)
+- [Working with Kotlin and JPA](https://www.baeldung.com/kotlin/jpa)

@@ -1,0 +1,30 @@
+@base_customer_url = http://localhost:8080/product
+
+POST {{base_customer_url}}
+Content-Type: application/json
+
+{
+  "name": "computer",
+  "price": 1000
+}
+###
+POST {{base_customer_url}}
+Content-Type: application/json
+
+{
+  "name": "drink",
+  "price": 10
+}
+###
+GET {{base_customer_url}}
+Accept: application/json
+###
+GET {{base_customer_url}}/1
+Accept: application/json
+###
+GET {{base_customer_url}}/20
+Accept: application/json
+###
+DELETE {{base_customer_url}}/1
+###
+DELETE {{base_customer_url}}/500
