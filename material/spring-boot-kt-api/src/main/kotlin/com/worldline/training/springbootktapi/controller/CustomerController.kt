@@ -1,6 +1,7 @@
 package com.worldline.training.springbootktapi.controller
 
 import com.worldline.training.springbootktapi.model.Customer
+import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
 val store = mutableListOf<Customer>()
@@ -15,6 +16,7 @@ class CustomerController {
     fun getById(@PathVariable id: String) = store.firstOrNull { it.id == id }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     fun addOne(@RequestBody customer: Customer) { store.add(customer) }
 
     @DeleteMapping("{id}")

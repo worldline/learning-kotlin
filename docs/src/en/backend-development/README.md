@@ -234,15 +234,49 @@ The default one that is more familiar with Java style and the DSL one which is m
 - Create a new Spring project using [Spring initializr](https://start.spring.io/) with Kotlin and the following dependencies: Spring Data JPA, H2 Database, Spring Boot DevTools, Spring Web
 - Open the project and add this class in the `model` package `@Entity class Product(@Id @GeneratedValue var id: Long? = null, var name: String, var price: Int)`. This single defines the class as well as the minimal JPA annotations (`@Entity`, `@Id` and `@GeneratedValue`) to generate the corresponding table.
 - In the `repository` package, declare the `ProductRepository` interface as follows `interface ProductRepository: CrudRepository<Product, Long>`. This is enough for Spring to generate an implementation with common features as we'll see later.
+- Next, create a `ProductService` class which will contain the business logic. In terms of architecture, the controller calls a service which in turn rely on other services or repositories.
+
+```kt
+@Service
+class ProductService(@Autowired val productRepository: ProductRepository) {
+    fun getAll() = productRepository.findAll()
+
+    // use findByIdOrNull instad of findById because the latter returns an optional<Product> instead of Product?
+    fun getById(id: Long) = productRepository.findByIdOrNull(id)
+}
+```
+
 - In the controller package, create a `ProductController` class that is mapped to `/product` and injects the with `@Autowired`. Reply to `@Get` as follows.
 
 ```kt
 @RestController
 @RequestMapping("/product")
-class ProductController(@Autowired val productRepository: ProductRepository) {
-    @GetMapping fun getAll() = productRepository.findAll()
+class ProductController(@Autowired val productService: ProductService) {
+    @GetMapping fun getAll() = productService.getAll()
+
+    @GetMapping("{id}")
+    fun getById(@PathVariable id: Long) =
+        productService.getById(id) ?: throw ResponseStatusException(HttpStatus.NOT_FOUND)
 }
 ```
+
+::: tip - Please note how concise getById(@PathVariable id: Long) is
+
+The Elvis operator `?:` allows to simplify the code.
+Here is a longer version as reference.
+
+```kt
+@GetMapping("{id}")
+fun getById(@PathVariable id: Long): Product {
+    val product = productService.getById(id)
+    if (product != null){
+        return product
+    }
+    throw ResponseStatusException(HttpStatus.NOT_FOUND)
+}
+```
+
+:::
 
 - Let's run the project. Before running the project, we need to add a plugin that allows Kotlin classes to generate a default constructor `id("org.jetbrains.kotlin.plugin.jpa") version "1.8.10"`. The plugins should look as follows:
 
@@ -262,6 +296,8 @@ plugins {
 
 ### PW: Spring boot part 2 - adding tests
 
+We're going to write tests for the repository and the REST API.
+
 ### Completed projects
 
 - [ktor Rest API](https://github.com/worldline/learning-kotlin/tree/master/material/ktor-api)
@@ -280,3 +316,4 @@ These official tutorials go even further:
 - [mockmvc kotlin dsl](https://www.baeldung.com/kotlin/mockmvc-kotlin-dsl)
 - [spring-boot-kotlin tutorial](https://spring.io/guides/tutorials/spring-boot-kotlin/)
 - [Working with Kotlin and JPA](https://www.baeldung.com/kotlin/jpa)
+- [Spring Data JPA How to use Kotlin nulls instead of Optional](https://stackoverflow.com/questions/47143127/spring-data-jpa-how-to-use-kotlin-nulls-instead-of-optional)
