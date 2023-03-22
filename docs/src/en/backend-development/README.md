@@ -236,6 +236,8 @@ The default one that is more familiar with Java style and the DSL one which is m
 - In the `repository` package, declare the `ProductRepository` interface as follows `interface ProductRepository: CrudRepository<Product, Long>`. This is enough for Spring to generate an implementation with common features as we'll see later.
 - Next, create a `ProductService` class which will contain the business logic. In terms of architecture, the controller calls a service which in turn rely on other services or repositories.
 
+::: details ProductService.kt
+
 ```kt
 @Service
 class ProductService(@Autowired val productRepository: ProductRepository) {
@@ -246,7 +248,11 @@ class ProductService(@Autowired val productRepository: ProductRepository) {
 }
 ```
 
+:::
+
 - In the controller package, create a `ProductController` class that is mapped to `/product` and injects the with `@Autowired`. Reply to `@Get` as follows.
+
+::: details ProductController.kt
 
 ```kt
 @RestController
@@ -259,6 +265,8 @@ class ProductController(@Autowired val productService: ProductService) {
         productService.getById(id) ?: throw ResponseStatusException(HttpStatus.NOT_FOUND)
 }
 ```
+
+:::
 
 ::: tip - Please note how concise getById(@PathVariable id: Long) is
 
@@ -296,7 +304,69 @@ plugins {
 
 ### PW: Spring boot part 2 - adding tests
 
-We're going to write tests for the repository and the REST API.
+Spring frameworks helps perform different types of tests by providing different classes out of the box:
+
+- Unit testing of services, repositories and the REST API. This is done through mock utilities such as `MockMVC`.
+- Integration testing of the REST API using `TestRestTemplate`. In this situation, a full server is run and tested.
+
+Most, if not all classes provided by Spring provide an elegant syntax for Java developers.
+Some of them go further by taking advantage of Kotlin specific features.
+In the following, we're going to focus on parts that provide Kotlin DSLs, namely unit testing the REST API with `MockMVC`.
+
+- Create a test class `ProductControllerUnitTests` with this initial content. `MockMvc` allows to unit test the REST API. The `@AutoConfigureMockMvc` annotation allows spring to configure it automatically
+
+```kt
+@SpringBootTest
+@AutoConfigureMockMvc
+class ProductControllerTests(
+    @Autowired val mockMvc: MockMvc,
+    @Autowired val productRepository: ProductRepository) {
+
+    @BeforeEach
+    fun reset(){
+        productRepository.deleteAll()
+    }
+}
+```
+
+- Add these two tests. The first one uses a classic approach while the second take advantage of Kotlin DSL capabilities.
+
+<CodeGroup>
+  <CodeGroupItem title="Without DSL">
+
+```kt
+@Test
+fun testWithClassicApproach(){
+    mockMvc.perform(get("/product"))
+        .andExpect(status().isOk)
+        .andExpect(content().string(containsString("[]")))
+}
+```
+
+  </CodeGroupItem>
+
+  <CodeGroupItem title="With DSL">
+
+```kt
+@Test
+fun `test POST a single product`() {
+    mockMvc.post("/product") {
+        content = """{ "name":"A", "price": 1 }"""
+        contentType = MediaType.APPLICATION_JSON
+    }.andExpect {
+        status { isCreated() }
+    }
+    mockMvc.get("/product/1").andExpect {
+        status { isOk() }
+        jsonPath("$.name") { value("A") }
+        jsonPath("$.price") { value(1) }
+        content { contentType(MediaType.APPLICATION_JSON) }
+    }
+}
+```
+
+  </CodeGroupItem>
+</CodeGroup>
 
 ### Completed projects
 

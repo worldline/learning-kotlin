@@ -1,25 +1,33 @@
 package com.worldline.training.springbootktapi.controller
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.kotlin.jsonMapper
 import com.worldline.training.springbootktapi.model.Product
+import com.worldline.training.springbootktapi.repository.ProductRepository
 import org.hamcrest.CoreMatchers.containsString
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.MockMvc
+import org.springframework.test.web.servlet.get
 import org.springframework.test.web.servlet.post
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.content
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest
 @AutoConfigureMockMvc
-class ProductControllerTests(@Autowired val mockMvc: MockMvc,
-                             @Autowired val objectMapper: ObjectMapper) {
+class ProductControllerUnitTests(@Autowired val mockMvc: MockMvc,
+                                 @Autowired val objectMapper: ObjectMapper,
+                                 @Autowired val productRepository: ProductRepository) {
+
+    @BeforeEach
+    fun reset(){
+        productRepository.deleteAll()
+    }
 
     @Test
     fun testWithClassicApproach(){
@@ -30,13 +38,17 @@ class ProductControllerTests(@Autowired val mockMvc: MockMvc,
 
     @Test
     fun `test POST a single product`() {
-        val p = Product(null, "A", 1)
+
         mockMvc.post("/product") {
-            content = objectMapper.writeValueAsString(p)
+            content = """{ "name":"A", "price": 1 }"""
             contentType = MediaType.APPLICATION_JSON
         }.andExpect {
             status { isCreated() }
-            jsonPath("$.name") { value("name") }
+        }
+
+        mockMvc.get("/product/1").andExpect {
+            status { isOk() }
+            jsonPath("$.name") { value("A") }
             jsonPath("$.price") { value(1) }
             content { contentType(MediaType.APPLICATION_JSON) }
         }
