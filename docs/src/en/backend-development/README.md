@@ -225,7 +225,7 @@ Let's go a little bit further by storing data in a database and writing some tes
 
 We'll use the H2 in-memory database for the sake of simplicity, since it does not require a server to run.
 Classes will mapped to database tables with JPA annotations.
-The database API we'll be using is called `CrudRepository`.
+The database API we'll be using is called `JPARepository`.
 It is a lightweight API that provides common CRUD features by just defining an interface.
 
 On the testing side, we'll see two different syntaxes.
@@ -233,7 +233,7 @@ The default one that is more familiar with Java style and the DSL one which is m
 
 - Create a new Spring project using [Spring initializr](https://start.spring.io/) with Kotlin and the following dependencies: Spring Data JPA, H2 Database, Spring Boot DevTools, Spring Web
 - Open the project and add this class in the `model` package `@Entity class Product(@Id @GeneratedValue var id: Long? = null, var name: String, var price: Int)`. This single defines the class as well as the minimal JPA annotations (`@Entity`, `@Id` and `@GeneratedValue`) to generate the corresponding table.
-- In the `repository` package, declare the `ProductRepository` interface as follows `interface ProductRepository: CrudRepository<Product, Long>`. This is enough for Spring to generate an implementation with common features as we'll see later.
+- In the `repository` package, declare the `ProductRepository` interface as follows `interface ProductRepository: JpaRepository<Product, Long>`. This is enough for Spring to generate an implementation with common features as we'll see later.
 - Next, create a `ProductService` class which will contain the business logic. In terms of architecture, the controller calls a service which in turn rely on other services or repositories.
 
 ::: details ProductService.kt
@@ -268,7 +268,7 @@ class ProductController(@Autowired val productService: ProductService) {
 
 :::
 
-::: tip - Please note how concise getById(@PathVariable id: Long) is
+::: tip Kotlin makes getById(@PathVariable id: Long) more concise
 
 The Elvis operator `?:` allows to simplify the code.
 Here is a longer version as reference.
@@ -283,6 +283,9 @@ fun getById(@PathVariable id: Long): Product {
     throw ResponseStatusException(HttpStatus.NOT_FOUND)
 }
 ```
+
+In addition to that, Spring provides `@ControllerAdvice` to change the exception message.
+You can see an [example here](https://spring.io/guides/tutorials/rest/).
 
 :::
 
@@ -329,7 +332,7 @@ class ProductControllerTests(
 }
 ```
 
-- Add these two tests. The first one uses a classic approach while the second take advantage of Kotlin DSL capabilities.
+- Add these two tests. The first one uses a classic approach while the second take advantage of Kotlin DSL capabilities. In addition to that, we name using a more readable string literal
 
 <CodeGroup>
   <CodeGroupItem title="Without DSL">
@@ -368,6 +371,23 @@ fun `test POST a single product`() {
   </CodeGroupItem>
 </CodeGroup>
 
+- As an exercise, unit tests for the other endpoints.
+
+::: tip Spring repository request builder
+
+Spring repositories implement requests based on the name of their methods.
+For example, to get all products sorted by name, we can add this method to the interface.
+
+```kt
+interface ProductRepository: JpaRepository<Product, Long> {
+    fun findAllByOrderByNameAsc(): List<Product>;
+}
+```
+
+[The official documentation](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.query-creation) provides more detailed explanations and examples.
+
+:::
+
 ### Completed projects
 
 - [ktor Rest API](https://github.com/worldline/learning-kotlin/tree/master/material/ktor-api)
@@ -379,6 +399,7 @@ These official tutorials go even further:
 
 - [This tutorial from kotlinlang](https://kotlinlang.org/docs/jvm-spring-boot-restful.html) shows how to create a RESTful web service with a database using Spring Boot.
 - [This one from spring.io](https://spring.io/guides/tutorials/spring-boot-kotlin/) show how to build a web application with Spring Boot and Kotlin.
+- [Rest ÄPIs with Spring](https://spring.io/guides/tutorials/rest/)
 - [Quarkus and kotlin](https://quarkus.io/guides/kotlin)
 
 ## Links and references

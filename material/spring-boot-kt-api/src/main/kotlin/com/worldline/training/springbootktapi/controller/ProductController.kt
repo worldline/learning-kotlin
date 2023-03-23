@@ -12,6 +12,7 @@ import org.springframework.web.server.ResponseStatusException
 @RestController
 @RequestMapping("/product")
 class ProductController(@Autowired val productService: ProductService) {
+
     @GetMapping fun getAll() = productService.getAll()
 
 
@@ -35,6 +36,9 @@ class ProductController(@Autowired val productService: ProductService) {
 
     @DeleteMapping("{id}")
     fun deleteOne(@PathVariable id: Long) {
-        productService.deleteOne(id)
+        if (!productService.deleteOne(id)){
+            throw ProductNotFoundException()
+        }
     }
 }
+

@@ -7,6 +7,7 @@ import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
   base: "/learning-kotlin/",
+  port: 3000,
   locales: {
     "/en/": {
       lang: "en-US", // this will be set as the lang attribute on <html>
