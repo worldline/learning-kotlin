@@ -335,7 +335,7 @@ class ProductControllerTests(
 - Add these two tests. The first one uses a classic approach while the second take advantage of Kotlin DSL capabilities. In addition to that, we name using a more readable string literal
 
 <CodeGroup>
-  <CodeGroupItem title="Without DSL">
+  <CodeGroupItem title="Without DSL (Test Get All)">
 
 ```kt
 @Test
@@ -348,17 +348,11 @@ fun testWithClassicApproach(){
 
   </CodeGroupItem>
 
-  <CodeGroupItem title="With DSL">
+  <CodeGroupItem title="With DSL (Test Get Single)">
 
 ```kt
 @Test
-fun `test POST a single product`() {
-    mockMvc.post("/product") {
-        content = """{ "name":"A", "price": 1 }"""
-        contentType = MediaType.APPLICATION_JSON
-    }.andExpect {
-        status { isCreated() }
-    }
+fun `test GET a single product`() {
     mockMvc.get("/product/1").andExpect {
         status { isOk() }
         jsonPath("$.name") { value("A") }
