@@ -367,7 +367,7 @@ fun `test GET a single product`() {
 
 - As an exercise, unit tests for the other endpoints.
 
-::: tip Spring repository request builder
+::: tip The request builder of JpaRepository
 
 Spring repositories implement requests based on the name of their methods.
 For example, to get all products sorted by name, we can add this method to the interface.
