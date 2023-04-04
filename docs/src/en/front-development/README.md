@@ -1,15 +1,17 @@
 # Frontend development
 
-Kotlin supports a wide selection of front frameworks from 
+Kotlin supports a wide selection of front frameworks from
 It supports JVM to JS frameworks as well as exclusive ones. Please find below a glimpse of the possibilities:
 
-- We can create Console apps with Kotlin.
-- Thanks to JVM support, Kotlin supports [JavaFX](https://openjfx.io/).
-  - :bulb: There is even a Kotlin counterpart called [tornadofx](https://tornadofx.io/).
-- With JS support, developers can create React, nodsjs, or vanilla JS Apps with IntelliJ IDEA.
-- [Ktor](https://ktor.io/docs/creating-interactive-website.html) can use templates engines [such as FreeMarker](https://freemarker.apache.org/) to create server pages.
-- Android developers use the [Jetpack Compose](https://developer.android.com/jetpack/compose) UI Framework or the legacy **xml layouts**.
-- [Compose Multiplatform](https://www.jetbrains.com/lp/compose-mpp/) brings Jetpack Compose to the desktop and the web.
+- On the desktop side
+  - Thanks to JVM support, Kotlin supports [JavaFX](https://openjfx.io/).
+    - :bulb: There is even a Kotlin counterpart called [tornadofx](https://tornadofx.io/).
+  - [Compose Multiplatform](https://www.jetbrains.com/lp/compose-mpp/) brings Jetpack Compose to the desktop and the web.
+- On the web
+  - With KotlinJS support, developers can create React, nodsjs, or vanilla JS Apps using Kotlin.
+  - [Ktor](https://ktor.io/docs/creating-interactive-website.html) can use templates engines [such as FreeMarker](https://freemarker.apache.org/) to create server pages.
+- On mobiles
+  - Android developers use the [Jetpack Compose](https://developer.android.com/jetpack/compose) UI Framework or the legacy **xml layouts**.
 
 ## Compose multiplatform
 
@@ -62,7 +64,7 @@ fun App() {
 ## PW create a Compose web app
 
 - Create a new IntelliJ project -> Compose Multiplaform.
-- Choose "Single platform" -> "Web" and fill the other fields. 
+- Choose "Single platform" -> "Web" and fill the other fields.
 - Choose **Finish**
 - IntelliJ may take some time to prepare the project and may request to install additional plugins.
 - Launch the development server of the web app sing this command ` ./gradlew jsBrowserRun --continuous`.
