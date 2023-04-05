@@ -8,8 +8,9 @@ It supports JVM to JS frameworks as well as exclusive ones. Please find below a 
     - :bulb: There is even a Kotlin counterpart called [tornadofx](https://tornadofx.io/).
   - [Compose Multiplatform](https://www.jetbrains.com/lp/compose-mpp/) brings Jetpack Compose to the desktop and the web.
 - On the web
-  - With KotlinJS support, developers can create React, nodsjs, or vanilla JS Apps using Kotlin.
   - [Ktor](https://ktor.io/docs/creating-interactive-website.html) can use templates engines [such as FreeMarker](https://freemarker.apache.org/) to create server pages.
+  - With KotlinJS, developers can create React, nodsjs, or vanilla JS Apps using Kotlin.
+  - Kotlin WASM compiles into Web Assembly. It can complement KotlinJS for computation intensive tasks.
 - On mobiles
   - Android developers use the [Jetpack Compose](https://developer.android.com/jetpack/compose) UI Framework or the legacy **xml layouts**.
 
@@ -30,7 +31,7 @@ Google provides a [JetPack compose tutorial](https://developer.android.com/jetpa
 
 ## PW create a Compose desktop + Android app
 
-- Create a new project on IntelliJ -> Compose Multiplaform.
+- Create a new project on IntelliJ -> Compose Multiplatform.
 - Choose "multiple platforms" and fill the other fields. Then choose **Finish**.
 - IntelliJ starts preparing the project and may request to install plugins.
 - Once ready, run the android app using the green run button.
@@ -90,3 +91,25 @@ fun main() {
 ```
 
 ![compose multiplatform demo](../../assets/compose-multiplaform-web.gif)
+
+## PW: KotlinJS web app
+
+## PW: Kotlin WASM web app
+
+- Enable the kotlin wasm wizard by enabling **kotlin.wasm.wizard** in IntelliJ's registry (open the registry by double tapping shift and typing "registry" in the search box) or clone [this project](https://github.com/worldline/learning-kotlin/tree/main/material/kotlin-wasm-starter).
+
+![](../../assets/kotlin-wasm-flag.png)
+
+- Check that kotlin is set to at least **1.8.20** in **build.gradle.kts** (the wizard may set it to a previous version).
+- Open **src/wasmMain/kotlin/sample.kt** and click on the run button that appears next to the `main` function.
+- If the build fails because the IDE used the wrong gradle task (the one that corresponds to a KotlinJS project), please change it to `wasmBrowserDevelopmentRun` and try to run again.
+
+![](../../assets/wasm-build-conf-edit.png)
+![](../../assets/wasm-run-configuration.png)
+
+- The development server should start and you can open your wasm powered webapp on [http://localhost:8080/](http://localhost:8080/)
+
+![](../../assets/kotlin-wasm-webapp.png)
+
+- Open ouiput/
+- https://github.com/WebAssembly/wabt
