@@ -153,6 +153,50 @@ DELETE http://127.0.0.1:8080/customer/500
 
 [This page has detailed steps](https://ktor.io/docs/creating-http-apis.html)
 
+## nodejs
+
+Thanks to Kotlin/JS, we can write apps that targets nodejs using Kotlin.
+
+We can even import npm libraries as long as you declare the JS API surface that you'll be using in Kotlin.
+This is called **external declaration** (You can think of it as an equivalent of TypeScript's type definitions) that declares the symbols that we want to access in Kotlin thanks to [@JsModule](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-js-module/) and [@JsNonModule](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-js-non-module/) annotations.
+Defining such external declarations can be a hassle and there seems to be no official automatic generator ([dukat](https://github.com/Kotlin/dukat) has been removed in kotlin 1.8.20).
+In that case, we have two options, either write the external declaration or import it as a dependency if available.
+
+Fortunately for us, the next PW uses expressjs for which we can find an external type declaration.
+
+### PW: express rest API with Kotlin/JS
+
+- In IntelliJ, create a new nodejs project
+- Once the project is loaded, edit **build.gradle.ts** as follows:
+  - Set the kotlin version to the latest one in the `kotlin("js")` line
+  - Add these two dependencies. The first one is the [**expressJS**]() library and the second one is it external definitions provided by [chrisnkrueger/kotlin-express](https://github.com/chrisnkrueger/kotlin-express).
+  - add a `useCommonJs()` line inside the the `js` block. This is required to be able to use [chrisnkrueger/kotlin-express](https://github.com/chrisnkrueger/kotlin-express) in our code.
+
+```js
+implementation(npm("express", "> 4.0.0 < 5.0.0"));
+implementation("dev.chriskrueger:kotlin-express:1.2.0");
+```
+
+- Modify **main.kt** as follows. This created a REST API server that listens to port 3000 and provides a **GET /hello** endpoint
+
+```kt
+data class Message(val id: Int, val message: String)
+
+fun main() {
+    val messages = listOf(Message(0, "I love Kotlin/JS"))
+    val app = express.Express()
+    app.get("/hello") { req, res ->
+        res.send(messages)
+    }
+
+    app.listen(3000) {
+        console.log("server start at port 3000")
+    }
+}
+```
+
+- Run the task `nodeRun` from IntelliJ of from the command line (if you have Gradle installed)
+
 ## Spring framework
 
 Spring is a famous framework for developing server-side applications: APIs, server generated web pages, microservices, etc.
@@ -398,6 +442,7 @@ These official tutorials go even further:
 
 ## Links and references
 
+- [JS in Kotlin/JS](https://dev.to/mpetuska/js-in-kotlinjs-c4g)
 - [mockmvc kotlin dsl](https://www.baeldung.com/kotlin/mockmvc-kotlin-dsl)
 - [spring-boot-kotlin tutorial](https://spring.io/guides/tutorials/spring-boot-kotlin/)
 - [Working with Kotlin and JPA](https://www.baeldung.com/kotlin/jpa)
