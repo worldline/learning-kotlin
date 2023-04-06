@@ -202,7 +202,7 @@ fun main() {
   - For a JSON body, we need to call `app.use(bodyParser.json())`.
   - [**bodyParser**](https://www.npmjs.com/package/body-parser) is an npm library and unfortunately, [chrisnkrueger/kotlin-express](https://github.com/chrisnkrueger/kotlin-express) does not provide an external definition for **bodyParser** as of version 1.2.0.
   - Can you try to define it yourself by reading the [library's code](https://www.npmjs.com/package/body-parser?activeTab=code) ?
-  - You can find a solution [here]()
+  - You can find a solution [here](https://github.com/worldline/learning-kotlin/blob/main/material/kotlin-nodejs-demo/src/main/kotlin/BodyParser.kt)
 
 ## Spring framework
 
