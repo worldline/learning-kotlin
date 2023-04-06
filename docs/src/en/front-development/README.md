@@ -107,7 +107,7 @@ fun main() {
 ![](../../assets/wasm-build-conf-edit.png)
 ![](../../assets/wasm-run-configuration.png)
 
-- The development server should start and you can open your wasm powered webapp on [http://localhost:8080/](http://localhost:8080/)
+- The development server should start and you can open your WASM powered webapp on [http://localhost:8080/](http://localhost:8080/)
 
 ![](../../assets/kotlin-wasm-webapp.png)
 
