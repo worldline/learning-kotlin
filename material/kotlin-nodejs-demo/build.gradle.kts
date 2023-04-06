@@ -12,6 +12,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation(npm("express", "> 4.0.0 < 5.0.0"))
+    implementation(npm("body-parser", "> 1.0.0 < 2.0.0"))
     implementation("dev.chriskrueger:kotlin-express:1.2.0")
 }
 
