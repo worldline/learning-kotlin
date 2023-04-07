@@ -4,16 +4,16 @@ Kotlin is a modern programming language developed by JetBrains.
 
 ## Some features
 
-- Kotlin compiles to many things: the JVM, JS, Android, iOS, Desktop, etc.
+- Kotlin compiles to many targets: the JVM, JS, WASM, Android, iOS, Desktop, native code, etc.
   - Many server frameworks officially support Kotlin such as Spring and Quarkus.
-  - It is a first-class language for writing Android.
-  - Kotlin native compiles to native code.
-  - Kotlin can be considered as a *fullstack* language.
+  - It is the first-class language for writing Android.
+  - Kotlin can compile to native with Kotlin native or with [GraalVM](https://www.graalvm.org/).
+  - KMP and KMM allow to share code between different platforms.
+- Kotlin can be considered as both _fullstack_ and _corss-platform_ language.
 - Inter-operable with Java.
 - Provides modern features such as compile-time null safety and data classes.
 - Supports Object oriented programming and functional programming.
 - [Kotlin KEEP](https://github.com/Kotlin/KEEP) is its open source evolution process.
-
 
 ## History
 
@@ -46,7 +46,7 @@ Please find more statics here:
 Here are some arguments that motivate switching from Java (version 17 LTS at the time of writing) to Kotlin.
 
 - Kotlin supports more targets than Java.
-- Kotlin has compile time null-safety (Java Optionals are runtime wrappers for nullable values).
+- Kotlin has compile time null-safety (Java Optionals are runtime wrappers for nullable values and null annotations have less features).
 - Kotlin strings support interpolation.
 - Casting in Kotlin is smart.
 - Kotlin functional programming features are better. It even allows to define Type-Safe builders and DSLs.
@@ -59,7 +59,7 @@ You can read more arguments in these articles:
 
 ## Sources and more reading
 
-- [Kotlin on Wikipedia](https://en.wikipedia.org/wiki/Kotlin_(programming_language))
+- [Kotlin on Wikipedia](<https://en.wikipedia.org/wiki/Kotlin_(programming_language)>)
 - [Introducing Kotlin support in Spring Framework 5.0](https://spring.io/blog/2017/01/04/introducing-kotlin-support-in-spring-framework-5-0)
 - [8 stats and facts you should know about Kotlin in 2022](https://medium.com/predict/8-stats-and-fact-you-should-know-about-kotlin-in-2021-b41133a1834)
 - [Why should you learn Kotlin in 2022?](https://dev.to/aashiya123/why-should-you-learn-kotlin-in-2021-57e2)

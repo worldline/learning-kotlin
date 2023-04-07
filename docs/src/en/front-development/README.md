@@ -46,8 +46,6 @@ For example, [WASI](https://wasi.dev/) allows WASM to communicate with the opera
 This means that me may see Kotlin/WASM project projects in the future that can target both the browser and the OS.
 Let's keep watching ::smile::.
 
-### PW: KotlinJS web app
-
 ### PW: Kotlin WASM web app
 
 - Enable the kotlin wasm wizard by enabling **kotlin.wasm.wizard** in IntelliJ's registry (open the registry by double tapping shift and typing "registry" in the search box) or clone [this project](https://github.com/worldline/learning-kotlin/tree/main/material/kotlin-wasm-starter).
@@ -70,6 +68,8 @@ Let's keep watching ::smile::.
   - We can either install [WABT (The WebAssembly Binary Toolkit or wabbit)](https://github.com/WebAssembly/wabt) and use the _wasm2wattool_ `wasm2wat --enable-all  -v .\kotlin-wasm-demo-wasm.wasm -o wasm.wat`,
   - or use an online converter [such as this one](https://webassembly.github.io/wabt/demo/wasm2wat/)
   - However, I couldn't get it to work
+
+### PW: KotlinJS web app
 
 ## Compose
 
@@ -148,3 +148,7 @@ fun App() {
 ```
 
 ![compose multiplatform demo](../../assets/compose-multiplaform.gif)
+
+## Further reading
+
+- [The huge potential of Kotlin/Wasm](https://seb.deleuze.fr/the-huge-potential-of-kotlin-wasm/)

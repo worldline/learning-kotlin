@@ -13,10 +13,21 @@ features:
     details: ktor, spring, …
   - title: Frontend development
     details: compose, KMP, …
-footer: Worldline, 2021
+footer: Worldline, 2023
 ---
 
 # Welcome
+
+## Who we are
+
+![avatar](./assets/logo_worldline.png)
+
+**We design payments technology that powers the growth of millions​ of businesses around the world. Engineering the next frontiers​ in payments technology​**
+
+- Leader in payment and secured transactions
+- Over 50bn transactions/year​
+- 7000+ engineers​ in over 40 countries
+- A huge & diverse​ tech-stack
 
 ::: tip
 This training is also available in [French](/fr/) / Cette formation est aussi disponible en [Français](/fr/)
