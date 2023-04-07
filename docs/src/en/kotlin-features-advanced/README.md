@@ -1,4 +1,30 @@
-# Advanced Kotlin features
+# Advanced and other Kotlin features
+
+## Native development
+
+Kotlin provides these **distinct** ways to generate native or low level code.
+
+### Kotlin native
+
+Kotlin native allows to create apps or libraries that compile to native binaries.
+This makes Kotlin similar to languages such as C or C++ with additional features:
+
+- Supported platforms: Apple (macOS, iOS, tvOS, watchOS), Linux, Windows (MinGW), JS and Android NDK. The full [list is available here](https://kotlinlang.org/docs/multiplatform-dsl-reference.html#targets)
+- Two-way interoperability with the target platform's programming languages.
+  - The compiler creates a binary compatible with the target. For example, Kotlin native generates an Apple framework for Swift and Objective-C projects.
+  - Kotlin native can use native libraries. For example, it can use C, Swift, and Objective-C frameworks on Apple platforms.
+- The Kotlin standard library is available.
+- Possibility to share a single codebase across multiple platforms. Kotlin Multiplatform helps making cross-platform apps with Kotlin straightforward.
+
+### GraalVM
+
+GraalVl is a
+Which is can be used when your target the JVM.
+
+### Kotlin WASM
+
+This may be subject to discussion whether WASM is considered native or not.
+At least it can be considered as _near-native_
 
 ## Delegated properties
 

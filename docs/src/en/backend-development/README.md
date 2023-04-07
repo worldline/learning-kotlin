@@ -162,14 +162,14 @@ This is called **external declaration** (You can think of it as an equivalent of
 Defining such external declarations can be a hassle and there seems to be no official automatic generator ([dukat](https://github.com/Kotlin/dukat) has been removed in kotlin 1.8.20).
 In that case, we have two options, either write the external declaration or import it as a dependency if available.
 
-Fortunately for us, the next PW uses expressjs for which we can find an external type declaration.
+Fortunately for us, the next PW uses Express for which we can find an external type declaration.
 
-### PW: express rest API with Kotlin/JS
+### PW: Rest API with Kotlin/JS and Express
 
 - In IntelliJ, create a new nodejs project
 - Once the project is loaded, edit **build.gradle.ts** as follows:
   - Set the kotlin version to the latest one in the `kotlin("js")` line
-  - Add these two dependencies. The first one is the [**expressJS**]() library and the second one is it external definitions provided by [chrisnkrueger/kotlin-express](https://github.com/chrisnkrueger/kotlin-express).
+  - Add these two dependencies. The first one is the [**Express**](https://expressjs.com/) library and the second one is it external definitions provided by [chrisnkrueger/kotlin-express](https://github.com/chrisnkrueger/kotlin-express).
   - add a `useCommonJs()` line inside the the `js` block. This [is required](https://github.com/Kotlin/dukat/issues/106) to be able to use [chrisnkrueger/kotlin-express](https://github.com/chrisnkrueger/kotlin-express) in our code.
 
 ```js
@@ -197,8 +197,8 @@ fun main() {
 
 - Run the task `nodeRun` from IntelliJ of from the command line (if you have Gradle installed)
   - If you encounter an error with Yarn lock, please run the task `kotlinUpgradeYarnLock` and try again
-- Add @POST, @PUT and @DELETE endpoints
-- Regarding the @POST body, expressjs leaves `req.body` undefined unless we specify a **body parser**.
+- Add POST, PUT and DELETE endpoints
+- Regarding the POST body, Express leaves `req.body` undefined unless we specify a **body parser**.
   - For a JSON body, we need to call `app.use(bodyParser.json())`.
   - [**bodyParser**](https://www.npmjs.com/package/body-parser) is an npm library and unfortunately, [chrisnkrueger/kotlin-express](https://github.com/chrisnkrueger/kotlin-express) does not provide an external definition for **bodyParser** as of version 1.2.0.
   - Can you try to define it yourself by reading the [library's code](https://www.npmjs.com/package/body-parser?activeTab=code) ?
