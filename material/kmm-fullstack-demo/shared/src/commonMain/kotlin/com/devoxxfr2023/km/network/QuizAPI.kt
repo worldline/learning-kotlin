@@ -1,6 +1,6 @@
 package com.devoxxfr2023.km.network
 
-import com.devoxxfr2023.km.network.data.Quiz
+import com.worldline.tech.learningkt.Quiz
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.plugins.contentnegotiation.*
@@ -21,7 +21,7 @@ class QuizAPI {
         }
     }
     suspend fun getAllQuestions(): Quiz {
-        val result:Quiz = httpClient.get("https://awl.li/devoxxkmm2023").body()
+        val result: Quiz = httpClient.get("https://awl.li/devoxxkmm2023").body()
         return result
     }
 }

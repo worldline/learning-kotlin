@@ -15,7 +15,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.devoxxfr2023.km.network.data.Question
+import com.worldline.tech.learningkt.Question
 import moe.tlaster.precompose.navigation.Navigator
 
 @Composable()

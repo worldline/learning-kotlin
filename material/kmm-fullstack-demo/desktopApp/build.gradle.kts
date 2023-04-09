@@ -23,7 +23,6 @@ kotlin {
 
         }
     }
-
 }
 
 compose.desktop { // the block replace

@@ -1,4 +1,4 @@
-package com.devoxxfr2023.km.network.data
+package com.worldline.tech.learningkt
 
 import kotlinx.serialization.Serializable
 

@@ -3,7 +3,7 @@ plugins {
     kotlin("native.cocoapods")
     id("com.android.library")
     id("org.jetbrains.compose")
-    kotlin("plugin.serialization") version "1.8.10"
+    kotlin("plugin.serialization")
 }
 
 kotlin {
@@ -35,6 +35,7 @@ kotlin {
     sourceSets {
         val commonMain by getting{
             dependencies {
+                implementation(project(":sharedFullStack"))
                 implementation(compose.ui)
                 implementation(compose.foundation)
                 implementation(compose.material)

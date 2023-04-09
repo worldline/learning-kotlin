@@ -14,4 +14,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "km"
-include(":androidApp", ":shared", ":iosApp", ":desktopApp")
+include(":androidApp", ":shared", ":sharedFullStack", ":iosApp", ":desktopApp")
