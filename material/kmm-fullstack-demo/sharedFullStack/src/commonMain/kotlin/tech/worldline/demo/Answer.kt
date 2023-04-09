@@ -1,4 +1,4 @@
-package com.worldline.tech.learningkt
+package tech.worldline.demo
 
 import kotlinx.serialization.Serializable
 

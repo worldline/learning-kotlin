@@ -1,11 +1,11 @@
 package com.devoxxfr2023.km.network
 
-import com.worldline.tech.learningkt.Question
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import tech.worldline.demo.Question
 
 class QuizRepository()  {
 

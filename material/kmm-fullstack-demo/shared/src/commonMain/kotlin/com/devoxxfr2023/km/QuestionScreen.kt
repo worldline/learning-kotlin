@@ -15,8 +15,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.worldline.tech.learningkt.Question
 import moe.tlaster.precompose.navigation.Navigator
+import tech.worldline.demo.Question
 
 @Composable()
 internal fun questionScreen(navigator: Navigator, questions: List<Question>) {

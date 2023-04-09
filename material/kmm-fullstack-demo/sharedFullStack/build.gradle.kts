@@ -1,3 +1,5 @@
+val ktorVersion: String by project
+
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization")
@@ -43,9 +45,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4") // For making asynchronous calls
-                implementation("io.ktor:ktor-client-content-negotiation:2.2.1") // Simplify handling of content type based deserialization
-                implementation("io.ktor:ktor-serialization-kotlinx-json:2.2.1")
+                implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
             }
         }
         val commonTest by getting {
@@ -53,5 +53,14 @@ kotlin {
                 implementation(kotlin("test"))
             }
         }
+        val jvmMain by getting {
+            dependencies {
+                implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
+                implementation("io.ktor:ktor-server-netty:$ktorVersion")
+                implementation("io.ktor:ktor-server-html-builder-jvm:$ktorVersion")
+                implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.8.0")
+            }
+        }
+        val jvmTest by getting
     }
 }
