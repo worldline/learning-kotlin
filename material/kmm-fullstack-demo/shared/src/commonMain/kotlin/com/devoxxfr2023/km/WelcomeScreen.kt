@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.sp
 import moe.tlaster.precompose.navigation.Navigator
 
 @Composable()
-internal fun welcomeScreen(navigator: Navigator){
+internal fun WelcomeScreen(navigator: Navigator) {
 
     Box(
         contentAlignment = Alignment.Center,
@@ -26,13 +26,13 @@ internal fun welcomeScreen(navigator: Navigator){
             modifier = Modifier.padding(10.dp),
         ) {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                if(getPlatform().name != "iOS")
-                Image(
-                    painter = getMyImage("logo"),
-                    contentDescription = "Logo of the quiz app", // decorative
-                    contentScale = ContentScale.Fit,
-                    modifier = Modifier.width(150.dp).padding(20.dp)
-                )
+                if (getPlatform().name != "iOS")
+                    Image(
+                        painter = getMyImage("logo"),
+                        contentDescription = "Logo of the quiz app", // decorative
+                        contentScale = ContentScale.Fit,
+                        modifier = Modifier.width(150.dp).padding(20.dp)
+                    )
 
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(

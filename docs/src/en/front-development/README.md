@@ -60,6 +60,7 @@ Let's keep watching ::smile::.
 ![](../../assets/wasm-run-configuration.png)
 
 - The development server should start and you can open your WASM powered webapp on [http://localhost:8080/](http://localhost:8080/)
+- ⚠️ You may need to activate some flags on your browser for the app to work. If you see a blank page, please read the browser logs to check for the instructions.
 
 ![](../../assets/kotlin-wasm-webapp.png)
 

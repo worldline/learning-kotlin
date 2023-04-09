@@ -14,4 +14,4 @@ class Greeting {
 }
 
 @Composable
-internal expect fun getMyImage( imageName:String): Painter
+internal expect fun getMyImage(imageName: String): Painter

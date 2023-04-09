@@ -2,11 +2,11 @@ package com.devoxxfr2023.km
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
-import tech.worldline.demo.QuizRepository
 import moe.tlaster.precompose.navigation.NavHost
 import moe.tlaster.precompose.navigation.path
 import moe.tlaster.precompose.navigation.rememberNavigator
 import moe.tlaster.precompose.navigation.transition.NavTransition
+import tech.worldline.demo.QuizRepository
 
 private val quizRepository = QuizRepository()
 
@@ -23,7 +23,7 @@ internal fun rootNavHost() {
             route = "/welcome",
             navTransition = NavTransition(),
         ) {
-            welcomeScreen(navigator)
+            WelcomeScreen(navigator)
         }
         scene(
             route = "/quiz",

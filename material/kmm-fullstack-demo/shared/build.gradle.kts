@@ -1,3 +1,5 @@
+import org.jetbrains.compose.ExperimentalComposeLibrary
+
 val ktorVersion: String by project
 
 plugins {
@@ -16,10 +18,13 @@ kotlin {
             }
         }
     }
+    js(IR) {
+        browser()
+    }
     iosX64()
     iosArm64()
     iosSimulatorArm64()
-    jvm("desktop"){
+    jvm("desktop") {
         jvmToolchain(11)
     }
     cocoapods {
@@ -35,7 +40,7 @@ kotlin {
     }
 
     sourceSets {
-        val commonMain by getting{
+        val commonMain by getting {
             dependencies {
                 implementation(project(":sharedFullStack"))
                 implementation(compose.ui)
@@ -55,7 +60,7 @@ kotlin {
                 implementation(kotlin("test"))
             }
         }
-        val androidMain by getting{
+        val androidMain by getting {
             dependencies {
                 implementation("io.ktor:ktor-client-android:$ktorVersion") // for Android
             }
@@ -86,6 +91,14 @@ kotlin {
             dependencies {
                 api(compose.preview)
                 implementation("io.ktor:ktor-client-apache:$ktorVersion")
+            }
+        }
+        val jsMain by getting {
+            dependencies {
+                implementation(compose.web.core)
+                implementation(compose.ui)
+                @OptIn(ExperimentalComposeLibrary::class)
+                implementation(compose.material3)
             }
         }
     }
