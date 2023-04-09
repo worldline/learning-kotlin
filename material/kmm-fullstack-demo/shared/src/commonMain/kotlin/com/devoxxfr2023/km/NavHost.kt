@@ -2,7 +2,7 @@ package com.devoxxfr2023.km
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
-import com.devoxxfr2023.km.network.QuizRepository
+import tech.worldline.demo.QuizRepository
 import moe.tlaster.precompose.navigation.NavHost
 import moe.tlaster.precompose.navigation.path
 import moe.tlaster.precompose.navigation.rememberNavigator

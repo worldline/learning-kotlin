@@ -8,12 +8,31 @@ This pw is so huge [that it has its own codelab](https://worldline.github.io/lea
 
 ## PW : Add a Ktor server App
 
-- Add a module into the project called **sharedFullStack** which will serve as a KMP shared library, thus, it will have the `kotlin("multiplatform")` plugin
-- For completeness, it will targets all possible platforms native, desktop, iOS, Android, JS, etc.
-- Since we are targeting JS, we'll add this line into **setting.gradle.kts**: `kotlin.js.compiler=ir` in order to use the new Kotlin/JS compiler.
-- Our clean task may conflict with Kotlin/JS's one, if that the case, we can fix this by renaming our clean task in the root **build.gradle.kts**
-- We will only need the common sourceSets (main and test) because it will only contain the API model classes (`Anwser`, `Quiz` and `Question`), thus this module should have the `kotlin("plugin.serialization")` plugin
-- In terms of dependencies, this module will include the dependencies used across all projects so that we don't need to repeat them everywhere and thus can also removed from the . For example, `org.jetbrains.kotlinx:kotlinx-coroutines-core:` can be removed from **shared** and placed into **sharedFullStack**
-- The build.gradle.kts of the **sharedFullStack** module should look as follows.
-- In android build file add io.netty.versions.properties and INDEX.LIST to packagingOptions excldues
-- In CommonMain -> QuizAPI.txt, change the url to [http://localhost:8080/quiz](http://localhost:8080/quiz) and remove the arguments of the json method above.
+We'll extend the previous app with a Ktor server and a React web client.
+The project will have the following architecture.
+
+![architecture](../../assets/fs-kmp-architecture.drawio.svg)
+
+- Add a module into the project called **sharedFullStack** which will contain
+  - Some shared code in commonMain that will by used by the **shared** project.
+  - A Ktor server that provides a Rest API to get the questions and hosts some html files. One of the HTML files will load a react app that will be developed in Kotlin/JS.
+  - A react web client in jsMain. This will only generate the JS code, the HTML page that loads the JS code will be provided by Ktor server as explained above.
+- Update the build file of this new module
+  - Add the `kotlin("multiplatform")` plugin and target all possible platforms (web, desktop, jvm ans mobile) for completeness.
+  - ⚠️ Our clean task may conflict with Kotlin/JS's one, if that the case, we can fix this by renaming our clean task in the root **build.gradle.kts**
+  - We need to add two tasks so that
+  - The file should [look as follows]()
+- Move the API model and client files from **shared** to **sharedFullStack** (`Anwser`, `Quiz`, `Question`)
+- Add the relevant plugin and dependencies to **sharedFullStack** for the different source sets: `commonMain`, `jvmMain` and `jsMain`
+- ⚠️ In the android build file, add **io.netty.versions.properties** and **INDEX.LIST** to packagingOptions excludes.
+- Write the necessary code for both the server and the client
+
+  - The server provides on "/" an html file that loads **sharedFullStack.js** because this is the name of the JS that is generated
+
+- Change the QuizAPI class so that it calls our local server _http://localhost:8081/quiz_ and remove the arguments of the json method above since the server sets the correct headers for the JSON content type.
+
+## Sources and references
+
+- [Full Stack JVM & JS App Hands-On Lab](https://github.com/kotlin-hands-on/jvm-js-fullstack)
+- [Build a full-stack web app with Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform-full-stack-app.html)
+- [Build a web application with React and Kotlin/JS — tutorial](https://kotlinlang.org/docs/js-react.htm)

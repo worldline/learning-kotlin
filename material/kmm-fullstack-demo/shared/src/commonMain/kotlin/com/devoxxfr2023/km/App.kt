@@ -2,7 +2,7 @@ package com.devoxxfr2023.km
 
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
-import com.devoxxfr2023.km.network.QuizRepository
+import tech.worldline.demo.QuizRepository
 
 
 private val repository = QuizRepository()

@@ -8,12 +8,12 @@ import io.ktor.server.html.*
 import io.ktor.server.http.content.*
 import io.ktor.server.netty.*
 import io.ktor.server.plugins.contentnegotiation.*
+import io.ktor.server.plugins.cors.routing.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import kotlinx.html.*
 import kotlinx.serialization.json.Json
-
-fun generateQuiz() = tech.worldline.demo.generateQuiz()
+import tech.worldline.demo.generateQuiz
 
 fun HTML.index() {
     head {
@@ -39,20 +39,34 @@ fun HTML.index() {
 }
 
 fun main() {
-    embeddedServer(Netty, port = 8080, host = "127.0.0.1") {
+    embeddedServer(Netty, port = 8081, host = "127.0.0.1") {
         install(ContentNegotiation) {
             json(Json {
                 prettyPrint = true
             })
         }
+        // Cors is required to be able to fetch the JS code
+        install(CORS) {
+            allowHeader(HttpHeaders.ContentType)
+            allowMethod(HttpMethod.Get)
+            allowMethod(HttpMethod.Post)
+            allowMethod(HttpMethod.Delete)
+            anyHost()
+        }
         routing {
-            get("/") {
+            get("/quiz.html") {
                 call.respondHtml(HttpStatusCode.OK, HTML::index)
             }
-            get("/quiz"){
+            get("/quiz") {
                 call.respond(generateQuiz())
             }
-            static("/static") {
+            get("/") {
+                call.respondText(
+                    this::class.java.classLoader.getResource("index.html")!!.readText(),
+                    ContentType.Text.Html
+                )
+            }
+            static("/") {
                 resources()
             }
         }

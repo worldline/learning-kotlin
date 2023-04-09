@@ -1,11 +1,10 @@
-package com.devoxxfr2023.km.network
+package tech.worldline.demo
 
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.plugins.contentnegotiation.*
 import io.ktor.client.request.*
 import io.ktor.serialization.kotlinx.json.*
-import tech.worldline.demo.Quiz
 
 class QuizAPI {
     private val httpClient = HttpClient {
@@ -20,10 +19,11 @@ class QuizAPI {
             )
         }
     }
+
     suspend fun getAllQuestions(): Quiz {
         // uncomment for non desktop platforms
 //        val url = "https://awl.li/devoxxkmm2023"
-        val url = "http://localhost:8080/quiz"
+        val url = "http://localhost:8081/quiz"
         val result: Quiz = httpClient.get(url).body()
         return result
     }

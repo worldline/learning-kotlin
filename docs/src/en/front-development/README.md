@@ -46,7 +46,7 @@ For example, [WASI](https://wasi.dev/) allows WASM to communicate with the opera
 This means that me may see Kotlin/WASM project projects in the future that can target both the browser and the OS.
 Let's keep watching ::smile::.
 
-### PW: Kotlin WASM web app
+### PW: Kotlin/WASM web app
 
 - Enable the kotlin wasm wizard by enabling **kotlin.wasm.wizard** in IntelliJ's registry (open the registry by double tapping shift and typing "registry" in the search box) or clone [this project](https://github.com/worldline/learning-kotlin/tree/main/material/kotlin-wasm-starter).
 
@@ -70,6 +70,9 @@ Let's keep watching ::smile::.
   - However, I couldn't get it to work
 
 ### PW: KotlinJS web app
+
+The Kotlin/JS wizard creates a very similar app to the Kotlin/WASM.
+in a later PW, we'll create a fullstack app with Ktor and Kotlin/JS
 
 ## Compose
 
