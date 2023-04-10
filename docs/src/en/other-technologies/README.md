@@ -1,4 +1,4 @@
-# Cross-plaform app Codelab
+# Cross-plaform and Fullstack app Codelab
 
 ## PW : Cross-platform app + KMM + KMP for Android, iOS and Desktop
 
