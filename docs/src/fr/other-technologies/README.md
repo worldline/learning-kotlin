@@ -1,37 +1,65 @@
-# Kotlin native and KMP / KMM
+## Application multiplateforme et Fullstack Codelab
 
-This section explores other technologies that Kotlin supports.
+## TP : Application multiplateforme + KMM + KMP pour Android, iOS et ordinateur de bureau
 
-## Kotlin native
+En combinant KMP, KMM et Compose, il est possible de développer des applications mobiles et de bureau multiplateformes en utilisant uniquement Kotlin.
 
-Kotlin native allows to create apps or libraries that compile to native binaries.
-This makes Kotlin similar to languages such as C or C++ with additional features:
+La première partie de ce labo [est accessible depuis ce lien](https://worldline.github.io/learning-kotlin-multiplatform/)
 
-- Supported platforms: Apple (macOS, iOS, tvOS, watchOS), Linux, Windows (MinGW), JS and Android NDK. The full [list is available here](https://kotlinlang.org/docs/multiplatform-dsl-reference.html#targets)
-- Two-way interoperability with the target platform's programming languagues. 
-  - The compiler creates a binary compatible with the target. For example, Kotlin native generates an Apple framework for Swift and Objective-C projects.
-  - Kotlin native can use native libraries. For example, it can use C, Swift, and Objective-C frameworks on Apple platfrorms.
-- Kotlin standard library is available.
-- Possiblity to share a single codebase across multiple platforms. Kotlin multiplaform helps making corss-platform apps with Kotlin straightforward.
+## PW : Ajouter une application serveur Ktor
 
-## Kotlin multiplatform (KMP)
+Nous allons étendre l'application précédente avec un serveur Ktor et un client web React.
+Le projet aura l'architecture suivante (❗ Ce choix d'architecture peut être sujet à discussion, mais nous nous en tiendrons à cela pour l'instant)
 
-[Kotlin multiplatform](https://blog.jetbrains.com/kotlin/2021/08/compose-multiplatform-goes-alpha/) relies on Kotlin native and Kotlin features to help developers create projects that target multiple platforms using a common code-base in coded Kotlin. 
+![architecture](../../assets/fs-kmp-architecture.drawio.svg)
 
-![KMP](https://kotlinlang.org/docs/images/kotlin-multiplatform.png)
+- Ajouter un module dans le projet appelé **sharedFullStack** qui contiendra :
+  - Dans _commonMain_ : Du code partagé qui sera utilisé par le projet **shared**.
+  - Dans _jvmMain_ : Un serveur Ktor qui sert une API Rest pour fournir les _questions_ et héberge quelques fichiers HTML. L'un des fichiers HTML chargera une application react qui sera développée en Kotlin/JS.
+  - Dans _jsMain_ : Un client web react. Cette cible ne générera que le code JS, la page HTML qui le charge sera fournie par le serveur Ktor comme expliqué plus haut.
+  - 💡 Avec IntelliJ vous pouvez faire un clic droit sur les dossiers **xxxMain/kotlin** et **xxxMain/resources** et utiliser **Mark Directory as** pour obtenir plus de support de la part de l'IDE.
+- Mettez à jour le fichier de construction de ce nouveau module comme suit :
+  - plugins : `multiplatform`, `serialilzation` et `application`. Ce dernier sera utilisé pour spécifier le fichier principal du serveur qui sera exécuté avec la tâche `run`.
+  - Ajoutez le plugin `kotlin("multiplatform")` et ciblez toutes les plateformes possibles (web, desktop, jvm et mobile) pour être complet.
+  - Les dépendances devraient être les suivantes :
+    - _commonMain_ : client kotr (puisque nous voulons ajouter le client API dans le code partagé)
+    - _jvmMain_ : serveur ktor + sérialisation json + cors (pour que le html puisse charger le JS)
+    - _jsMain_ : Kotlin React
+  - Nous devons ajouter deux tâches, la première produit l'application JS React et l'autre copie dans les ressources du serveur Ktor.
+  - Définir la classe principale du plugin `application`.
+  - Le fichier devrait [ressembler à ce qui suit] (https://github.com/worldline/learning-kotlin/blob/main/material/kmm-fullstack-demo/sharedFullStack/build.gradle.kts)
+- Déplacer le modèle API et les fichiers clients de **shared** vers **sharedFullStack** (`Anwser`, `Quiz`, `Question`, `QuizAPI` et `QuizRepository`)
+- ⚠️ Quelques points à noter :
+  - Dans le fichier de construction d'android, ajoutez **io.netty.versions.properties** et **INDEX.LIST** au fichier de construction d'android.
+  - Notre tâche globale de nettoyage peut entrer en conflit avec celle de Kotlin/JS, si c'est le cas, nous pouvons corriger cela en renommant notre tâche de nettoyage dans la racine **build.gradle.kts**
+    packagingOptions exclues.
+- Ecrivez le code nécessaire pour le serveur et le client. Le serveur doit fournir ces points de terminaison :
+  - Un GET sur `/` fournit un fichier html qui charge **sharedFullStack.js** parce que c'est le nom du JS qui est généré.
+  - Un GET sur `/quiz` fournit un JSON de `Quiz` généré par le serveur
+  - Un GET sur `/quiz.html` sert une page HTML générée par le serveur en utilisant le HTML DSL.
+- Changez la classe `QuizAPI` pour qu'elle appelle notre serveur local _http://localhost:8081/quiz_ et supprimez les arguments de la méthode json ci-dessus puisque le serveur met en place les bons headers.
+- Lancer la tâche gradle "application -> run" du module **sharedFullStack**, qui copiera le JS généré dans le dossier ressources du serveur Ktor.
+- Ouvrez _http://localhost:8081_ pour exécuter l'application react
 
-Many combinations of targets and use cases are possible:
+![kmm-fs-react-demo](../../assets/kmm-fs-react-demo.png)
 
-- [Full-Stack web apps](https://kotlinlang.org/docs/multiplatform-full-stack-app.html): A project that contains a backend and a web app while sharing common logic.
-- [Multiplatform libraries](https://kotlinlang.org/docs/multiplatform-library.html)
-- [Kotlin Multiplatform Mobile (KMM)](https://kotlinlang.org/lp/mobile/): a special denomination for KMP when used for iOS and Android projects.
-  - It allows to share a single codebase for the logic. 
-  - :warning: KMM does not share view logic.
-  - :bulb: To develop the views: we must use native SDKs or any SDK compatible with KMM. For example, KMP + KMM + Compose allows to develop the logic + the UI all in a single Kotlin project.
+- Exécutez l'application de bureau qui récupère le quiz sur le serveur local.
 
+![](../../assets/kmp-fs-desktop-local-ktor.png)
 
-![KMM](https://kotlinlang.org/lp/mobile/static/sdk-313e52f7d9d3b3e3e48471ef06e8e3aa.svg)
+- Le test sur mobile est un peu plus complexe parce que localhost peut être mappé à une autre adresse et que le HTTP non sécurisé est bloqué par défaut.
 
-## PW: create a KMP full-Stack web app
+Le projet final est [disponible ici] (https://github.com/worldline/learning-kotlin/tree/main/material/kmm-fullstack-demo) dans le module **sharedFullStack**.
 
-Please follow this [Kotlin Hands-On tutorial](https://play.kotlinlang.org/hands-on/Full%20Stack%20Web%20App%20with%20Kotlin%20Multiplatform/01_Introduction)
+## PW : Ajouter une cible Compose for Web Canvas (expérimental)
+
+Compose for Web Canvas permet d'utiliser la même surface d'API que Compose Desktop et Android.
+Ajoutons un autre module pour l'expérimenter.
+
+![architecture web canvas](../../assets/fs-kmp-webcanvas-architecture.drawio.svg)
+
+- Dans la racine **settings.gradle.kts**, ajoutez ce dépôt maven `maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")` qui a les dépendances de Compose for Web Canvas.
+- Dans **gradle.properties**, ajoutez cette ligne `org.jetbrains.compose.experimental.jscanvas.enabled=true`.
+- Dans le fichier de construction du module **shared**, ajoutez une cible `js(IR) { browser() }` et un sourceSet **jsMain** avec ces dépendances : `compose.web.core`, `compose.ui` et `compose.material3`.
+  - Implémentez le fichier `Platform` et fournissez un composable pour l' `App`. Voici un [exemple d'implémentation] (https://github.com/worldline/learning-kotlin/tree/main/material/kmm-fullstack-demo/shared/src/jsMain/kotlin/com/devoxxfr2023/km)
+- Ajoutez un module nommé **composeWebCanvasApp** et définissez

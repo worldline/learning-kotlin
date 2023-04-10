@@ -179,7 +179,7 @@ implementation("dev.chriskrueger:kotlin-express:1.2.0");
 
 - Modify **main.kt** as follows. This created a REST API server that listens to port 3000 and provides a **GET /hello** endpoint
 
-```kt
+```kotlin
 data class Message(val id: Int, val message: String)
 
 fun main() {
@@ -221,7 +221,7 @@ In the next section, we'll use this starter to recreate our above REST API with 
   - For VSCode, install a [Kotlin extension](https://marketplace.visualstudio.com/search?term=kotlin&target=VSCode&category=All%20categories&sortBy=Relevance) and [Spring Boot Extension Pack](https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-boot-dev-pack) ( :warning: Spring extension do not seem to support kotlin).
 - Check that plugins part `build.gradle.kts` uses the latest version of Kotlin. Here is what is should look like with with Kotlin _1.8.10_:
 
-```kt
+```kotlin
 plugins {
 	id("org.springframework.boot") version "3.0.4"
 	id("io.spring.dependency-management") version "1.1.0"
@@ -289,7 +289,7 @@ The default one that is more familiar with Java style and the DSL one which is m
 
 ::: details ProductService.kt
 
-```kt
+```kotlin
 @Service
 class ProductService(@Autowired val productRepository: ProductRepository) {
     fun getAll() = productRepository.findAll()
@@ -305,7 +305,7 @@ class ProductService(@Autowired val productRepository: ProductRepository) {
 
 ::: details ProductController.kt
 
-```kt
+```kotlin
 @RestController
 @RequestMapping("/product")
 class ProductController(@Autowired val productService: ProductService) {
@@ -324,7 +324,7 @@ class ProductController(@Autowired val productService: ProductService) {
 The Elvis operator `?:` allows to simplify the code.
 Here is a longer version as reference.
 
-```kt
+```kotlin
 @GetMapping("{id}")
 fun getById(@PathVariable id: Long): Product {
     val product = productService.getById(id)
@@ -369,7 +369,7 @@ In the following, we're going to focus on parts that provide Kotlin DSLs, namely
 
 - Create a test class `ProductControllerUnitTests` with this initial content. `MockMvc` allows to unit test the REST API. The `@AutoConfigureMockMvc` annotation allows spring to configure it automatically
 
-```kt
+```kotlin
 @SpringBootTest
 @AutoConfigureMockMvc
 class ProductControllerTests(
@@ -388,7 +388,7 @@ class ProductControllerTests(
 <CodeGroup>
   <CodeGroupItem title="Without DSL (Test Get All)">
 
-```kt
+```kotlin
 @Test
 fun testWithClassicApproach(){
     mockMvc.perform(get("/product"))
@@ -401,7 +401,7 @@ fun testWithClassicApproach(){
 
   <CodeGroupItem title="With DSL (Test Get Single)">
 
-```kt
+```kotlin
 @Test
 fun `test GET a single product`() {
     mockMvc.get("/product/1").andExpect {
@@ -423,7 +423,7 @@ fun `test GET a single product`() {
 Spring repositories implement requests based on the name of their methods.
 For example, to get all products sorted by name, we can add this method to the interface.
 
-```kt
+```kotlin
 interface ProductRepository: JpaRepository<Product, Long> {
     fun findAllByOrderByNameAsc(): List<Product>;
 }

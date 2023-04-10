@@ -300,7 +300,7 @@ class ProductService(@Autowired val productRepository: ProductRepository) {
 
 ::: details ProductController.kt
 
-```kt
+```kotlin
 @RestController
 @RequestMapping("/product")
 class ProductController(@Autowired val productService : ProductService) {
@@ -319,7 +319,7 @@ class ProductController(@Autowired val productService : ProductService) {
 L'opérateur Elvis `?:` permet de simplifier le code.
 Voici une version plus longue en guise de référence.
 
-```kt
+```kotlin
 @GetMapping("{id}")
 fun getById(@PathVariable id : Long) : Produit {
     val product = productService.getById(id)
