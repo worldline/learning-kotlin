@@ -1,4 +1,4 @@
-## Application multiplateforme et Fullstack Codelab
+# Application multiplateforme et Fullstack Codelab
 
 ## TP : Application multiplateforme + KMM + KMP pour Android, iOS et ordinateur de bureau
 
