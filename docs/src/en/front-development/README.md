@@ -37,18 +37,20 @@ KMM is based on KMP and focuses on helping mobile developers create Cross-Platfo
 
 ## Kotlin/JS and Kotlin/WASM
 
-Kotlin/JS can also target the web and even use web frameworks (such as react) in Kolitn.
-
-Kotlin WASM is another possibility to target the web but this will generate WASM instead of pure JS code.
-It can be used for example to develop computation intensive libraries.
-Maybe we can do even more in the future with as all these technologies (Kotlin, WASM and Kotlin/WASM) evolve.
-For example, [WASI](https://wasi.dev/) allows WASM to communicate with the operating system.
-This means that me may see Kotlin/WASM project projects in the future that can target both the browser and the OS.
-Let's keep watching ::smile::.
+- Kotlin/JS can also target the web and even use web frameworks (such as react) in Kolitn.
+- Kotlin WASM is another possibility to target the web but this will generate WASM instead of pure JS code.
+  - It can be used for example to develop computation intensive libraries.
+- Maybe we can do even more in the future with as all these technologies (Kotlin, WASM and Kotlin/WASM) evolve. - For example, [WASI](https://wasi.dev/) allows WASM to communicate with the operating system. - This means that me may see Kotlin/WASM project projects in the future that can target both the browser and the OS.
+- Let's keep watching 😄.
 
 ### PW: Kotlin/WASM web app
 
-- Enable the kotlin wasm wizard by enabling **kotlin.wasm.wizard** in IntelliJ's registry (open the registry by double tapping shift and typing "registry" in the search box) or clone [this project](https://github.com/worldline/learning-kotlin/tree/main/material/kotlin-wasm-starter).
+- Both Kotlin/WASM and Kotlin/JS wizards on IntelliJ work similarly.
+  - The IDE generates a Kotlin file that will compile later WASM and / or JS. Kotlin/JS generated only JS while Kotin/WASM generates both JS and WASM.
+  - In both cases, the entry point of the generated code is a JS file called **module_name.js**.
+  - The IDE also generates an **index.html** in the resources folder which loads the generated JS explained above (the one named **module_name.js**).
+  - The task `wasmBrowserDevelopmentRun` or `jsWasmBrowserDevelopmentRun` will run a local server that hosts both the **index.html** files and the generated JS and WASM files.
+- Let's create a Kotlin/WASM app. First, Enable the kotlin wasm wizard by enabling **kotlin.wasm.wizard** in IntelliJ's registry (open the registry by double tapping shift and typing "registry" in the search box) or clone [this project](https://github.com/worldline/learning-kotlin/tree/main/material/kotlin-wasm-starter).
 
 ![](../../assets/kotlin-wasm-flag.png)
 
@@ -68,27 +70,32 @@ Let's keep watching ::smile::.
 - WASM being a binary format, we need to convert it first to text format.
   - We can either install [WABT (The WebAssembly Binary Toolkit or wabbit)](https://github.com/WebAssembly/wabt) and use the _wasm2wattool_ `wasm2wat --enable-all  -v .\kotlin-wasm-demo-wasm.wasm -o wasm.wat`,
   - or use an online converter [such as this one](https://webassembly.github.io/wabt/demo/wasm2wat/)
-  - However, I couldn't get it to work
+  - ❗ However, I couldn't get it to work
 
 ### PW: KotlinJS web app
 
 The Kotlin/JS wizard creates a very similar app to the Kotlin/WASM.
-in a later PW, we'll create a fullstack app with Ktor and Kotlin/JS
+in a later PW, we'll create a fullstack app with Ktor and Kotlin/JS.
 
 ## Compose
 
-[Compose multiplatform](https://blog.jetbrains.com/kotlin/2021/08/compose-multiplatform-goes-alpha/) is a family of declarative UI frameworks for Android (Jetpack Compose), the desktop (Compose Desktop), and the web (Compose Web). It has experimental support for iOS.
+[Compose multiplatform](https://blog.jetbrains.com/kotlin/2021/08/compose-multiplatform-goes-alpha/) is a family of declarative UI frameworks for Android (Jetpack Compose), the desktop (Compose Desktop), and the web (Compose Web). It has experimental support for iOS and Web Canvas.
 
-::: warning state of compose multiplatform as of August 2022
+::: warning Compose multiplatform vs Jetpack Compose
 
-Currently, IntelliJ can create compose projects that include both Android and Desktops.
-The web platform is not yet included, but it is still possible to create Compose projects only for web or only for desktop.
-
-For Android only compose apps (Jetpack Compose), please use **Android Studio**.
+While very similar, Compose multiplatform is different from Jetpack Compose as the latter is only compatible with Android.
+Google provides a [JetPack compose tutorial](https://developer.android.com/jetpack/compose/tutorial) for Android development.
 
 :::
 
-Google provides a [JetPack compose tutorial](https://developer.android.com/jetpack/compose/tutorial) for Android development.
+::: tip Compose Web vs Compose for Web Canvas
+
+- Compose Web's API surface is different that other Compose targets because it works directly with the DOM.
+- Compose for Web Canvas has the same API surface as the Desktop and Android because it draws on a Canvas and does not manipulate on the DOM.
+
+This means that the first one has better web support and the second one has more reusable code.
+
+:::
 
 ### PW: Compose web
 

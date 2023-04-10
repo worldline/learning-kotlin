@@ -59,6 +59,10 @@ Let's add another module to try this out.
 
 ![architecture web canvas](../../assets/fs-kmp-webcanvas-architecture.drawio.svg)
 
+- In the root **settings.gradle.kts**, add this maven repository `maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")` that has Compose for Web Canvas dependencies.
+- In **gradle.properties** add this line `org.jetbrains.compose.experimental.jscanvas.enabled=true`.
+- In the **shared** module's build file, add a `js(IR) { browser() }` target and a **jsMain** sourceSet with these dependencies: `compose.web.core`, `compose.ui` and `compose.material3`
+  - Implement the `Platform` file and provide a composable for the `App`. Here is an [example implementation](https://github.com/worldline/learning-kotlin/tree/main/material/kmm-fullstack-demo/shared/src/jsMain/kotlin/com/devoxxfr2023/km)
 - Add a module named **composeWebCanvasApp** and define it as a Kotlin/JS web app.
   - add `src/jsMain/kotlin` folder and `src/jsMain/resources` folder
   - 💡 With IntelliJ you can right click on these folders and use **Mark Directory as** to get more help later from the IDE.
