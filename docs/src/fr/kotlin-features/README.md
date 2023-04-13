@@ -1,4 +1,4 @@
-# Fonctionnalités du langage Kotlin
+# Fonctionnalités du langage Kotlin (30min)
 
 Kotlin est un langage qui support les paradigmes orienté objet et fonctionnel.
 Ce chapitre couvre les caractéristiques basiques et intermédiaires.
