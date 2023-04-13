@@ -1,4 +1,4 @@
-# Développement frontend
+# Développement frontend (25min)
 
 Kotlin supporte une large sélection de frameworks frontaux sur toutes les plateformes : mobile, desktop et web.
 Vous trouverez ci-dessous un aperçu des possibilités que vous pouvez faire directement à partir d'IntelliJ :
