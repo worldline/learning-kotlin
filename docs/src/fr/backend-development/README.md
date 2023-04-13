@@ -1,4 +1,4 @@
-# Développement du backend (45)
+# Développement du backend (45 min)
 
 De nombreux frameworks supportent officiellement Kotlin comme [Spring](https://spring.io/blog/2017/01/04/introducing-kotlin-support-in-spring-framework-5-0), [Quarkus](https://quarkus.io/guides/kotlin) et [Ktor](https://github.com/ktorio/ktor), parmi d'autres [listés ici](https://kotlinlang.org/docs/server-overview.html#deploying-kotlin-server-side-applications).
 
