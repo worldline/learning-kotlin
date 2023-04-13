@@ -4,7 +4,8 @@
 
 By combining KMP, KMM and Compose, it is possible to fully develop cross-platform mobile and desktop apps using only Kotlin.
 
-### This pw is so huge [that it has its own codelab](https://worldline.github.io/learning-kotlin-multiplatform/)
+[![kmp codelab](../../assets/kmp_codelab.png)](https://worldline.github.io/learning-kotlin-multiplatform/)  
+*This pw is so huge [that it has its own codelab](https://worldline.github.io/learning-kotlin-multiplatform/)*
 
 ## PW : Add a Ktor server App
 
