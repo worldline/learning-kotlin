@@ -454,3 +454,5 @@ These official tutorials go even further:
 - [spring-boot-kotlin tutorial](https://spring.io/guides/tutorials/spring-boot-kotlin/)
 - [Working with Kotlin and JPA](https://www.baeldung.com/kotlin/jpa)
 - [Spring Data JPA How to use Kotlin nulls instead of Optional](https://stackoverflow.com/questions/47143127/spring-data-jpa-how-to-use-kotlin-nulls-instead-of-optional)
+
+# Break (10min)
