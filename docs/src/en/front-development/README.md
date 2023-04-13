@@ -1,4 +1,4 @@
-# Frontend development
+# Frontend development (25min)
 
 Kotlin supports a wide selection of frontend frameworks across all platforms: mobile, desktop and web.
 
