@@ -82,6 +82,29 @@ Let's add another module to try this out.
 
 The final project is [available here](https://github.com/worldline/learning-kotlin/tree/main/material/kmm-fullstack-demo) in the **composeWebCanvasApp** module.
 
+## PW: add a Kotlin Native console app
+
+We'll create an API client with Kotlin Native.
+
+- The sharedFullStack module has already declared that it the native targets thanks to this code in the its build file.
+
+```kotlin
+val nativeTarget = when {
+  hostOs == "Mac OS X" -> macosX64("native")
+  hostOs == "Linux" -> linuxX64("native")
+  isMingwX64 -> mingwX64("native")
+  else -> throw GradleException("Host OS is not supported in Kotlin/Native.")
+}
+```
+
+- We just to add:
+  - A `nativeTarget.binaries { executable() }`
+  - A **nativeMain** block which be left empty and add a nativeMain/kotlin/nativeMain.kt
+- Add this content into the file
+
+- Run the task `nativeMainBinaries` which will generate the native binary.
+- Run the generated app which is located here: `.\sharedFullStack\build\bin\native\releaseExecutable\sharedFullStack.exe`
+
 ## Going futher
 
 - Add a Compose Web target to the project

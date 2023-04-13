@@ -47,7 +47,11 @@ kotlin {
         else -> throw GradleException("Host OS is not supported in Kotlin/Native.")
     }
 
-    
+    nativeTarget.binaries {
+        executable()
+    }
+
+
     sourceSets {
         val commonMain by getting {
             dependencies {
@@ -78,6 +82,11 @@ kotlin {
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react:$reactVersion")
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom:$reactVersion")
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-emotion:11.9.3-pre.346")
+            }
+        }
+        val nativeMain by getting {
+            dependencies {
+                implementation("io.ktor:ktor-client-cio:$ktorVersion")
             }
         }
     }

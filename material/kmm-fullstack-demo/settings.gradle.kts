@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "km"
 include(":composeWebCanvasApp", ":androidApp", ":shared", ":sharedFullStack", ":iosApp", ":desktopApp")
+include("nativeConsoleApp")

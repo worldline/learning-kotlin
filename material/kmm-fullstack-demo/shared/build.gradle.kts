@@ -111,7 +111,6 @@ android {
         minSdk = 24
         targetSdk = 33
     }
-
 }
 
 dependencies {
