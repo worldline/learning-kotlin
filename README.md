@@ -1,6 +1,8 @@
 # Learning Kotlin
 ![deploy status](https://github.com/worldline/learning-kotlin/actions/workflows/vuepress-deploy.yml/badge.svg)
 
+![qrcode](docs/src/assets/qrcode.gif)
+
 ## What?
 
 This repository contains a small module allowing to discover and learn the very basics of Kotlin.
