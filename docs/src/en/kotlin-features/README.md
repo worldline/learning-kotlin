@@ -1,4 +1,4 @@
-# Kotlin language features
+# Kotlin language features (30min)
 
 Kotlin is an object oriented language with functional features.
 This chapter covers important and relevant features of the language slit into basic and intermediate. Another chapter covers advanced features.
