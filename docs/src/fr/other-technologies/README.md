@@ -4,7 +4,10 @@
 
 En combinant KMP, KMM et Compose, il est possible de développer des applications mobiles et de bureau multiplateformes en utilisant uniquement Kotlin.
 
-La première partie de ce labo [est accessible depuis ce lien](https://worldline.github.io/learning-kotlin-multiplatform/)
+
+[![kmp codelab](../../assets/kmp_codelab.png)](https://worldline.github.io/learning-kotlin-multiplatform/)  
+
+Ce labo à un codelab dédié [qui accessible depuis ce lien](https://worldline.github.io/learning-kotlin-multiplatform/)
 
 ## PW : Ajouter une application serveur Ktor
 
