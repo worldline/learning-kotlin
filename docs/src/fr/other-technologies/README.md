@@ -1,4 +1,4 @@
-# Application multiplateforme et Fullstack Codelab
+# Application multiplateforme et Fullstack Codelab (60min)
 
 ## TP : Application multiplateforme + KMM + KMP pour Android, iOS et ordinateur de bureau
 
