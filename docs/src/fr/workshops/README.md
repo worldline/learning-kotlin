@@ -6,7 +6,7 @@
 
 Lien du workshop: [awl.li/am23-kt](https://awl.li/am23-kt)
 
-![qr code](../../assets/Androidmakers2023kotlinworkshop.svg)
+![qr code](../../assets/Androidmakers2023Kotlinshortlink.svg)
 
 ### Agenda
 
