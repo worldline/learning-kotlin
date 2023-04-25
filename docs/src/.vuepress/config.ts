@@ -1,9 +1,9 @@
 import { defaultTheme } from "@vuepress/theme-default";
-import { searchPlugin } from "@vuepress/plugin-search";
-import { nprogressPlugin } from "@vuepress/plugin-nprogress";
 import { pwaPlugin } from "@vuepress/plugin-pwa";
-import { seoPlugin } from "vuepress-plugin-seo2";
+import { searchPlugin } from "@vuepress/plugin-search";
 import { defineUserConfig } from "vuepress";
+import { mediumZoomPlugin } from "@vuepress/plugin-medium-zoom";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default defineUserConfig({
   base: "/learning-kotlin/",
@@ -42,7 +42,7 @@ export default defineUserConfig({
           "/en/front-development/",
           "/en/other-technologies/",
           "/en/kotlin-features-advanced/",
-          "/en/to-go-futher/",
+          "/en/workshops/",
         ],
       },
 
@@ -55,27 +55,34 @@ export default defineUserConfig({
           "/fr/front-development/",
           "/fr/other-technologies/",
           "/fr/kotlin-features-advanced/",
-          "/fr/to-go-futher/",
+          "/fr/workshops/",
         ],
       },
     },
   }),
 
   plugins: [
-    // searchPlugin({
-    //   locales: {
-    //     "/en/": {
-    //       placeholder: "Search",
-    //     },
-    //     "/fr/": {
-    //       placeholder: "Rechercher",
-    //     },
-    //   },
-    // }),
-    // nprogressPlugin(),
-    // pwaPlugin({}),
-    seoPlugin({
-      hostname: "https://worldline.github.io/learning-kotlin",
+    searchPlugin({
+      locales: {
+        "/en/": {
+          placeholder: "Search",
+        },
+        "/fr/": {
+          placeholder: "Rechercher",
+        },
+      },
     }),
+    pwaPlugin({}),
+    mediumZoomPlugin({}),
+    mdEnhancePlugin({
+      // Enable image lazyload
+      imgLazyload: true,
+      // Enable image size
+      imgSize: true,
+    }),
+    // nprogressPlugin(),
+    // seoPlugin({
+    //   hostname: "https://worldline.github.io/learning-kotlin",
+    // }),
   ],
 });

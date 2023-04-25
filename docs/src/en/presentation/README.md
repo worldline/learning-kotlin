@@ -63,3 +63,5 @@ You can read more arguments in these articles:
 - [Introducing Kotlin support in Spring Framework 5.0](https://spring.io/blog/2017/01/04/introducing-kotlin-support-in-spring-framework-5-0)
 - [8 stats and facts you should know about Kotlin in 2022](https://medium.com/predict/8-stats-and-fact-you-should-know-about-kotlin-in-2021-b41133a1834)
 - [Why should you learn Kotlin in 2022?](https://dev.to/aashiya123/why-should-you-learn-kotlin-in-2021-57e2)
+- [Kotlin is awesome](https://kotlin.link/)
+- [Awesome Kotlin](https://kotlin.libhunt.com/)
