@@ -13,7 +13,7 @@ Dans ce qui suit, nous allons créer une API REST avec le serveur Ktor.
 
 ### TP : développer une API avec Ktor
 
-- Créez un projet sur [start.ktor.io](https://start.ktor.io/) avec les plugins suivants : ContentNegotiation, kotlinx.serialization, et Routing.
+- Créez un projet sur [start.ktor.io](https://start.ktor.io/) avec les plugins suivants : Content Negotiation, kotlinx.serialization, et Routing.
 - Cliquez sur "Generate project".
 - Téléchargez l'archive, décompressez-la et ouvrez le projet avec votre IDE préféré.
 - Créez un package `models` et ajoutez-y une classe de données `Customer` avec ces propriétés immuables `id : String, firstName : String, lastName : Chaîne, email : Chaîne`.
