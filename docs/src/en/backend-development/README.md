@@ -21,7 +21,7 @@ In the following, we'll create a REST API with Ktor server.
 - Create a new package named `routes` and add to it a file `CustomerRoutes.kt` that will contain the code for the `/customer` endpoint.
 - The code below provides the implementation of some endpoints. Please implement the remaining ones.
 - To enable the route call `customerRouting()` in the routing configuration file located in `plugins/Routing.kt`.
-- For simplicity, use a global in-memory list of customers `val customerStorage = mutableListOf<Customer>()`.
+- For simplicity, use a global in-memory list of customers `val store = mutableListOf<Customer>()`.
 - Run the server by running the main method.
 - Test the api on the IDE by using an http file or using any other client.
 
