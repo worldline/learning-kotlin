@@ -2,7 +2,7 @@
 
 ## Android makers 2023: Kotlin Beyond Android
 
-![am2023 logo](../../assets/Kotlin%20Beyond%20Android.png)
+![am2023 logo](../../assets/Kotlin-Beyond-Android.png)
 
 ### Link
 

@@ -2,6 +2,8 @@
 
 ## Android makers 2023: Kotlin Beyond Android
 
+![am2023 logo](../../assets/Kotlin-Beyond-Android.png)
+
 ### Liens
 
 Lien du workshop: [awl.li/am23-kt](https://awl.li/am23-kt)
