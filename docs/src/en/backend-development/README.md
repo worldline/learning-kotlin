@@ -1,4 +1,4 @@
-# Backend development (45min)
+# Backend development
 
 Many frameworks officially support Kotlin: [Spring](https://spring.io/blog/2017/01/04/introducing-kotlin-support-in-spring-framework-5-0), [Quarkus](https://quarkus.io/guides/kotlin), [Ktor](https://github.com/ktorio/ktor), among others [listed here](https://kotlinlang.org/docs/server-overview.html#deploying-kotlin-server-side-applications).
 
@@ -454,5 +454,3 @@ These official tutorials go even further:
 - [spring-boot-kotlin tutorial](https://spring.io/guides/tutorials/spring-boot-kotlin/)
 - [Working with Kotlin and JPA](https://www.baeldung.com/kotlin/jpa)
 - [Spring Data JPA How to use Kotlin nulls instead of Optional](https://stackoverflow.com/questions/47143127/spring-data-jpa-how-to-use-kotlin-nulls-instead-of-optional)
-
-# Break (10min)

@@ -1,11 +1,11 @@
-# Cross-plaform and Fullstack app Codelab (60min)
+# Cross-plaform and Fullstack app Codelab
 
 ## PW : Cross-platform app + KMM + KMP for Android, iOS and Desktop
 
 By combining KMP, KMM and Compose, it is possible to fully develop cross-platform mobile and desktop apps using only Kotlin.
 
 [![kmp codelab](../../assets/kmp_codelab.png)](https://worldline.github.io/learning-kotlin-multiplatform/)  
-*This pw is so huge [that it has its own codelab](https://worldline.github.io/learning-kotlin-multiplatform/)*
+_This pw is so huge [that it has its own codelab](https://worldline.github.io/learning-kotlin-multiplatform/)_
 
 ## PW : Add a Ktor server App
 
