@@ -57,6 +57,12 @@ You can read more arguments in these articles:
 - [Java Vs Kotlin: Which One Is Better To Learn In 2022?](https://codersera.com/blog/java-vs-kotlin/)
 - [8 Reasons Why You Should Switch To Kotlin From Java](https://www.geeksforgeeks.org/8-reasons-why-you-should-switch-to-kotlin-from-java)
 
+## Prerequisites
+
+- _Recommended_: IntelliJ IDEA (Both community or ultimate are OK),
+- _or_ GitPod by opening [https://gitpod.io/#https://github.com/worldline/learning-kotlin](https://gitpod.io/#https://github.com/worldline/learning-kotlin) to create a workspace and then browser to the _material_ folder,
+- _or_ VSCode (with Kotlin and Java plugins) + JDK 17 (install via scoop.sh on windows or SDK man on Unix) + gradle
+
 ## Sources and more reading
 
 - [Kotlin on Wikipedia](<https://en.wikipedia.org/wiki/Kotlin_(programming_language)>)

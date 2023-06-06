@@ -29,6 +29,7 @@ Workshop link: [awl.li/jnation23-kt](https://awl.li/jnation23-kt)
 
 ### Agenda
 
+- [Prerequisutes](../presentation/#prerequisites)
 - Selection of Kotlin's languages features: [null safety](../kotlin-features/#null-safety) and [functions](../kotlin-features/#functions)
 - [Backend development: Rest API with Ktor](../backend-development/#ktor)
 - Optional: [Backend development: Rest API with nodeJS and Kotlin/JS](../backend-development/#ktor)
