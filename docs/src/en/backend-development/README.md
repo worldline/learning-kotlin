@@ -13,7 +13,7 @@ In the following, we'll create a REST API with Ktor server.
 
 ### PW: develop an API with Ktor
 
-- Create a project on [start.ktor.io](https://start.ktor.io/) with the following plugins: ContentNegotiation, kotlinx.serialization, and Routing.
+- Create a project on [start.ktor.io](https://start.ktor.io/) with the following plugins: Content Negotiation, kotlinx.serialization, and Routing.
 - Click on "Generate project".
 - Download the archive, unzip it, and open the project with IntelliJ.
 - Create a `models` package and add to it a `Customer` data class with these immutable properties `id: String, firstName: String, lastName: String, email: String`.
