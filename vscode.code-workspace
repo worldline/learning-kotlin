@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "docs"
+		},
+		{
+			"path": "material/spring-boot-kt-api"
+		},
+		{
+			"path": "material/ktor-api"
+		}
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic"
+	}
+}
