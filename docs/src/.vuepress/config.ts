@@ -1,7 +1,6 @@
-import { defaultTheme } from "@vuepress/theme-default";
 import { pwaPlugin } from "@vuepress/plugin-pwa";
 import { searchPlugin } from "@vuepress/plugin-search";
-import { defineUserConfig } from "vuepress";
+import { defaultTheme, defineUserConfig } from "vuepress";
 import { mediumZoomPlugin } from "@vuepress/plugin-medium-zoom";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
@@ -31,6 +30,7 @@ export default defineUserConfig({
   ],
 
   theme: defaultTheme({
+    home: "/en/",
     logo: "logo_worldline.png",
     locales: {
       "/en/": {

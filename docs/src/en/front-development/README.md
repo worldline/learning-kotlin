@@ -17,9 +17,9 @@ Please find below a glimpse of the possibilities that you can do right from Inte
 
 Kotlin supports cross platform frontend development thanks to **KMP and KMM**
 
-## KMP & KMM
+## Kotlin Multiplatform (KMP)
 
-KMP (Kotlin Multiplatform) and KMM (Kotlin Multiplatform Mobile) are the two Kotlin technologies that allow to share a single codebase across multiple targets.
+KMP (Kotlin Multiplatform) is the name of the technology that allows Kotlin to share a single codebase across multiple targets.
 
 [KMP](https://blog.jetbrains.com/kotlin/2021/08/compose-multiplatform-goes-alpha/) relies on Kotlin native and other Kotlin features to help developers create projects that target multiple platforms using a common Kotlin code-base.
 
@@ -29,11 +29,6 @@ Many combinations of targets and use cases are possible:
 
 - [Full-Stack web apps](https://kotlinlang.org/docs/multiplatform-full-stack-app.html): A project that contains a backend and a web app while sharing common logic.
 - [Multiplatform libraries](https://kotlinlang.org/docs/multiplatform-library.html)
-- [KMM](https://kotlinlang.org/lp/mobile/): a special denomination for KMP when used for iOS and Android projects.
-
-KMM is based on KMP and focuses on helping mobile developers create Cross-Platform SDK for common code.
-
-![KMM](https://kotlinlang.org/lp/mobile/static/sdk-313e52f7d9d3b3e3e48471ef06e8e3aa.svg)
 
 ## Kotlin/JS and Kotlin/WASM
 

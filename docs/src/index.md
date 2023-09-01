@@ -8,11 +8,17 @@ actions:
     type: primary
 features:
   - title: Language features
-    details: null safetry, extenesions, …
+    details: null safety, extensions, lambdas, Java interoperability and more
   - title: Backend development
-    details: ktor, spring, …
+    details: With Ktor, spring and NodeJS
   - title: Frontend development
-    details: compose, KMP, …
+    details: Compose multiplatform, Kotlin/JS, Kotlin/WASM and JVM frameworks
+  - title: Cross-platform development
+    details: With KMP and Compose multiplatform
+  - title: Advanced Kotlin
+    details: Coroutines, delegates, Function literal with receiver, DSLs and more
+  - title: Practical exercises and solutions
+    details: All chapters have a set of exercises
 footer: Worldline, 2023
 ---
 
@@ -25,9 +31,9 @@ footer: Worldline, 2023
 **We design payments technology that powers the growth of millions​ of businesses around the world. Engineering the next frontiers​ in payments technology​**
 
 - Leader in payment and secured transactions
-- Over 50bn transactions/year​
-- 7000+ engineers​ in over 40 countries
-- A huge & diverse​ tech-stack
+- Over 50 billion transactions/year​
+- 7000+ engineers in over 40 countries
+- A huge & diverse tech-stack
 
 ::: tip
 This training is also available in [French](/fr/) / Cette formation est aussi disponible en [Français](/fr/)
@@ -36,7 +42,7 @@ This training is also available in [French](/fr/) / Cette formation est aussi di
 ## Prerequisites
 
 - Basic knowledge of object-oriented language like Java
-- Prepare your dev environment and install stuff before the session (see [Tooling section](tooling))
+- Prepare your development environment and install stuff before the session (see [Tooling section](tooling))
 
 ## Useful links
 
