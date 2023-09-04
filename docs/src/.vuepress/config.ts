@@ -30,7 +30,6 @@ export default defineUserConfig({
   ],
 
   theme: defaultTheme({
-    home: "/en/",
     logo: "logo_worldline.png",
     locales: {
       "/en/": {
