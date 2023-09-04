@@ -17,6 +17,9 @@ bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
+.DS_Store
+.idea
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
