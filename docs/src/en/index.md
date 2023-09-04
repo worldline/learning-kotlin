@@ -26,9 +26,9 @@ footer: Worldline, 2023
 
 ## Who we are
 
-![avatar](./assets/logo_worldline.png)
+![avatar](../assets/logo_worldline.png)
 
-**We design payments technology that powers the growth of millions​ of businesses around the world. Engineering the next frontiers​ in payments technology​**
+**We design payments technology that powers the growth of millions of businesses around the world. Engineering the next frontiers in payments technology**
 
 - Leader in payment and secured transactions
 - Over 50 billion transactions/year​
@@ -47,4 +47,4 @@ This training is also available in [French](/fr/) / Cette formation est aussi di
 ## Useful links
 
 - [Official Kotlin documentation](https://kotlinlang.org/docs/home.html)
-- [Github repository for this training](https://github.com/worldline/learning-kotlin)
+- [GitHub repository for this training](https://github.com/worldline/learning-kotlin)

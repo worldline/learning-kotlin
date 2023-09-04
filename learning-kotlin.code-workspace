@@ -1,13 +1,19 @@
 {
 	"folders": [
 		{
-			"path": "docs"
-		},
-		{
 			"path": "material/spring-boot-kt-api"
 		},
 		{
 			"path": "material/ktor-api"
+		},
+		{
+			"path": "docs/src/en"
+		},
+		{
+			"path": "docs/src/fr"
+		},
+		{
+			"path": "docs/src/.vuepress"
 		}
 	],
 	"settings": {

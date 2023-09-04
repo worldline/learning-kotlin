@@ -18,3 +18,38 @@ Lien du workshop: [awl.li/am23-kt](https://awl.li/am23-kt)
 - [Front-end development: cross-platform Hello world App with Compose multiplatform](../front-development/#compose)
 - [Front-end development: Cross-platform Quiz App with Compose multiplatform](https://worldline.github.io/learning-kotlin-multiplatform/)
 - [Full-stack development: Quiz App with Compose multiplatform and Ktor server](../other-technologies/#pw-add-a-ktor-server-app)
+
+## Mobile DevOps summit 2023
+
+- Titre: **From Android to Multiplatform: leveraging the full potential of Kotlin**
+- Lien: [awl.li/mds23-kt](https://awl.li/mds23-kt)
+
+![qr code](../../assets/qrcode-mds2023.gif =200x)
+
+### Agenda
+
+- [Développement d'une application multi-plateformes](../other-technologies/#pw-add-a-ktor-server-app)
+- Démonstration des autres possibilités:
+  - [API Rest avec Ktor](../backend-development/#ktor)
+  - [API Rest avec nodeJS et Kotlin/JS](../backend-development/#ktor)
+  - [Webapp Kotlin/WASM et Kotlin/JS ](../front-development/#kotlin-js-and-kotlin-wasm)
+
+## Devoxx Morocco 2023
+
+- Titre: **Let's discover the amazing possibilities of Kotlin**
+- Lien: [awl.li/mds23-kt](https://awl.li/devoxxma23-kt)
+
+![qr code](../../assets/qrcode-devoxxma23.gif =200x)
+
+### Agenda
+
+- [Prérequis](../presentation/#prerequisites)
+- Caractéristiques notables de Kotlin: [le null safety](../kotlin-features/#null-safety) et [les fonctions](../kotlin-features/#functions)
+- [API Rest avec Spring boot](../backend-development/#spring-framework)
+- [API Rest avec Ktor](../backend-development/#ktor)
+- [Développement d'une application multi-plateformes type "Hello World" avec Compose Multiplatform](../front-development/#compose)
+- [Dévelopment sullstack d'une application de Quiz avec with Compose multiplatform en front et Ktor server en backend](../other-technologies/#pw-add-a-ktor-server-app)
+- Autres fonctionnalités et possibilités:
+  - [Kotlin/WASM](../front-development/#kotlin-js-and-kotlin-wasm)
+  - [Serveur NodeJS avec Kotlin/JS](../backend-development/#nodejs)
+  - [Coroutines](../kotlin-features-advanced/#concurrency-and-coroutines)
