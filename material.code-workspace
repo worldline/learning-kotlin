@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "material/rest-api-spring-kotlin"
+		},
+		{
+			"path": "material/rest-api-ktor-server"
+		},
+		{
+			"path": "material/rest-api-kotlin-nodejs"
+		}
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic",
+		"java.configuration.updateBuildConfiguration": "interactive"
+	}
+}

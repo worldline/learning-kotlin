@@ -166,6 +166,34 @@ Fortunately for us, the next PW uses Express for which we can find an external t
 
 ### PW: Rest API with Kotlin/JS and Express
 
+```
+ gradle init
+Starting a Gradle Daemon, 1 incompatible and 1 stopped Daemons could not be reused, use --status for details
+
+Select type of project to generate:
+  1: basic
+  2: application
+  3: library
+  4: Gradle plugin
+Enter selection (default: basic) [1..4] 1
+
+Select build script DSL:
+  1: Kotlin
+  2: Groovy
+Enter selection (default: Kotlin) [1..2] 1
+
+Project name (default: starter): rest-api-kotlin-nodejs
+
+Generate build using new APIs and behavior (some features may change in the next minor release)? (default: no) [yes, no] yes
+
+
+> Task :init
+To learn more about Gradle by exploring our Samples at https://docs.gradle.org/8.3/samples
+
+BUILD SUCCESSFUL in 24s
+2 actionable tasks: 2 executed
+```
+
 - In IntelliJ, create a new nodejs project
 - Once the project is loaded, edit **build.gradle.ts** as follows:
   - Set the kotlin version to the latest one in the `kotlin("js")` line

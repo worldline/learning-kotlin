@@ -1,0 +1,11 @@
+{
+  "folders": [
+	{
+		"path": "docs/src/en"
+	},
+	{
+		"path": "docs/src/fr"
+	}
+],
+  "settings": {}
+}
