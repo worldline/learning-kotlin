@@ -1,11 +1,14 @@
 {
   "folders": [
-	{
-		"path": "docs/src/en"
-	},
-	{
-		"path": "docs/src/fr"
-	}
-],
+    {
+      "path": "docs/src/en"
+    },
+    {
+      "path": "docs/src/fr"
+    },
+    {
+      "path": "docs/src/.vuepress"
+    }
+  ],
   "settings": {}
 }

@@ -7,7 +7,7 @@ import { pwaPopupPlugin } from "@vuepress/plugin-pwa-popup";
 
 export default defineUserConfig({
   base: "/learning-kotlin/",
-  port: 3000,
+  port: 3001,
   locales: {
     "/en/": {
       lang: "en-US", // this will be set as the lang attribute on <html>
@@ -76,14 +76,15 @@ export default defineUserConfig({
     mediumZoomPlugin({}),
     pwaPopupPlugin({
       locales: {
-        '/en/': {
-          message: 'New content is available.',
-          buttonText: 'Refresh',
+        "/en/": {
+          message: "New content is available.",
+          buttonText: "Refresh",
         },
-        '/fr/': {
-          message: 'Du nouveau contenu est disponible.',
-          buttonText: 'Actualiser',
+        "/fr/": {
+          message: "Du nouveau contenu est disponible.",
+          buttonText: "Actualiser",
         },
+      },
     }),
     mdEnhancePlugin({
       imgLazyload: true,

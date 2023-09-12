@@ -7,11 +7,14 @@
 			"path": "material/rest-api-ktor-server"
 		},
 		{
-			"path": "material/rest-api-kotlin-nodejs"
+			"path": "material/rest-api-kotlin-nodejs/starter-rest-api-kotlin-nodejs"
+		},
+		{
+			"path": "material/rest-api-kotlin-nodejs/final-rest-api-kotlin-nodejs"
 		}
 	],
 	"settings": {
 		"java.compile.nullAnalysis.mode": "automatic",
-		"java.configuration.updateBuildConfiguration": "interactive"
+		"java.configuration.updateBuildConfiguration": "automatic"
 	}
 }
