@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "material/rest-api-kotlin-nodejs/final-rest-api-kotlin-nodejs"
+		},
+		{
+			"path": "material/webapp-kotlin-wasm"
 		}
 	],
 	"settings": {

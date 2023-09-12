@@ -1,28 +1,14 @@
-plugins {
-    kotlin("multiplatform") version "1.8.20"
-}
+plugins { kotlin("multiplatform") version "1.9.20-Beta" }
 
 group = "tech.worldline.demo"
+
 version = "1.0-SNAPSHOT"
 
-repositories {
-    mavenCentral()
-}
+repositories { mavenCentral() }
 
 kotlin {
-    wasm {
+    wasmJs {
         binaries.executable()
-        browser {
-        }
-    }
-    sourceSets {
-        val commonMain by getting
-        val commonTest by getting {
-            dependencies {
-                implementation(kotlin("test"))
-            }
-        }
-        val wasmMain by getting
-        val wasmTest by getting
+        browser {}
     }
 }
