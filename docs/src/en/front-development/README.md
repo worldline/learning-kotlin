@@ -72,58 +72,30 @@ Many combinations of targets and use cases are possible:
 The Kotlin/JS wizard creates a very similar app to the Kotlin/WASM.
 in a later PW, we'll create a fullstack app with Ktor and Kotlin/JS.
 
-## Compose
+## Compose multiplatform
 
-[Compose multiplatform](https://blog.jetbrains.com/kotlin/2021/08/compose-multiplatform-goes-alpha/) is a family of declarative UI frameworks for Android (Jetpack Compose), the desktop (Compose Desktop), and the web (Compose Web). It has experimental support for iOS and Web Canvas.
+[Compose multiplatform](https://blog.jetbrains.com/kotlin/2021/08/compose-multiplatform-goes-alpha/) is a cross-platform declarative UI framework that targets Android, iOS, desktops and the web.
 
-::: warning Compose multiplatform vs Jetpack Compose
+::: tip Compose multiplatform vs Jetpack Compose
 
 While very similar, Compose multiplatform is different from Jetpack Compose as the latter is only compatible with Android.
 Google provides a [JetPack compose tutorial](https://developer.android.com/jetpack/compose/tutorial) for Android development.
 
 :::
 
-::: tip Compose Web vs Compose for Web Canvas
+::: warning Compose HTML is not cross-platform
 
-- Compose Web's API surface is different that other Compose targets because it works directly with the DOM.
-- Compose for Web Canvas has the same API surface as the Desktop and Android because it draws on a Canvas and does not manipulate on the DOM.
-
-This means that the first one has better web support and the second one has more reusable code.
+Compose HTML is UI a library targeting Kotlin/JS which is not compatible with Compose Multiplatform (it is a different API).
+For cross-platform UI development with Compose Multiplatform, compose Web is the choice.
 
 :::
 
-### PW: Compose web
+### PW: Compose multiplatform app
 
-- Create a new IntelliJ project -> Compose Multiplaform.
-- Choose "Single platform" -> "Web" and fill the other fields.
-- Choose **Finish**
-- IntelliJ may take some time to prepare the project and may request to install additional plugins.
-- Launch the development server of the web app sing this command ` ./gradlew jsBrowserRun --continuous`.
-- Modify `Main.kt` as follows and run the app.
-- Open this address: `localhost:8080`.
+We'll create a multiplatform app using the [official template](https://github.com/JetBrains/compose-multiplatform-template).
+At the time of writing, this template does not include a compose web target.
 
-```kotlin
-fun main() {
-    renderComposable(rootElementId = "root") {
-        Div({ style { padding(25.px) } }) {
-            var expanded by remember { mutableStateOf(false) }
-            Button(
-                attrs = {
-                    onClick { expanded = !expanded }
-                }
-            ) { Text("Click me") }
-            Div({ style { display(if (expanded) DisplayStyle.Block else DisplayStyle.None) } }) {
-                Text("Click me !")
-            }
-        }
-    }
-}
-```
-
-![compose multiplatform demo](../../assets/compose-multiplaform-web.gif)
-
-### PW: Compose desktop + Android app
-
+-
 - Create a new project on IntelliJ -> Compose Multiplatform.
 - Choose "multiple platforms" and fill the other fields. Then choose **Finish**.
 - IntelliJ starts preparing the project and may request to install plugins.
