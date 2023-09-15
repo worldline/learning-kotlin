@@ -1,4 +1,4 @@
-import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     kotlin("multiplatform") version "1.9.20-Beta"
@@ -15,6 +15,23 @@ repositories {
 kotlin {
     wasmWasi {
         nodejs()
-        
+    }
+
+    fun configureNative(target: KotlinNativeTarget){
+        target.binaries {
+            executable()
+        }
+    }
+    mingwX64 {
+        configureNative(this)
+    }
+    linuxX64 {
+        configureNative(this)
+    }
+    macosX64 {
+        configureNative(this)
+    }
+    linuxArm64 {
+        configureNative(this)
     }
 }

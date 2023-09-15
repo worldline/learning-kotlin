@@ -1,0 +1,1 @@
+fun getWelcomeMessage() = "Hello from Kotlin!"
