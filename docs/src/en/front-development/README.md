@@ -129,4 +129,4 @@ fun App() {
 
 ## Further reading
 
-- [The huge potential of Kotlin/Wasm](https://seb.deleuze.fr/the-huge-potential-of-kotlin-wasm/)
+- [The huge potential of Kotlin/WASM](https://seb.deleuze.fr/the-huge-potential-of-kotlin-wasm/)

@@ -12,20 +12,19 @@ kotlin {
     js {
         binaries.executable()
         browser {
-
         }
     }
 
     sourceSets {
-//        val jsMain by getting {
-//            dependencies {
-//                implementation(project(":shared"))
-//                implementation(compose.web.core)
-//                implementation(compose.ui)
-//                @OptIn(ExperimentalComposeLibrary::class)
-//                implementation(compose.material3)
-//            }
-//        }
+        val jsMain by getting {
+            dependencies {
+                implementation(project(":shared"))
+                implementation(compose.web.core)
+                implementation(compose.ui)
+                @OptIn(ExperimentalComposeLibrary::class)
+                implementation(compose.material3)
+            }
+        }
     }
 }
 
