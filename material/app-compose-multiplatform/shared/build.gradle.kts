@@ -4,6 +4,8 @@ plugins {
     id("org.jetbrains.compose")
 }
 
+val ktorVersion = extra["ktor.version"]
+
 kotlin {
     androidTarget()
 
@@ -31,6 +33,8 @@ kotlin {
                 implementation(compose.foundation)
                 implementation(compose.material)
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
+                implementation(compose.material3)
+                @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
             }
         }
@@ -44,6 +48,13 @@ kotlin {
         val desktopMain by getting {
             dependencies {
                 implementation(compose.desktop.common)
+            }
+        }
+
+        val jsMain by getting {
+            dependsOn(commonMain)
+            dependencies {
+                implementation("io.ktor:ktor-client-core:$ktorVersion")
             }
         }
     }

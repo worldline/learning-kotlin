@@ -19,10 +19,12 @@ kotlin {
         val jsMain by getting {
             dependencies {
                 implementation(project(":shared"))
-                implementation(compose.web.core)
+                implementation(compose.runtime)
                 implementation(compose.ui)
-                @OptIn(ExperimentalComposeLibrary::class)
-                implementation(compose.material3)
+                implementation(compose.foundation)
+                implementation(compose.material)
+                @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
+                implementation(compose.components.resources)
             }
         }
     }
