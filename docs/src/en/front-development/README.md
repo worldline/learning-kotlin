@@ -15,7 +15,7 @@ Please find below a glimpse of the possibilities that you can do right from Inte
 - On mobiles
   - Android developers use the [Jetpack Compose](https://developer.android.com/jetpack/compose) UI Framework or the legacy **xml layouts**. It is experimental on iOS.
 
-Kotlin supports cross platform frontend development thanks to **KMP and KMM**
+Kotlin supports cross platform frontend development thanks to **KMP**.
 
 ## Kotlin Multiplatform (KMP)
 

@@ -17,11 +17,11 @@ Vous trouverez ci-dessous un aperçu des possibilités que vous pouvez faire dir
 
 Comme nous pouvons le voir, Kotlin propose plusieurs options.
 L'option la plus séduisante en terme de partage de code est Compose Multiplatform.
-Ceci est possible notamment grâce à **KMP et KMM**
+Ceci est possible notamment grâce à **KMP**
 
-## KMP & KMM
+## KMP
 
-- KMP (Kotlin Multiplatform) et KMM (Kotlin Multiplatform Mobile) sont les deux technologies Kotlin qui permettent de partager une base de code unique sur plusieurs cibles.
+- KMP (Kotlin Multiplatform) permet de partager une base de code unique sur plusieurs cibles.
 - [KMP](https://blog.jetbrains.com/kotlin/2021/08/compose-multiplatform-goes-alpha/) s'appuie sur Kotlin native et d'autres fonctionnalités de Kotlin pour aider les développeurs à créer des projets destinés à plusieurs plates-formes en utilisant une base de code Kotlin commune.
 
 ![KMP](https://kotlinlang.org/docs/images/kotlin-multiplatform.png)
@@ -29,10 +29,7 @@ Ceci est possible notamment grâce à **KMP et KMM**
 - De nombreuses combinaisons de cibles et de cas d'utilisation sont possibles :
   - [Full-Stack web apps](https://kotlinlang.org/docs/multiplatform-full-stack-app.html) : Un projet qui contient un backend et une application web tout en partageant une logique commune.
   - [Bibliothèques multiplateformes](https://kotlinlang.org/docs/multiplatform-library.html)
-  - [KMM](https://kotlinlang.org/lp/mobile/) : dénomination spéciale pour KMP lorsqu'il est utilisé pour des projets iOS et Android.
-- KMM est basé sur KMP et vise à aider les développeurs mobiles à créer un SDK multiplateforme pour le mobile de façon aisée.
-
-![KMM](https://kotlinlang.org/lp/mobile/static/sdk-313e52f7d9d3b3e3e48471ef06e8e3aa.svg)
+- KMM est une ancienne dénomination qui est dépréciée.
 
 Dans la suite de ce chapitre, nous explorerons les différentes possibilités individuellement et on fera un projet KMP dans le chapitre suivant.
 
