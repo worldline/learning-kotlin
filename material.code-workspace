@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "material/rest-api-spring-kotlin"
+		},
+		{
+			"path": "material/rest-api-ktor-server"
+		},
+		{
+			"path": "material/rest-api-kotlin-nodejs/starter-rest-api-kotlin-nodejs"
+		},
+		{
+			"path": "material/rest-api-kotlin-nodejs/final-rest-api-kotlin-nodejs"
+		},
+		{
+			"path": "material/webapp-kotlin-wasm"
+		}
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic",
+		"java.configuration.updateBuildConfiguration": "automatic"
+	}
+}

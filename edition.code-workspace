@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "path": "docs/src/en"
+    },
+    {
+      "path": "docs/src/fr"
+    },
+    {
+      "path": "docs/src/.vuepress"
+    },
+    {
+      "path": "docs/src/assets"
+    }
+  ],
+  "settings": {}
+}

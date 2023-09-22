@@ -153,57 +153,6 @@ DELETE http://127.0.0.1:8080/customer/500
 
 [This page has detailed steps](https://ktor.io/docs/creating-http-apis.html)
 
-## nodejs
-
-Thanks to Kotlin/JS, we can write apps that targets nodejs using Kotlin.
-
-We can even import npm libraries as long as you declare the JS API surface that you'll be using in Kotlin.
-This is called **external declaration** (You can think of it as an equivalent of TypeScript's type definitions) that declares the symbols that we want to access in Kotlin thanks to [@JsModule](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-js-module/) and [@JsNonModule](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-js-non-module/) annotations.
-Defining such external declarations can be a hassle and there seems to be no official automatic generator ([dukat](https://github.com/Kotlin/dukat) has been removed in kotlin 1.8.20).
-In that case, we have two options, either write the external declaration or import it as a dependency if available.
-
-Fortunately for us, the next PW uses Express for which we can find an external type declaration.
-
-### PW: Rest API with Kotlin/JS and Express
-
-- In IntelliJ, create a new nodejs project
-- Once the project is loaded, edit **build.gradle.ts** as follows:
-  - Set the kotlin version to the latest one in the `kotlin("js")` line
-  - Add these two dependencies. The first one is the [**Express**](https://expressjs.com/) library and the second one is it external definitions provided by [chrisnkrueger/kotlin-express](https://github.com/chrisnkrueger/kotlin-express).
-  - add a `useCommonJs()` line inside the the `js` block. This [is required](https://github.com/Kotlin/dukat/issues/106) to be able to use [chrisnkrueger/kotlin-express](https://github.com/chrisnkrueger/kotlin-express) in our code.
-
-```js
-implementation(npm("express", "> 4.0.0 < 5.0.0"));
-implementation("dev.chriskrueger:kotlin-express:1.2.0");
-```
-
-- Modify **main.kt** as follows. This created a REST API server that listens to port 3000 and provides a **GET /hello** endpoint
-
-```kotlin
-data class Message(val id: Int, val message: String)
-
-fun main() {
-    val messages = listOf(Message(0, "I love Kotlin/JS"))
-    val app = express.Express()
-    app.get("/hello") { req, res ->
-        res.send(messages)
-    }
-
-    app.listen(3000) {
-        console.log("server start at port 3000")
-    }
-}
-```
-
-- Run the task `nodeRun` from IntelliJ of from the command line (if you have Gradle installed)
-  - If you encounter an error with Yarn lock, please run the task `kotlinUpgradeYarnLock` and try again
-- Add POST, PUT and DELETE endpoints
-- Regarding the POST body, Express leaves `req.body` undefined unless we specify a **body parser**.
-  - For a JSON body, we need to call `app.use(bodyParser.json())`.
-  - [**bodyParser**](https://www.npmjs.com/package/body-parser) is an npm library and unfortunately, [chrisnkrueger/kotlin-express](https://github.com/chrisnkrueger/kotlin-express) does not provide an external definition for **bodyParser** as of version 1.2.0.
-  - Can you try to define it yourself by reading the [library's code](https://www.npmjs.com/package/body-parser?activeTab=code) ?
-  - You can find a solution [here](https://github.com/worldline/learning-kotlin/blob/main/material/kotlin-nodejs-demo/src/main/kotlin/BodyParser.kt)
-
 ## Spring framework
 
 Spring is a famous framework for developing server-side applications: APIs, server generated web pages, microservices, etc.
@@ -216,28 +165,14 @@ In the next section, we'll use this starter to recreate our above REST API with 
 
 - Create a project on [start.spring.io (also called Spring initializr)](https://start.spring.io/) with the following dependencies: Spring Web and Spring Boot DevTools.
 - Choose Kotlin as the language and Kotlin-Grade as the project manager.
-- Add these dependencies: **Spring Web** and **Spring Boot DevTools**.
+- Add these dependencies: **Spring Web**, **Spring Boot DevTools** and **Spring Data JPA**.
 - Click on "Generate". Download the archive, unzip it, and open the project with IntelliJ (preferably) or VSCode.
   - For VSCode, install a [Kotlin extension](https://marketplace.visualstudio.com/search?term=kotlin&target=VSCode&category=All%20categories&sortBy=Relevance) and [Spring Boot Extension Pack](https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-boot-dev-pack) ( :warning: Spring extension do not seem to support kotlin).
-- Check that plugins part `build.gradle.kts` uses the latest version of Kotlin. Here is what is should look like with with Kotlin _1.8.10_:
-
-```kotlin
-plugins {
-	id("org.springframework.boot") version "3.0.4"
-	id("io.spring.dependency-management") version "1.1.0"
-	kotlin("jvm") version "1.8.10"
-	kotlin("plugin.spring") version "1.8.10"
-}
-```
-
-- Create the same `Customer` data class in the `model` package withotut the `@Serializable` annotation.
+- Create `Customer` data class in the `model` package without the `@Serializable` annotation.
 - Create a `controller` package that contains a `CustomerController` class which provides a CRUD using a global list. You can find a skeleton below.
   - :bulb: In Spring, Rest controllers serve the purpose of Ktor routes, where a controller defines a REST resource.
 - Define the same endpoints as in the previous PW.
-- Start the REST API server by running:
-  - On Powershell: `.\gradlew.bat bootRun`
-  - Any Unix shell: `.\gradlew bootRun`
-  - IntelliJ already provides run configurations for spring boot projects.
+- Start the REST API server by running `.\gradlew bootRun` or from your IDE.
 - Please test the endpoints with a REST client. You can find http files here in [JetBrains format](https://github.com/worldline/learning-kotlin/blob/main/material/spring-boot-kt-api/customer.jetbrains.http) or [VSCode's REST Client extension](https://github.com/worldline/learning-kotlin/blob/main/material/spring-boot-kt-api/customer.vscode-resclient.http)
 
 ::: details CustomerController.kt
@@ -433,10 +368,201 @@ interface ProductRepository: JpaRepository<Product, Long> {
 
 :::
 
-### Completed projects
+## nodejs
+
+Thanks to Kotlin/JS, we can write apps that target nodejs using Kotlin.
+We can even import npm libraries as long as you declare the JS API surface that you'll be using in Kotlin.
+This is called **external declaration** (You can think of it as an equivalent of TypeScript's type definitions) that declares the symbols that we want to access in Kotlin thanks to [@JsModule](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-js-module/) and [@JsNonModule](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-js-non-module/) annotations.
+
+Defining such external declarations can be a hassle and there seems to be no official automatic generator ([dukat](https://github.com/Kotlin/dukat) has been removed in kotlin 1.8.20).
+In that case, we have two options, either we write the external declaration ourselves or import it as a dependency if available. Fortunately for express developers, [chrisnkrueger/kotlin-express](https://github.com/chrisnkrueger/kotlin-express) provides declarations for the express library.
+
+There are two gradle plugins that allow to create nodeJs projects: the `kotlin("js")` one and the `kotlin("multiplatform")` one. The difference between the two plugins is that the former only supports JS or WASM while the latter supports more platforms but requires to configure source sets. Thus, the former may seem easier to setup but the latter is better in the long run because it allows us to get more familiar with Kotlin Multiplatform (KMP).
+
+### PW1: Getting started with Kotlin/JS and Express
+
+At the time of writing, I didn't find an official wizard or starter project. So we'll create one from scratch using `gradle init`.
+
+- Create a new Gradle project using IntelliJ or by running `gradle init` in a empty folder (see below for the replies to the `gradle init` command).
+
+::: details gradle init
+
+```sh
+gradle init
+Starting a Gradle Daemon, 1 incompatible and 1 stopped Daemons could not be reused, use --status for details
+
+Select type of project to generate:
+  1: basic
+  2: application
+  3: library
+  4: Gradle plugin
+Enter selection (default: basic) [1..4] 1
+
+Select build script DSL:
+  1: Kotlin
+  2: Groovy
+Enter selection (default: Kotlin) [1..2] 1
+
+Project name (default: starter): rest-api-kotlin-nodejs
+
+Generate build using new APIs and behavior (some features may change in the next minor release)? (default: no) [yes, no] yes
+
+
+> Task :init
+To learn more about Gradle by exploring our Samples at https://docs.gradle.org/8.3/samples
+
+BUILD SUCCESSFUL in 24s
+2 actionable tasks: 2 executed
+```
+
+:::
+
+- In **build.gradle.kts**, add and configure the `kotlin("multiplatform")` plugin. Also add the `express` and `dev.chriskrueger:kotlin-express` dependencies.
+
+::: details build.gradle.kts
+
+```kts
+plugins {
+    kotlin("multiplatform") version "1.9.20-Beta"
+}
+
+repositories {
+    mavenCentral()
+}
+
+group = "tech.worldline.demo"
+version = "1.0-SNAPSHOT"
+
+kotlin {
+    js {
+        nodejs {
+        }
+        binaries.executable()
+        useCommonJs()
+    }
+
+    sourceSets {
+        val jsMain by getting {
+            dependencies {
+                implementation(npm("express", "> 4.0.0 < 5.0.0"))
+                implementation("dev.chriskrueger:kotlin-express:1.2.0")
+            }
+        }
+    }
+}
+```
+
+:::
+
+::: tip Some notes on the build file
+
+- express dependency is retrieved from npm
+- `useCommonJs()` [is required](https://github.com/Kotlin/dukat/issues/106) to be able to use [chrisnkrueger/kotlin-express](https://github.com/chrisnkrueger/kotlin-express) in our code.
+
+:::
+
+- create a **main.kt** file in **src/jsMain/kotlin** with the following content:
+
+::: details main.kt
+
+```kotlin
+data class Message(val id: Int, val message: String)
+
+val messages = mutableListOf(Message(0, "I love Kotlin/JS"))
+
+fun main() {
+    val app = express.Express()
+
+    // REST API that provides a **GET /hello** endpoint
+    app.get("/hello") { _, res ->
+        res.send(messages)
+    }
+
+    // Create a server that listens to port 3000
+    app.listen(3000) {
+        console.log("server start at port 3000")
+    }
+}
+```
+
+:::
+
+- Run the task `jsRun` from IntelliJ of from the command line `./gradlew --console=plain jsRun`. The server should start running.
+- Open the **hello** endpoint on [http://localhost:3000/hello](http://localhost:3000/hello)
+
+::: warning Execution failed for task ':kotlinStoreYarnLock'
+
+If you get this error:
+
+```sh
+Execution failed for task ':kotlinStoreYarnLock'.
+> yarn.lock was changed. Run the `kotlinUpgradeYarnLock` task to actualize yarn.lock file
+```
+
+Run `./gradlew kotlinUpgradeYarnLock` so that yarn.lock is updated
+
+:::
+
+### PW2: Adding a post endpoint and an external Kotlin/JS definition
+
+Let's add a post endpoint which reads the body as a json. In order to read the body as json, we must add this possibility to express by importing the npm library [body-parser](https://www.npmjs.com/package/body-parser) and by calling `app.use(bodyParser.json())`. Once this setup is complete, `req.body` will contain the content of the body. However, there is no available external definition for **bodyParser** as of the time of writing. Thus, we must create or own external definition.
+
+- First, add the body-parser dependncy in the build file `implementation(npm("body-parser", "> 1.0.0 < 2.0.0"))`
+- Next, we would write: `app.use(bodyparser.json())` to activate the library. Let's guess what a minimal definition of `bodyparser` can be.
+
+::: details BodyParser.kt
+
+```kotlin
+// external means that this class is defined in JS
+external class BodyParser {
+    // we tell Kotlin that we want to use the json() function.
+    fun json(): Any
+    // It is not required to define all the functions of the module
+}
+
+// @JsModule is used to import the module from the NPM registry
+@JsModule("body-parser")
+external val bodyParser: BodyParser
+```
+
+:::
+
+- Finally, we just need to add the BodyParser.kt file into the project and use it in our server.
+
+::: details main.kt
+
+```kotlin
+app.use(bodyParser.json())
+app.post("/hello") { req, res ->
+    // Kotlin does not keep the original field name when parsing JSON from JS (you can see it the in get response)
+    if (req.body as? Message == null) {
+        println("failed to get the body from Kotlin")
+    }
+    // Thus, we need to use js() to get the the field by its expected name
+    // js() calls JS from Kotlin
+    println("req.body from JS ${js("req.body.id")} - ${js("req.body.message")}")
+    val id = js("req.body.id") as? Int
+    val message = js("req.body.message") as? String
+    if (message != null && id != null) {
+        messages.add(Message(id, message))
+        res.status(201).end()
+    } else {
+        res.status(400).send(js("{cause : 'error'}") as Any)
+    }
+}
+```
+
+:::
+
+### Exercises
+
+- Add PUT and DELETE endpoints
+
+## Completed projects
 
 - [ktor Rest API](https://github.com/worldline/learning-kotlin/tree/master/material/ktor-api)
 - [Spring boot Rest API](https://github.com/worldline/learning-kotlin/tree/master/material/spring-boot-kt-api)
+- The starter and final nodejs projects are available [here](https://github.com/worldline/learning-kotlin/blob/main/material/rest-api-kotlin-nodejs)
 
 ## Going further
 
