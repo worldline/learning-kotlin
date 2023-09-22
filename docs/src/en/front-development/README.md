@@ -90,42 +90,59 @@ For cross-platform UI development with Compose Multiplatform, compose Web is the
 
 :::
 
-### PW: Compose multiplatform app
+### PW1: Create a Compose multiplatform app
 
 We'll create a multiplatform app using the [official template](https://github.com/JetBrains/compose-multiplatform-template).
 At the time of writing, this template does not include a compose web target.
 
--
-- Create a new project on IntelliJ -> Compose Multiplatform.
-- Choose "multiple platforms" and fill the other fields. Then choose **Finish**.
-- IntelliJ starts preparing the project and may request to install plugins.
-- Once ready, run the android app using the green run button.
-- Run the Desktop app by running the main function on the desktop project (should be in `Main.kt`).
-- Modify `App.kt` in the main project as follows and run the app.
+- Please check that your environment is correctly setup [as explained here](https://github.com/JetBrains/compose-multiplatform-template#set-up-the-environment).
+  - On Windows and Linux, we don't need to install iOS/macOS related tools but and we won't be able to run iOS/macOS targets.
+  - If we don't want to install Android Studio, we need at least to install the Android SDK either through the official installer or from the _"Languages and Framework -> Android SDK"_ menu in the settings.
+- Open the [official template](https://github.com/JetBrains/compose-multiplatform-template) and either download a zip or use the "_use this template_" options on GitHub.
+- Open the downloaded projet. You'll note that it contains these modules:
+  - a **shared** module (or subproject) that contains common code as well as
+  - and another module for earch targeted platform: androidApp, iOSApp and desktopApp (When web will be included in the template, we should also see a webApp project). These contain the source code of the apps itself (such as the main activity in Android, the `@main App` in iOS and the main function in desktopJVM) and well as platform specific resources that cannot be placed in the _shared_ module. Some examples of such files are the _AndroidManifest.xml_ for android and the **info.plist** in iOS.
+- In order to run the desktopApp, open a terminal on the project root folder and launch this command: `./gradlew desktopApp:run`.
+- In order to run the Android App, the simplest way is to launch it from IntelliJ ![Alt text](../../assets/launch-android-app.png). It is also possible [define a gradle task](https://gist.github.com/MoshDev/a61080cc5e1f5bafdf3cc0bf70fd86fd) that installs the app on the device and issues a command to the device to launch it.
+- In order to run the iOS App, the simplest way is to run it on the simulator using IntelliJ. In order to run it on a real device, the TramID needs to be defined as [explained here](https://github.com/JetBrains/compose-multiplatform-template#on-ios)
+
+![Alt text](..//../assets/kmp-compose-desktop.png)
+
+### PW2: Playing with the Compose multiplatform API
+
+Compose multiplatform is a component based declarative UI framework.
+Each component is called a `Composable` and is defined as a function annotated with `@Composable`.
+
+In compose multiplatform, the main component (the component at the root of the App) is usually found in **shared/src/commonMain/Kotlin/App.kt**.
+
+- Take a look at **shared/src/commonMain/Kotlin/App.kt**, run the app and try to understand how compose works.
+- Let's create a new composable called `RandomNumberList`.
 
 ```kotlin
 @Composable
-fun App() {
-    val platformName = getPlatformName()
-    Card {
-        var expanded by remember { mutableStateOf(false) }
-        Column(Modifier.clickable { expanded = !expanded }) {
-            Text(
-                text="Click me !",
-                style = MaterialTheme.typography.h2
-            )
-            AnimatedVisibility(expanded){
-                Text(
-                    text = "Hello, ${platformName} 🎊",
-                    style = MaterialTheme.typography.h1
-                )
-            }
+fun RandomNumberList(){
+    // Generate a list of random numbers
+    val myRandomValues = List(5) { Random.nextInt(0, 30) }
+    // LazyColumn is a vertically scrolling list that renders items on demand
+    LazyColumn {
+        items(myRandomValues.size){
+            Text(text = "$it")
         }
     }
 }
 ```
 
-![compose multiplatform demo](../../assets/compose-multiplaform.gif)
+- Place this composable below `AnimatedVisibility` and `Button` and run the app.
+
+```kotlin
+/*
+Button(onClick ...
+AnimatedVisibility(showImage) { ...
+*/
+RandomNumberList()
+```
+
+- Exercise: Make the "Hello, .." button switch between showing the list and and the image.
 
 ## Further reading
 

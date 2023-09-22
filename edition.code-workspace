@@ -8,6 +8,9 @@
     },
     {
       "path": "docs/src/.vuepress"
+    },
+    {
+      "path": "docs/src/assets"
     }
   ],
   "settings": {}
