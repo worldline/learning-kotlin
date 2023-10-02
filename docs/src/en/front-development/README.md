@@ -1,4 +1,4 @@
-# Frontend development
+# 📚 Frontend development
 
 Kotlin supports a wide selection of frontend frameworks across all platforms: mobile, desktop and web.
 
@@ -155,8 +155,8 @@ Even though the official template does not support the web target, we can use th
 ## Solutions:
 
 - [Kotlin/JS and Kotlin/WASM PW](https://github.com/worldline/learning-kotlin/tree/main/material/webapp-kotlin-wasm)
-- [Compose multiplatform PW2]()
-- [Compose multiplatform PW3]()
+- [Compose multiplatform PW2](https://github.com/worldline/learning-kotlin/tree/main/material/app-compose-multiplatform)
+- [Compose multiplatform PW3](https://github.com/worldline/learning-kotlin/tree/main/material/app-compose-multiplatform-with-web)
 
 ## Further reading
 
