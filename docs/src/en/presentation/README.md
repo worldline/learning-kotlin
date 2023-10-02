@@ -8,7 +8,7 @@ Kotlin is a modern programming language developed by JetBrains.
   - Many server frameworks officially support Kotlin such as Spring and Quarkus.
   - It is the first-class language for writing Android.
   - Kotlin can compile to native with Kotlin native or with [GraalVM](https://www.graalvm.org/).
-  - KMP and KMM allow to share code between different platforms.
+  - KMP allows to share code between different platforms.
 - Kotlin can be considered as both _fullstack_ and _corss-platform_ language.
 - Inter-operable with Java.
 - Provides modern features such as compile-time null safety and data classes.
