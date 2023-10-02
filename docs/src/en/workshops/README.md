@@ -1,4 +1,4 @@
-# Workshops
+# 📅 Workshops
 
 ## Android makers 2023: Kotlin Beyond Android
 
