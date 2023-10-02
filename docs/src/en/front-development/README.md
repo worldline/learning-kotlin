@@ -1,29 +1,29 @@
-# Frontend development
+# 📚 Frontend development
 
 Kotlin supports a wide selection of frontend frameworks across all platforms: mobile, desktop and web.
 
 Please find below a glimpse of the possibilities that you can do right from IntelliJ:
 
-- On the desktop side
+- On the **Desktop** side
   - Thanks to JVM support, Kotlin supports [JavaFX](https://openjfx.io/).
     - :bulb: There is even a Kotlin counterpart called [tornadofx](https://tornadofx.io/).
   - [Compose Multiplatform](https://www.jetbrains.com/lp/compose-mpp/) brings Jetpack Compose to the desktop, the web and mobile.
-- On the web
+- On the **Web**
   - [Ktor](https://ktor.io/docs/creating-interactive-website.html) can use templates engines [such as FreeMarker](https://freemarker.apache.org/) to create server pages.
-  - With KotlinJS, developers can create React, nodsjs, or vanilla JS Apps using Kotlin.
-  - Kotlin WASM compiles into Web Assembly. It can complement KotlinJS for computation intensive tasks.
-- On mobiles
+  - With **KotlinJS**, developers can create React, nodsjs, or vanilla JS Apps using Kotlin.
+  - Kotlin **WASM** compiles into *Web Assembly*. It can complement KotlinJS for computation intensive tasks.
+- On **Mobiles**
   - Android developers use the [Jetpack Compose](https://developer.android.com/jetpack/compose) UI Framework or the legacy **xml layouts**. It is experimental on iOS.
 
-Kotlin supports cross platform frontend development thanks to **KMP and KMM**
+Kotlin supports cross platform frontend development thanks to **Kotlin MultiPlatform (KMP)**
 
 ## Kotlin Multiplatform (KMP)
 
-KMP (Kotlin Multiplatform) is the name of the technology that allows Kotlin to share a single codebase across multiple targets.
+>"The Kotlin Multiplatform technology is designed to simplify the development of cross-platform projects. It reduces time spent writing and maintaining the same code for different platforms while retaining the flexibility and benefits of native programming." [₁](https://kotlinlang.org/docs/multiplatform.html)
 
 [KMP](https://blog.jetbrains.com/kotlin/2021/08/compose-multiplatform-goes-alpha/) relies on Kotlin native and other Kotlin features to help developers create projects that target multiple platforms using a common Kotlin code-base.
 
-![KMP](https://kotlinlang.org/docs/images/kotlin-multiplatform.png)
+![KMP](https://kotlinlang.org/docs/images/kotlin-multiplatform.svg)
 
 Many combinations of targets and use cases are possible:
 
@@ -38,7 +38,7 @@ Many combinations of targets and use cases are possible:
 - Maybe we can do even more in the future with as all these technologies (Kotlin, WASM and Kotlin/WASM) evolve. - For example, [WASI](https://wasi.dev/) allows WASM to communicate with the operating system. - This means that me may see Kotlin/WASM project projects in the future that can target both the browser and the OS.
 - Let's keep watching 😄.
 
-### PW: Kotlin/WASM web app
+### 🧪 Kotlin/WASM web app
 
 - Both Kotlin/WASM and Kotlin/JS wizards on IntelliJ work similarly.
   - The IDE generates a Kotlin file that will compile later WASM and / or JS. Kotlin/JS generated only JS while Kotin/WASM generates both JS and WASM.
@@ -67,14 +67,29 @@ Many combinations of targets and use cases are possible:
   - or use an online converter [such as this one](https://webassembly.github.io/wabt/demo/wasm2wat/)
   - ❗ However, I couldn't get it to work
 
-### PW: KotlinJS web app
+### 🧪 KotlinJS web app
 
 The Kotlin/JS wizard creates a very similar app to the Kotlin/WASM.
 in a later PW, we'll create a fullstack app with Ktor and Kotlin/JS.
 
 ## Compose multiplatform
 
-[Compose multiplatform](https://blog.jetbrains.com/kotlin/2021/08/compose-multiplatform-goes-alpha/) is a cross-platform declarative UI framework that targets Android, iOS, desktops and the web.
+> "Compose Multiplatform simplifies and accelerates UI development for Desktop and Web applications, and allows extensive UI code sharing between Android, iOS, Desktop and Web. It's a modern toolkit for building native UI. Quickly bring your app to life with less code, powerful tools, and intuitive Kotlin APIs."
+
+![img](https://www.jetbrains.com/lp/compose-multiplatform/static/code-1-359257c1e103ebc01b8eb4662a61f733.svg)
+
+```kotlin
+Button(
+  onClick = {
+    logger.info("Pressed!")
+  }
+) {
+  Text("Hello $platform")
+}
+```
+
+It is based on [Android Jetpack Compose](https://developer.android.com/jetpack/compose) declarative UI approach ( which is similar also to [iOS SwiftUI](https://developer.apple.com/xcode/swiftui/) ) [1](https://www.jetbrains.com/lp/compose-multiplatform/)
+
 
 ::: tip Compose multiplatform vs Jetpack Compose
 
@@ -90,7 +105,7 @@ For cross-platform UI development with Compose Multiplatform, compose Web is the
 
 :::
 
-### PW1: Create a Compose multiplatform app
+### 🧪 Create a Compose multiplatform app
 
 We'll create a multiplatform app using the [official template](https://github.com/JetBrains/compose-multiplatform-template).
 At the time of writing, this template does not include a compose web target.
@@ -108,7 +123,7 @@ At the time of writing, this template does not include a compose web target.
 
 ![Alt text](..//../assets/kmp-compose-desktop.png)
 
-### PW2: Playing with the Compose multiplatform API
+### 🧪 Playing with the Compose multiplatform API
 
 Compose multiplatform is a component based declarative UI framework.
 Each component is called a `Composable` and is defined as a function annotated with `@Composable`.

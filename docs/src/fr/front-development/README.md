@@ -1,4 +1,4 @@
-# Développement frontend
+# 📚 Développement frontend
 
 Kotlin supporte une large sélection de frameworks frontaux sur toutes les plateformes : mobile, desktop et web.
 Vous trouverez ci-dessous un aperçu des possibilités que vous pouvez faire directement à partir d'IntelliJ :
@@ -17,9 +17,9 @@ Vous trouverez ci-dessous un aperçu des possibilités que vous pouvez faire dir
 
 Comme nous pouvons le voir, Kotlin propose plusieurs options.
 L'option la plus séduisante en terme de partage de code est Compose Multiplatform.
-Ceci est possible notamment grâce à **KMP et KMM**
+Ceci est possible notamment grâce à **KMP**
 
-## KMP & KMM
+## KMP 
 
 - KMP (Kotlin Multiplatform) et KMM (Kotlin Multiplatform Mobile) sont les deux technologies Kotlin qui permettent de partager une base de code unique sur plusieurs cibles.
 - [KMP](https://blog.jetbrains.com/kotlin/2021/08/compose-multiplatform-goes-alpha/) s'appuie sur Kotlin native et d'autres fonctionnalités de Kotlin pour aider les développeurs à créer des projets destinés à plusieurs plates-formes en utilisant une base de code Kotlin commune.
@@ -44,7 +44,7 @@ Dans la suite de ce chapitre, nous explorerons les différentes possibilités in
 - Nous pourrons peut-être faire encore plus à l'avenir grâce à l'évolution de toutes ces technologies (Kotlin, WASM et Kotlin/WASM). - Par exemple, [WASI] (https://wasi.dev/) permet à WASM de communiquer avec le système d'exploitation. - Cela signifie que je pourrais voir des projets Kotlin/WASM à l'avenir qui peuvent cibler à la fois le navigateur et le système d'exploitation.
 - Continuons à observer 😄.
 
-### TP : Application web Kotlin/WASM
+### 🧪 Application web Kotlin/WASM
 
 - Les assistants de création de projet Kotlin/WASM et Kotlin/JS sur IntelliJ fonctionnent de manière similaire:
   - L'IDE génère un fichier Kotlin qui sera compilé par la suite en WASM et/ou JS. Kotlin/JS ne génère que du JS tandis que Kotin/WASM génère à la fois du JS et du WASM.
@@ -73,7 +73,7 @@ Dans la suite de ce chapitre, nous explorerons les différentes possibilités in
   - ou utiliser un convertisseur en ligne [comme celui-ci](https://webassembly.github.io/wabt/demo/wasm2wat/)
   - ❗ Cependant, je n'ai pas réussi à le faire fonctionner
 
-### PW : Application web KotlinJS
+### 🧪 Application web KotlinJS
 
 L'assistant Kotlin/JS crée une application très similaire à celle de Kotlin/WASM.
 Dans un prochain PW, nous créerons une application complète avec Ktor et Kotlin/JS.
@@ -98,7 +98,7 @@ Cela signifie que le premier a un meilleur support web et que le second a plus d
 
 :::
 
-### TP : Compose Web
+### 🧪 Compose Web
 
 - Créez un nouveau projet IntelliJ -> Compose Multiplaform.
 - Choisissez "Single platform" -> "Web" et remplissez les autres champs.
@@ -128,7 +128,7 @@ fun main() {
 
 ![compose multiplatform demo](../../assets/compose-multiplaform-web.gif)
 
-### TP : Compose desktop + Android app
+### 🧪 Compose desktop + Android app
 
 - Créez un nouveau projet sur IntelliJ -> Compose Multiplatform.
 - Choisissez "multiple platforms" et remplissez les autres champs. Choisissez ensuite **Finish**.

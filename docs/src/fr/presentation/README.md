@@ -1,4 +1,4 @@
-# Présentation de Kotlin
+# 🚀 Présentation de Kotlin
 
 Kotlin est un langage de programmation moderne développé par JetBrains.
 
