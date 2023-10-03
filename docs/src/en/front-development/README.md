@@ -159,7 +159,7 @@ RandomNumberList()
 
 - Exercise: Make the "Hello, .." button switch between showing the list and and the image.
 
-### PW3: Compose multiplatform with web target
+### 🧪 Compose multiplatform with web target
 
 Even though the official template does not support the web target, we can use the sample GitHub project [Kotlin/kotlin-wasm-examples/compose-imageviewer](https://github.com/Kotlin/kotlin-wasm-examples/tree/main/compose-imageviewer) with fortunately support all compose targets.
 
@@ -167,12 +167,12 @@ Even though the official template does not support the web target, we can use th
 - The web target can be run with: `./gradlew --console=plain :webApp:wasmRun`. The other targets can be run as seen above.
 - Exercise: develop a compose app that behaves like the below animation.
 
-## Solutions:
+## 🎯 Solutions
 
 - [Kotlin/JS and Kotlin/WASM PW](https://github.com/worldline/learning-kotlin/tree/main/material/webapp-kotlin-wasm)
 - [Compose multiplatform PW2](https://github.com/worldline/learning-kotlin/tree/main/material/app-compose-multiplatform)
 - [Compose multiplatform PW3](https://github.com/worldline/learning-kotlin/tree/main/material/app-compose-multiplatform-with-web)
 
-## Further reading
+## 📖 Further reading
 
 - [The huge potential of Kotlin/WASM](https://seb.deleuze.fr/the-huge-potential-of-kotlin-wasm/)
