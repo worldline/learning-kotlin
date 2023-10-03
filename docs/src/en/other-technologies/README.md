@@ -14,4 +14,4 @@ For more information about your DEV environment and installs please have a look 
 
 
 # [ _____ 🚀 Start the practical work here 🚀_____](https://worldline.github.io/learning-kotlin-multiplatform/overview/)
-[![kmp codelab](../../assets/kmp_codelab.png)](https://worldline.github.io/learning-kotlin-multiplatform/)  
+[![kmp codelab](../../assets/kmp_codelab.png)]([https://worldline.github.io/learning-kotlin-multiplatform/](https://worldline.github.io/learning-kotlin-multiplatform/overview/))  
