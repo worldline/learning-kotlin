@@ -84,9 +84,9 @@ val text = StringBuilder("Temp")
 
 [Kotlin docs](https://kotlinlang.org/docs/type-safe-builders.html) provides an example of an advanced type-safe builder that builds an HTML page.
 
-## Exercises
+## 🧪 Exercises
 
-### Exercise 1
+#### Exercise 1
 
 1. open the **java-integration-exercise** projects in the **materials** folder.
 1. Have a look at the Java class we provided you in the `src/main/java/com/worldline/learning/kotlin/java2kotlin` package. _(yes, that's the Pokemon class)_

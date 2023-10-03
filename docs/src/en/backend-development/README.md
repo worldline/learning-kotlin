@@ -11,7 +11,7 @@ Ktor is a cross-platform Kotlin library for building both HTTP clients and serve
 This makes Ktor a useful library to learn for both front-end developers for its HTTP client capabilities and backend-development for its HTTP server capabilities.
 In the following, we'll create a REST API with Ktor server.
 
-### PW: develop an API with Ktor
+### 🧪 develop an API with Ktor
 
 - Create a project on [start.ktor.io](https://start.ktor.io/) with the following plugins: Content Negotiation, kotlinx.serialization, and Routing.
 - Click on "Generate project".
@@ -161,7 +161,7 @@ Even better, Spring officially supports Kotlin.
 It even allows in start a new project with Kotlin and Gradle-Kotlin.
 In the next section, we'll use this starter to recreate our above REST API with Spring.
 
-### PW: Spring boot part 1 - develop the same API with Spring Boot
+### 🧪 Spring boot part 1 - develop the same API with Spring Boot
 
 - Create a project on [start.spring.io (also called Spring initializr)](https://start.spring.io/) with the following dependencies: Spring Web and Spring Boot DevTools.
 - Choose Kotlin as the language and Kotlin-Grade as the project manager.
@@ -205,7 +205,7 @@ Both are ok as long as you follow the same convention in the project.
 
 :::
 
-### PW: Spring boot part 2 - adding a database
+### 🧪 Spring boot part 2 - adding a database
 
 Let's go a little bit further by storing data in a database and writing some tests.
 
@@ -291,7 +291,7 @@ plugins {
   - Hint: `ProductController` already provides the necessary methods.
 - Call the different endpoints with a REST client.
 
-### PW: Spring boot part 2 - adding tests
+### 🧪 Spring boot part 2 - adding tests
 
 Spring frameworks helps perform different types of tests by providing different classes out of the box:
 
@@ -368,7 +368,7 @@ interface ProductRepository: JpaRepository<Product, Long> {
 
 :::
 
-## nodejs
+## NodeJS
 
 Thanks to Kotlin/JS, we can write apps that target nodejs using Kotlin.
 We can even import npm libraries as long as you declare the JS API surface that you'll be using in Kotlin.
@@ -379,7 +379,7 @@ In that case, we have two options, either we write the external declaration ours
 
 There are two gradle plugins that allow to create nodeJs projects: the `kotlin("js")` one and the `kotlin("multiplatform")` one. The difference between the two plugins is that the former only supports JS or WASM while the latter supports more platforms but requires to configure source sets. Thus, the former may seem easier to setup but the latter is better in the long run because it allows us to get more familiar with Kotlin Multiplatform (KMP).
 
-### PW1: Getting started with Kotlin/JS and Express
+### 🧪 Getting started with Kotlin/JS and Express
 
 At the time of writing, I didn't find an official wizard or starter project. So we'll create one from scratch using `gradle init`.
 
@@ -503,7 +503,7 @@ Run `./gradlew kotlinUpgradeYarnLock` so that yarn.lock is updated
 
 :::
 
-### PW2: Adding a post endpoint and an external Kotlin/JS definition
+### 🧪 Adding a post endpoint and an external Kotlin/JS definition
 
 Let's add a post endpoint which reads the body as a json. In order to read the body as json, we must add this possibility to express by importing the npm library [body-parser](https://www.npmjs.com/package/body-parser) and by calling `app.use(bodyParser.json())`. Once this setup is complete, `req.body` will contain the content of the body. However, there is no available external definition for **bodyParser** as of the time of writing. Thus, we must create or own external definition.
 
@@ -554,17 +554,17 @@ app.post("/hello") { req, res ->
 
 :::
 
-### Exercises
+### 🧪 Adding more endpoints
 
 - Add PUT and DELETE endpoints
 
-## Completed projects
+## 🎯 Solutions
 
 - [ktor Rest API](https://github.com/worldline/learning-kotlin/tree/master/material/ktor-api)
 - [Spring boot Rest API](https://github.com/worldline/learning-kotlin/tree/master/material/spring-boot-kt-api)
 - The starter and final nodejs projects are available [here](https://github.com/worldline/learning-kotlin/blob/main/material/rest-api-kotlin-nodejs)
 
-## Going further
+## 📖 Further readings
 
 These official tutorials go even further:
 
@@ -573,7 +573,7 @@ These official tutorials go even further:
 - [Rest ÄPIs with Spring](https://spring.io/guides/tutorials/rest/)
 - [Quarkus and kotlin](https://quarkus.io/guides/kotlin)
 
-## Links and references
+**References**
 
 - [JS in Kotlin/JS](https://dev.to/mpetuska/js-in-kotlinjs-c4g)
 - [mockmvc kotlin dsl](https://www.baeldung.com/kotlin/mockmvc-kotlin-dsl)

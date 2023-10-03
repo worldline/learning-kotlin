@@ -1,4 +1,4 @@
-# 💡 Presentation of Kotlin
+# 🚀 Presentation of Kotlin
 
 Kotlin is a modern programming language developed by JetBrains.
 
@@ -63,7 +63,7 @@ You can read more arguments in these articles:
 - _or_ GitPod by opening [https://gitpod.io/#https://github.com/worldline/learning-kotlin](https://gitpod.io/#https://github.com/worldline/learning-kotlin) to create a workspace and then browser to the _material_ folder,
 - _or_ VSCode (with Kotlin and Java plugins) + JDK 17 (install via scoop.sh on windows or SDK man on Unix) + gradle
 
-## Sources and more reading
+## 📖 Further reading
 
 - [Kotlin on Wikipedia](<https://en.wikipedia.org/wiki/Kotlin_(programming_language)>)
 - [Introducing Kotlin support in Spring Framework 5.0](https://spring.io/blog/2017/01/04/introducing-kotlin-support-in-spring-framework-5-0)
