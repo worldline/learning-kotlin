@@ -106,7 +106,7 @@ At the time of writing, this template does not include a compose web target.
 - In order to run the Android App, the simplest way is to launch it from IntelliJ ![Alt text](../../assets/launch-android-app.png). It is also possible [define a gradle task](https://gist.github.com/MoshDev/a61080cc5e1f5bafdf3cc0bf70fd86fd) that installs the app on the device and issues a command to the device to launch it.
 - In order to run the iOS App, the simplest way is to run it on the simulator using IntelliJ. In order to run it on a real device, the TramID needs to be defined as [explained here](https://github.com/JetBrains/compose-multiplatform-template#on-ios)
 
-![Alt text](..//../assets/kmp-compose-desktop.png)
+![Alt text](../../assets/kmp-compose-desktop.png =200x)
 
 ### PW2: Playing with the Compose multiplatform API
 
@@ -144,19 +144,12 @@ RandomNumberList()
 
 - Exercise: Make the "Hello, .." button switch between showing the list and and the image.
 
-### PW3: Compose multiplatform with web target
-
-Even though the official template does not support the web target, we can use the sample GitHub project [Kotlin/kotlin-wasm-examples/compose-imageviewer](https://github.com/Kotlin/kotlin-wasm-examples/tree/main/compose-imageviewer) with fortunately support all compose targets.
-
-- Similarly to the previous PW, download the project and open it in your IDE.
-- The web target can be run with: `./gradlew --console=plain :webApp:wasmRun`. The other targets can be run as seen above.
-- Exercise: develop a compose app that behaves like the below animation.
+![Hello compose demo](../../assets/hello-compose-demo.gif)
 
 ## Solutions:
 
 - [Kotlin/JS and Kotlin/WASM PW](https://github.com/worldline/learning-kotlin/tree/main/material/webapp-kotlin-wasm)
 - [Compose multiplatform PW2](https://github.com/worldline/learning-kotlin/tree/main/material/app-compose-multiplatform)
-- [Compose multiplatform PW3](https://github.com/worldline/learning-kotlin/tree/main/material/app-compose-multiplatform-with-web)
 
 ## Further reading
 
