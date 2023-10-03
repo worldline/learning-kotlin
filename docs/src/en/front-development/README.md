@@ -11,7 +11,7 @@ Please find below a glimpse of the possibilities that you can do right from Inte
 - On the **Web**
   - [Ktor](https://ktor.io/docs/creating-interactive-website.html) can use templates engines [such as FreeMarker](https://freemarker.apache.org/) to create server pages.
   - With **KotlinJS**, developers can create React, nodsjs, or vanilla JS Apps using Kotlin.
-  - Kotlin **WASM** compiles into *Web Assembly*. It can complement KotlinJS for computation intensive tasks.
+  - Kotlin **WASM** compiles into _Web Assembly_. It can complement KotlinJS for computation intensive tasks.
 - On **Mobiles**
   - Android developers use the [Jetpack Compose](https://developer.android.com/jetpack/compose) UI Framework or the legacy **xml layouts**. It is experimental on iOS.
 
@@ -19,7 +19,7 @@ Kotlin supports cross platform frontend development thanks to **Kotlin MultiPlat
 
 ## Kotlin Multiplatform (KMP)
 
->"The Kotlin Multiplatform technology is designed to simplify the development of cross-platform projects. It reduces time spent writing and maintaining the same code for different platforms while retaining the flexibility and benefits of native programming." [₁](https://kotlinlang.org/docs/multiplatform.html)
+> "The Kotlin Multiplatform technology is designed to simplify the development of cross-platform projects. It reduces time spent writing and maintaining the same code for different platforms while retaining the flexibility and benefits of native programming." [₁](https://kotlinlang.org/docs/multiplatform.html)
 
 [KMP](https://blog.jetbrains.com/kotlin/2021/08/compose-multiplatform-goes-alpha/) relies on Kotlin native and other Kotlin features to help developers create projects that target multiple platforms using a common Kotlin code-base.
 
@@ -90,7 +90,6 @@ Button(
 
 It is based on [Android Jetpack Compose](https://developer.android.com/jetpack/compose) declarative UI approach ( which is similar also to [iOS SwiftUI](https://developer.apple.com/xcode/swiftui/) ) [1](https://www.jetbrains.com/lp/compose-multiplatform/)
 
-
 ::: tip Compose multiplatform vs Jetpack Compose
 
 While very similar, Compose multiplatform is different from Jetpack Compose as the latter is only compatible with Android.
@@ -121,7 +120,7 @@ At the time of writing, this template does not include a compose web target.
 - In order to run the Android App, the simplest way is to launch it from IntelliJ ![Alt text](../../assets/launch-android-app.png). It is also possible [define a gradle task](https://gist.github.com/MoshDev/a61080cc5e1f5bafdf3cc0bf70fd86fd) that installs the app on the device and issues a command to the device to launch it.
 - In order to run the iOS App, the simplest way is to run it on the simulator using IntelliJ. In order to run it on a real device, the TramID needs to be defined as [explained here](https://github.com/JetBrains/compose-multiplatform-template#on-ios)
 
-![Alt text](..//../assets/kmp-compose-desktop.png)
+![Alt text](../../assets/kmp-compose-desktop.png =200x)
 
 ### 🧪 Playing with the Compose multiplatform API
 
@@ -159,19 +158,12 @@ RandomNumberList()
 
 - Exercise: Make the "Hello, .." button switch between showing the list and and the image.
 
-### 🧪 Compose multiplatform with web target
-
-Even though the official template does not support the web target, we can use the sample GitHub project [Kotlin/kotlin-wasm-examples/compose-imageviewer](https://github.com/Kotlin/kotlin-wasm-examples/tree/main/compose-imageviewer) with fortunately support all compose targets.
-
-- Similarly to the previous PW, download the project and open it in your IDE.
-- The web target can be run with: `./gradlew --console=plain :webApp:wasmRun`. The other targets can be run as seen above.
-- Exercise: develop a compose app that behaves like the below animation.
+![Hello compose demo](../../assets/hello-compose-demo.gif)
 
 ## 🎯 Solutions
 
 - [Kotlin/JS and Kotlin/WASM PW](https://github.com/worldline/learning-kotlin/tree/main/material/webapp-kotlin-wasm)
 - [Compose multiplatform PW2](https://github.com/worldline/learning-kotlin/tree/main/material/app-compose-multiplatform)
-- [Compose multiplatform PW3](https://github.com/worldline/learning-kotlin/tree/main/material/app-compose-multiplatform-with-web)
 
 ## 📖 Further reading
 
