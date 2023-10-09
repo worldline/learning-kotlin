@@ -19,7 +19,7 @@ Workshop link: [awl.li/am23-kt](https://awl.li/am23-kt)
 - [Front-end development: Cross-platform Quiz App with Compose multiplatform](https://worldline.github.io/learning-kotlin-multiplatform/)
 - [Full-stack development: Quiz App with Compose multiplatform and Ktor server](../other-technologies/#pw-add-a-ktor-server-app)
 
-## (2023) JNation :  Let's discover the possibilities of Kotlin
+## (2023) JNation : Let's discover the possibilities of Kotlin
 
 #### Link
 
@@ -53,10 +53,10 @@ Workshop link: [awl.li/jnation23-kt](https://awl.li/jnation23-kt)
   - [Backend development: Rest API with nodeJS and Kotlin/JS](../backend-development/#ktor)
   - [Front-end development: Kotlin/WASM and Kotlin/JS webapp](../front-development/#kotlin-js-and-kotlin-wasm)
 
-## (2023) Devoxx Morocco 
+## (2023) Devoxx Morocco
 
 - Title: **Let's discover the amazing possibilities of Kotlin**
-- Link: [awl.li/mds23-kt](https://awl.li/devoxxma23-kt)
+- Link: [awl.li/devoxxma23-kt](https://awl.li/devoxxma23-kt)
 
 ![qr code](../../assets/qrcode-devoxxma23.gif =200x)
 
