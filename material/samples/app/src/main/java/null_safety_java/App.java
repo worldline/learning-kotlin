@@ -4,20 +4,22 @@
 package null_safety_java;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public class App {
 
     public static void main(String[] args) {
         @Nonnull
         String name;
-        name = null; //
+        name = null; // warning
+        @Nullable
         String name2;
         name2 = null;
-        System.out.println(name2.length()); // compile error
+        System.out.println(name2.length()); // warning (there is no optional chaining operator ?.)
         System.out.println(name2 == null ? 0 : name2.length());
     }
 
-    public static int getLength2(String name) {
+    public static int getLength2(@Nullable String name) {
         if (name == null)
             return 0;
         return name.length();
