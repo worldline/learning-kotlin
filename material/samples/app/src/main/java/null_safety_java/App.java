@@ -9,6 +9,9 @@ import javax.annotation.Nullable;
 public class App {
 
     public static void main(String[] args) {
+
+        int length = getLength(null);
+
         @Nonnull
         String name;
         name = null; // warning
@@ -19,9 +22,14 @@ public class App {
         System.out.println(name2 == null ? 0 : name2.length());
     }
 
+    public static int getLength(String name) {
+        return name.length();
+    }
+
     public static int getLength2(@Nullable String name) {
         if (name == null)
             return 0;
         return name.length();
     }
+
 }
