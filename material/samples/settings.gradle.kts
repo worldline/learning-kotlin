@@ -10,5 +10,5 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.7.0"
 }
 
-rootProject.name = "null_safety_java"
+rootProject.name = "kotlin-training-samples"
 include("app")

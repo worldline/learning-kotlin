@@ -30,7 +30,7 @@ java { toolchain { languageVersion.set(JavaLanguageVersion.of(17)) } }
 
 application {
     // Define the main class for the application.
-    mainClass.set("null_safety_java.App")
+    mainClass.set("com.worldline.learningkt.samples.App")
 }
 
 tasks.named<Test>("test") {

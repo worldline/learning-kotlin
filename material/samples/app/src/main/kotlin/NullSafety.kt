@@ -1,9 +1,9 @@
 fun main() {
-    var name: String
-    name = null // compile error
+    val name: String = "john doe"
+    println(name.length)
+
     val name2: String?
     name2 = null
-    println(name2.length) // compile error
     print(name?.length ?: 0)
 }
 
