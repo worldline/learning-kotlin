@@ -165,7 +165,7 @@ In the next section, we'll use this starter to recreate our above REST API with 
 
 - Create a project on [start.spring.io (also called Spring initializr)](https://start.spring.io/) with the following dependencies: Spring Web and Spring Boot DevTools.
 - Choose Kotlin as the language and Kotlin-Grade as the project manager.
-- Add these dependencies: **Spring Web**, **Spring Boot DevTools** and **Spring Data JPA**.
+- Add these dependencies: **Spring Web**, **Spring Boot DevTools**, **h2 database** and **Spring Data JPA**.
 - Click on "Generate". Download the archive, unzip it, and open the project with IntelliJ (preferably) or VSCode.
   - For VSCode, install a [Kotlin extension](https://marketplace.visualstudio.com/search?term=kotlin&target=VSCode&category=All%20categories&sortBy=Relevance) and [Spring Boot Extension Pack](https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-boot-dev-pack) ( :warning: Spring extension do not seem to support kotlin).
 - Create `Customer` data class in the `model` package without the `@Serializable` annotation.
