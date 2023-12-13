@@ -5,8 +5,7 @@ Kotlin supports a wide selection of frontend frameworks across all platforms: mo
 Please find below a glimpse of the possibilities that you can do right from IntelliJ:
 
 - On the **Desktop** side
-  - Thanks to JVM support, Kotlin supports [JavaFX](https://openjfx.io/).
-    - :bulb: There is even a Kotlin counterpart called [tornadofx](https://tornadofx.io/).
+  - Thanks to JVM support, Kotlin supports [JavaFX](https://openjfx.io/) (There *was* a Kotlin counterpart called [tornadofx](https://tornadofx.io/) which is not maintained anymore).
   - [Compose Multiplatform](https://www.jetbrains.com/lp/compose-mpp/) brings Jetpack Compose to the desktop, the web and mobile.
 - On the **Web**
   - [Ktor](https://ktor.io/docs/creating-interactive-website.html) can use templates engines [such as FreeMarker](https://freemarker.apache.org/) to create server pages.
@@ -40,37 +39,31 @@ Many combinations of targets and use cases are possible:
 
 ### 🧪 Kotlin/WASM web app
 
-- Both Kotlin/WASM and Kotlin/JS wizards on IntelliJ work similarly.
-  - The IDE generates a Kotlin file that will compile later WASM and / or JS. Kotlin/JS generated only JS while Kotin/WASM generates both JS and WASM.
-  - In both cases, the entry point of the generated code is a JS file called **module_name.js**.
-  - The IDE also generates an **index.html** in the resources folder which loads the generated JS explained above (the one named **module_name.js**).
-  - The task `wasmBrowserDevelopmentRun` or `jsWasmBrowserDevelopmentRun` will run a local server that hosts both the **index.html** files and the generated JS and WASM files.
-- Let's create a Kotlin/WASM app. First, Enable the kotlin wasm wizard by enabling **kotlin.wasm.wizard** in IntelliJ's registry (open the registry by double tapping shift and typing "registry" in the search box) or clone [this project](https://github.com/worldline/learning-kotlin/tree/main/material/kotlin-wasm-starter).
-
-![](../../assets/kotlin-wasm-flag.png)
-
-- Check that kotlin is set to at least **1.8.20** in **build.gradle.kts** (the wizard may set it to a previous version).
-- Open **src/wasmMain/kotlin/sample.kt** and click on the run button that appears next to the `main` function.
-- If the build fails because the IDE used the wrong gradle task (the one that corresponds to a KotlinJS project), please change it to `wasmBrowserDevelopmentRun` and try to run again.
-
-![](../../assets/wasm-build-conf-edit.png)
-![](../../assets/wasm-run-configuration.png)
-
+- Let's create a Kotlin/WASM app. By cloning `git clone git@github.com:Kotlin/kotlin-wasm-examples.git` and opening the **browser-example** folder in your IDE.
+  - To get up to date information on how to start a Kotlin/WASM project, please refer to the [official documentation for kotlin/wasm](https://kotlinlang.org/docs/wasm-get-started.html).
+- Open the project and run the `wasmJsBrowserRun` task.
 - The development server should start and you can open your WASM powered webapp on [http://localhost:8080/](http://localhost:8080/)
-- ⚠️ You may need to activate some flags on your browser for the app to work. If you see a blank page, please read the browser logs to check for the instructions.
+  - ⚠️ You may need to activate some flags on your browser for the app to work. If you see a blank page, please read the browser logs to check for the instructions.
 
-![](../../assets/kotlin-wasm-webapp.png)
+![Alt text](../../assets/kotlin-wasm-webapp.png)
 
-- The generated wasm file is available in **build/js/packages/project_name/kotlin**
-- WASM being a binary format, we need to convert it first to text format.
+- Please check the contents of **src/wasmJsMain/kotlin/Simple.kt** to understand how the page is coded.
+- Next, let's check the generated wasm file which is available in **build/js/packages/project_name/kotlin**
+  - WASM being a binary format, we need to convert it first to text format.
   - We can either install [WABT (The WebAssembly Binary Toolkit or wabbit)](https://github.com/WebAssembly/wabt) and use the _wasm2wattool_ `wasm2wat --enable-all  -v .\kotlin-wasm-demo-wasm.wasm -o wasm.wat`,
   - or use an online converter [such as this one](https://webassembly.github.io/wabt/demo/wasm2wat/)
-  - ❗ However, I couldn't get it to work
+  - ❗ However, I couldn't get it to work (yet).
 
-### 🧪 KotlinJS web app
+### Kotlin/JS and Kotlin/WASM common points
 
-The Kotlin/JS wizard creates a very similar app to the Kotlin/WASM.
-in a later PW, we'll create a fullstack app with Ktor and Kotlin/JS.
+Both Kotlin/WASM and Kotlin/JS IntelliJ work somewhat similarly.
+
+- Both rely on the KMP plugin
+- Kotlin/WASM is enabled by adding a `wasmjs` section in the `build.gradle.kts` file, while Kotlin/JS is enabled by adding a `js` section.
+- The Kotlin code will compile to WASM and / or JS. Kotlin/JS generates only JS while Kotin/WASM generates both JS and WASM.
+- In both cases, the entry point of the generated code is a JS file called **module_name.js**.
+- The **index.html** in the resources folder loads the generated JS explained above (the one named **module_name.js**).
+- The task `wasmBrowserDevelopmentRun` or `jsWasmBrowserDevelopmentRun` run a local server that hosts both the **index.html** files and the generated JS and WASM files.
 
 ## Compose multiplatform
 
@@ -168,3 +161,4 @@ RandomNumberList()
 ## 📖 Further reading
 
 - [The huge potential of Kotlin/WASM](https://seb.deleuze.fr/the-huge-potential-of-kotlin-wasm/)
+- [Official KMP wizard](https://kmp.jetbrains.com/)
