@@ -9,16 +9,18 @@ val store = mutableListOf<Customer>()
 @RestController
 @RequestMapping("/customer")
 class CustomerController {
-    @GetMapping
-    fun getAll() = store
+    @GetMapping fun getAll() = store
 
-    @GetMapping("{id}")
-    fun getById(@PathVariable id: String) = store.firstOrNull { it.id == id }
+    @GetMapping("{id}") fun getById(@PathVariable id: String) = store.firstOrNull { it.id == id }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun addOne(@RequestBody customer: Customer) { store.add(customer) }
+    fun addOne(@RequestBody customer: Customer) {
+        store.add(customer)
+    }
 
     @DeleteMapping("{id}")
-    fun deleteOne(@PathVariable id: String) { store.removeIf { it.id == id } }
+    fun deleteOne(@PathVariable id: String) {
+        store.removeIf { it.id == id }
+    }
 }
