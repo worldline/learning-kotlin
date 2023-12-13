@@ -32,6 +32,7 @@ export default defineUserConfig({
 
   theme: defaultTheme({
     logo: "logo_worldline.png",
+    repo: "worldline/learning-kotlin",
     locales: {
       "/en/": {
         selectLanguageName: "English",
