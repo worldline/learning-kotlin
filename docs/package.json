@@ -23,7 +23,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^18.17.12",
+    "@types/node": "^20.10.4",
     "@vuepress/client": "2.0.0-beta.67",
     "@vuepress/plugin-medium-zoom": "2.0.0-beta.67",
     "@vuepress/plugin-nprogress": "2.0.0-beta.67",
