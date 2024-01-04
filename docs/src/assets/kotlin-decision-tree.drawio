@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="Acv-mW_82h9PubKR8HCS" name="Page-1">
-        <mxGraphModel dx="3113" dy="2378" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1579" dy="1681" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#999999" math="0" shadow="1">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -12,7 +12,7 @@
                 </mxCell>
                 <mxCell id="6" value="" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="3" target="8" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="270" y="350" as="targetPoint"/>
+                        <mxPoint x="270" y="366" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="9" value="Android" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="6" vertex="1" connectable="0">
@@ -45,7 +45,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="3" value="What type &lt;br&gt;of front project" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" parent="1" vertex="1">
-                    <mxGeometry x="342.5" y="300" width="105" height="100" as="geometry"/>
+                    <mxGeometry x="342.5" y="316" width="105" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" target="3" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -59,7 +59,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="8" value="Kotlin is the default Android Language since 2019" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" parent="1" vertex="1">
-                    <mxGeometry x="57.82" y="320" width="160" height="60" as="geometry"/>
+                    <mxGeometry x="57.82" y="336" width="160" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="38" value="" style="edgeStyle=none;html=1;" parent="1" source="11" target="37" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -78,7 +78,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="11" value="Do you want &lt;br&gt;to generate native code" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e3c800;strokeColor=#B09500;fontColor=#000000;" parent="1" vertex="1">
-                    <mxGeometry x="342.5" y="490" width="105" height="100" as="geometry"/>
+                    <mxGeometry x="342.5" y="506" width="105" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="28" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="14" target="17" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -110,8 +110,8 @@
                 <mxCell id="36" value="" style="edgeStyle=none;html=1;" parent="1" source="17" target="35" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" value="Do you want to &lt;br&gt;use a conise language &lt;br&gt;with null safety and full interop with Java" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e3c800;strokeColor=#B09500;fontColor=#000000;rounded=1;" parent="1" vertex="1">
-                    <mxGeometry x="550" y="118.75" width="160" height="137.5" as="geometry"/>
+                <mxCell id="17" value="Are you intereted in &lt;br&gt;using a conise language &lt;br&gt;with null safety and full &lt;br&gt;interop with Java" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e3c800;strokeColor=#B09500;fontColor=#000000;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="540" y="119.69" width="180" height="135.62" as="geometry"/>
                 </mxCell>
                 <mxCell id="62" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="23" target="53" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -136,10 +136,10 @@
                     <mxGeometry x="877.5" y="150" width="180" height="75" as="geometry"/>
                 </mxCell>
                 <mxCell id="35" value="Use Java or Groovy or Scala" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;rounded=1;" parent="1" vertex="1">
-                    <mxGeometry x="570" y="-60" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="570" y="-52.5" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="37" value="Use Flutter or React native" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;" parent="1" vertex="1">
-                    <mxGeometry x="335" y="700" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="335" y="716" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="43" value="" style="edgeStyle=none;html=1;" parent="1" source="39" target="42" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -158,10 +158,10 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="39" value="Do you want to &lt;br&gt;develop the UI using native frameworks (Jetpack compose &lt;br&gt;and SwiftUI)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e3c800;strokeColor=#B09500;fontColor=#000000;" parent="1" vertex="1">
-                    <mxGeometry x="40" y="462.5" width="187.5" height="155" as="geometry"/>
+                    <mxGeometry x="40" y="478.5" width="187.5" height="155" as="geometry"/>
                 </mxCell>
                 <mxCell id="42" value="Kotlin Multiplatform (KMP) allows to share no UI code" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" parent="1" vertex="1">
-                    <mxGeometry x="61.87" y="692.5" width="143.75" height="75" as="geometry"/>
+                    <mxGeometry x="61.87" y="708.5" width="143.75" height="75" as="geometry"/>
                 </mxCell>
                 <mxCell id="50" value="" style="edgeStyle=none;html=1;" parent="1" source="46" target="49" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -180,13 +180,13 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="46" value="Do you to use &lt;br&gt;native System&lt;br&gt;views&amp;nbsp;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e3c800;strokeColor=#B09500;fontColor=#000000;" parent="1" vertex="1">
-                    <mxGeometry x="-237.51" y="475" width="156.25" height="130" as="geometry"/>
+                    <mxGeometry x="-237.51" y="491" width="156.25" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="49" value="Use MAUI" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;" parent="1" vertex="1">
-                    <mxGeometry x="-219.375" y="700" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="-219.375" y="716" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="51" value="Use KMP with Compose multiplatform" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" parent="1" vertex="1">
-                    <mxGeometry x="-239.38" y="320" width="160" height="70" as="geometry"/>
+                    <mxGeometry x="-239.38" y="336" width="160" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="57" value="" style="edgeStyle=none;html=1;" parent="1" source="53" target="56" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -233,11 +233,11 @@
                     <mxGeometry x="-218.75" y="-65" width="121.25" height="105" as="geometry"/>
                 </mxCell>
                 <mxCell id="64" value="Use other languages" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;rounded=1;" parent="1" vertex="1">
-                    <mxGeometry x="77.815" y="-42.5" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="77.815" y="-52.5" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="80" value="" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="73" target="79" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="770" y="430" as="targetPoint"/>
+                        <mxPoint x="770" y="446" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="81" value="JavaSctipt / TypeScript" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="80" vertex="1" connectable="0">
@@ -245,40 +245,42 @@
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="97" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="73" target="96">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="97" value="" style="edgeStyle=none;html=1;" parent="1" source="73" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="910" y="324.82352941176487" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
-                <mxCell id="103" value="Kotlin / Java" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="97">
+                <mxCell id="103" value="Kotlin / Java" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="97" vertex="1" connectable="0">
                     <mxGeometry x="-0.4506" y="-3" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="99" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="73" target="98">
+                <mxCell id="99" value="" style="edgeStyle=none;html=1;" parent="1" source="73" target="98" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="100" value="C#" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="99">
+                <mxCell id="100" value="C#" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="99" vertex="1" connectable="0">
                     <mxGeometry x="-0.2667" y="-1" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="102" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="73" target="101">
+                <mxCell id="102" value="" style="edgeStyle=none;html=1;" parent="1" source="73" target="101" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="105" value="Dart" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="102">
+                <mxCell id="105" value="Dart" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="102" vertex="1" connectable="0">
                     <mxGeometry x="-0.536" y="-2" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="107" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="73" target="106">
+                <mxCell id="107" value="" style="edgeStyle=none;html=1;" parent="1" source="73" target="106" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="108" value="Rust" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="107">
+                <mxCell id="108" value="Rust" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="107" vertex="1" connectable="0">
                     <mxGeometry x="-0.2964" relative="1" as="geometry">
                         <mxPoint x="-33" as="offset"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="73" value="Which &lt;br&gt;language are &lt;br&gt;you already&lt;br&gt;confortable with" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e3c800;strokeColor=#B09500;fontColor=#000000;" parent="1" vertex="1">
-                    <mxGeometry x="560" y="287.5" width="140" height="125" as="geometry"/>
+                    <mxGeometry x="560" y="303.5" width="140" height="125" as="geometry"/>
                 </mxCell>
                 <mxCell id="83" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="76" target="11" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -288,31 +290,31 @@
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="86" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="76" target="73">
+                <mxCell id="86" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="76" target="73" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="87" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="86">
+                <mxCell id="87" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="86" vertex="1" connectable="0">
                     <mxGeometry x="-0.6329" y="-1" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="76" value="Do you want &lt;br&gt;to share code&lt;br&gt;across mobile &lt;br&gt;and web" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e3c800;strokeColor=#B09500;fontColor=#000000;" parent="1" vertex="1">
-                    <mxGeometry x="565" y="487.5" width="130" height="105" as="geometry"/>
+                    <mxGeometry x="565" y="503.5" width="130" height="105" as="geometry"/>
                 </mxCell>
                 <mxCell id="79" value="Use JS ot TS to develop the webapp" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" parent="1" vertex="1">
-                    <mxGeometry x="907.5" y="655" width="122.5" height="55" as="geometry"/>
+                    <mxGeometry x="907.5" y="671" width="122.5" height="55" as="geometry"/>
                 </mxCell>
-                <mxCell id="96" value="Use Kotlin/JS" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" vertex="1" parent="1">
+                <mxCell id="96" value="Use Kotlin/JS" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="910" y="270" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="98" value="Use Blazor" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" vertex="1" parent="1">
-                    <mxGeometry x="907.5" y="560" width="120" height="60" as="geometry"/>
+                <mxCell id="98" value="Use Blazor" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="907.5" y="576" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="101" value="User Flutter" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" vertex="1" parent="1">
-                    <mxGeometry x="907.5" y="470" width="120" height="60" as="geometry"/>
+                <mxCell id="101" value="User Flutter" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="907.5" y="486" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="106" value="Use Yew (or an alternative in Rust)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" vertex="1" parent="1">
-                    <mxGeometry x="907.5" y="360" width="120" height="60" as="geometry"/>
+                <mxCell id="106" value="Use Yew (or an alternative in Rust)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="907.5" y="376" width="120" height="60" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
