@@ -90,6 +90,8 @@ export default defineUserConfig({
     mdEnhancePlugin({
       imgLazyload: true,
       imgSize: true,
+      figure: true,
+      imgMark: true,
     }),
     // nprogressPlugin(),
     // seoPlugin({

@@ -57,6 +57,10 @@ You can read more arguments in these articles:
 - [Java Vs Kotlin: Which One Is Better To Learn In 2022?](https://codersera.com/blog/java-vs-kotlin/)
 - [8 Reasons Why You Should Switch To Kotlin From Java](https://www.geeksforgeeks.org/8-reasons-why-you-should-switch-to-kotlin-from-java)
 
+## A decision tree to help you decide if you should use Kotlin
+
+![decision tree](../../assets/kotlin-decision-tree.svg)
+
 ## Prerequisites
 
 - _Recommended_: IntelliJ IDEA (Both community or ultimate are OK),
