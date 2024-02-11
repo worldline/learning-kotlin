@@ -1,11 +1,17 @@
 import { pwaPlugin } from "@vuepress/plugin-pwa";
 import { searchPlugin } from "@vuepress/plugin-search";
-import { defaultTheme, defineUserConfig } from "vuepress";
+import { defineUserConfig } from "vuepress";
+import { defaultTheme } from "@vuepress/theme-default";
 import { mediumZoomPlugin } from "@vuepress/plugin-medium-zoom";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 import { pwaPopupPlugin } from "@vuepress/plugin-pwa-popup";
+import { viteBundler } from "@vuepress/bundler-vite";
 
 export default defineUserConfig({
+  bundler: viteBundler({
+    viteOptions: {},
+    vuePluginOptions: {},
+  }),
   base: "/learning-kotlin/",
   port: 3001,
   locales: {
