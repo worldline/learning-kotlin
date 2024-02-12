@@ -19,5 +19,24 @@ paths:
               examples:
                 Example#1:
                   value: "Hello World!"
+  /fighters:
+    get:
+      description: "Hello World!"
+      responses:
+        "200":
+          description: "List of fighters"
+          content:
+            application/json:
+              schema:
+                type: "array"
+                items:
+                  $ref: "#/components/schemas/StreetFighter"
 components:
   schemas:
+    StreetFighter:
+      type: "object"
+      properties:
+        name:
+          type: "string"
+        superMove:
+          type: "string"
