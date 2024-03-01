@@ -30,7 +30,7 @@
     "@vuepress/plugin-pwa": "^2.0.0-rc.7",
     "@vuepress/plugin-search": "^2.0.0-rc.7",
     "vue": "^3.4.15",
-    "vuepress": "^2.0.0-rc.7",
+    "vuepress": "^2.0.0-rc.8",
     "@vuepress/theme-default": "^2.0.0-rc.7",
     "vuepress-plugin-md-enhance": "^2.0.0-rc.23",
     "@vuepress/plugin-pwa-popup": "^2.0.0-rc.7",
