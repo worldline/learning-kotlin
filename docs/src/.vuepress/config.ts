@@ -4,7 +4,6 @@ import { defineUserConfig } from "vuepress";
 import { defaultTheme } from "@vuepress/theme-default";
 import { mediumZoomPlugin } from "@vuepress/plugin-medium-zoom";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
-import { pwaPopupPlugin } from "@vuepress/plugin-pwa-popup";
 import { viteBundler } from "@vuepress/bundler-vite";
 
 export default defineUserConfig({
@@ -12,6 +11,7 @@ export default defineUserConfig({
     viteOptions: {},
     vuePluginOptions: {},
   }),
+  shouldPrefetch: false,
   base: "/learning-kotlin/",
   port: 3001,
   locales: {
@@ -81,27 +81,11 @@ export default defineUserConfig({
     }),
     pwaPlugin({}),
     mediumZoomPlugin({}),
-    pwaPopupPlugin({
-      locales: {
-        "/en/": {
-          message: "New content is available.",
-          buttonText: "Refresh",
-        },
-        "/fr/": {
-          message: "Du nouveau contenu est disponible.",
-          buttonText: "Actualiser",
-        },
-      },
-    }),
     mdEnhancePlugin({
       imgLazyload: true,
       imgSize: true,
       figure: true,
       imgMark: true,
     }),
-    // nprogressPlugin(),
-    // seoPlugin({
-    //   hostname: "https://worldline.github.io/learning-kotlin",
-    // }),
   ],
 });
