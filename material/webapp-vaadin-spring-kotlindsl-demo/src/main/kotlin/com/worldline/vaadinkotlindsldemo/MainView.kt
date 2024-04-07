@@ -9,7 +9,7 @@ import com.vaadin.flow.router.Route
 @Route("")
 internal class MainView : VerticalLayout() {
     init {
-        val h1 = H1("Hello, Vaadin Kotlin DSL!")
+        val h1 = H1("Hello, Vaadin Kotlin")
         val button = Button("Click me") {
             add(Paragraph("Button clicked!"))
         }
