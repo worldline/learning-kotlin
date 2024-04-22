@@ -57,7 +57,7 @@ Workshop link: [awl.li/jnation23-kt](https://awl.li/jnation23-kt)
 
 - Titre : **Développement front et back en Kotlin. Une visite guidée de KMP**
 
-![qr code](../../assets/qrcode-mixtit24.gif =200x)
+![qr code](../../assets/qrcode-mixtit24.png =200x)
 
 ### Agenda
 
