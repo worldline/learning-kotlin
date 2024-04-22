@@ -10,13 +10,14 @@ fun main() {
         res.send(messages)
     }
 
+    // Kotlin does not keep the original field name when parsing JSON from JS (you can see it the in get response)
+    // Thus, we need to use js() to get the the field by its expected name
+    // js() calls JS from Kotlin
     app.post("/hello") { req, res ->
-        // Kotlin does not keep the original field name when parsing JSON from JS (you can see it the in get response)
         if (req.body as? Message == null) {
-            println("failed to get the body from Kotlin")
+            res.status(400).send(js("{cause : 'error'}") as Any)
+            return@post
         }
-        // Thus, we need to use js() to get the the field by its expected name
-        // js() calls JS from Kotlin
         println("req.body from JS ${js("req.body.id")} - ${js("req.body.message")}")
         val id = js("req.body.id") as? Int
         val message = js("req.body.message") as? String
