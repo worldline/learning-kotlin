@@ -53,3 +53,26 @@ Lien du workshop: [awl.li/am23-kt](https://awl.li/am23-kt)
   - [Kotlin/WASM](../front-development/#kotlin-js-and-kotlin-wasm)
   - [Serveur NodeJS avec Kotlin/JS](../backend-development/#nodejs)
   - [Coroutines](../kotlin-features-advanced/#concurrency-and-coroutines)
+
+## (2024) MiXit
+
+- Titre : **Développement front et back en Kotlin. Une visite guidée de KMP**
+
+![qr code](../../assets/qrcode-mixtit24.gif =200x)
+
+### Agenda
+
+- [Prérequis](../presentation/#prerequisites)
+- Fonctionnalités notables: [null safety](../kotlin-features/#null-safety) et [les fonctions](../kotlin-features/#functions)
+- **Développement backend**
+  - [Présentation d'introduction à Kotlin pour le développement backend](https://speakerdeck.com/yostane/kotlin-pour-le-developpement-backend)
+  - [API Rest avec Spring boot](../backend-development/#spring-framework)
+  - [API Rest avec Ktor](../backend-development/#ktor)
+- **Développement frontend**
+  - [Application "Hello World" avec Compose Multiplatform](../front-development/#compose)
+- **Développement fullstack**
+  - [Application de quiz avec Ktor + Compose Multiplatform](../other-technologies/#pw-add-a-ktor-server-app)
+- **Autres fonctionnalités**
+  - [Kotlin/WASM](../front-development/#kotlin-js-and-kotlin-wasm)
+  - [Développement NodeJS en Kotlin](../backend-development/#nodejs)
+  - [Coroutines](../kotlin-features-advanced/#concurrency-and-coroutines)

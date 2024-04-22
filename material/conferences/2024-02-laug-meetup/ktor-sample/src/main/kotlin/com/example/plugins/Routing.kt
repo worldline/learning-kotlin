@@ -14,7 +14,7 @@ var streetFighters = listOf(StreetFighter("Ryu", 100), StreetFighter("Ken", 100)
 fun Application.configureRouting() {
     routing {
         get("/") { call.respondText("Hello World!") }
-        get("/fighters", { description = "Get all street fighters" }) {
+        get("/fighters") {
             call.respond(streetFighters)
         }
         post("/fighters") {
