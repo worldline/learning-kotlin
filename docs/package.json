@@ -23,7 +23,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^20.10.6",
+    "@types/node": "^20.12.7",
     "vue": "^3.4.15",
     "vuepress": "^2.0.0-rc.8",
     "@vuepress/client": "^2.0.0-rc.8",
