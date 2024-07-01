@@ -24,7 +24,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.10.6",
-    "vue": "^3.4.15",
+    "vue": "^3.4.31",
     "vuepress": "^2.0.0-rc.8",
     "@vuepress/client": "^2.0.0-rc.8",
     "@vuepress/plugin-medium-zoom": "^2.0.0-rc.23",
