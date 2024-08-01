@@ -31,7 +31,7 @@
     "@vuepress/plugin-search": "^2.0.0-rc.21",
     "@vuepress/theme-default": "^2.0.0-rc.26",
     "vuepress-plugin-md-enhance": "^2.0.0-rc.23",
-    "@vuepress/plugin-pwa": "^2.0.0-rc.26",
+    "@vuepress/plugin-pwa": "^2.0.0-rc.40",
     "@vuepress/bundler-vite": "^2.0.0-rc.8"
   }
 }
