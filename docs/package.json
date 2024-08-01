@@ -30,7 +30,7 @@
     "@vuepress/plugin-medium-zoom": "^2.0.0-rc.23",
     "@vuepress/plugin-search": "^2.0.0-rc.21",
     "@vuepress/theme-default": "^2.0.0-rc.26",
-    "vuepress-plugin-md-enhance": "^2.0.0-rc.23",
+    "vuepress-plugin-md-enhance": "^2.0.0-rc.52",
     "@vuepress/plugin-pwa": "^2.0.0-rc.26",
     "@vuepress/bundler-vite": "^2.0.0-rc.8"
   }
