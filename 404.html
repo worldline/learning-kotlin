@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.14" />
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+
+      html.dark {
+        --c-bg: #22272e;
+      }
+
+      html,
+      body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme')
+      const systemDarkMode =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+
+      if (userMode === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (userMode === 'dark' || systemDarkMode) {
+        document.documentElement.classList.toggle('dark', true)
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <link rel="icon" href="/learning-kotlin/favicon.ico"><link rel="manifest" href="/learning-kotlin/manifest.webmanifest"><meta name="theme-color" content="#2176d6"><title></title><meta name="description" content="">
+    <link rel="preload" href="/learning-kotlin/assets/style-CTaFAUa6.css" as="style"><link rel="stylesheet" href="/learning-kotlin/assets/style-CTaFAUa6.css">
+    <link rel="modulepreload" href="/learning-kotlin/assets/app-CNJaJBXu.js"><link rel="modulepreload" href="/learning-kotlin/assets/404.html-CvGp3yhe.js">
+    
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container" data-v-303656ba><main class="page" data-v-303656ba><div class="theme-default-content" data-v-303656ba><h1 data-v-303656ba>404</h1><blockquote data-v-303656ba>How did we get here?</blockquote><a class="route-link" href="/learning-kotlin/" data-v-303656ba>Take me home</a></div></main></div><!--[--><!----><!----><!--]--><!--]--></div>
+    <script type="module" src="/learning-kotlin/assets/app-CNJaJBXu.js" defer></script>
+  </body>
+</html>
