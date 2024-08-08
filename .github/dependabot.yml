@@ -9,7 +9,15 @@ updates:
     directory: "/docs/" # Location of package manifests
     schedule:
       interval: "monthly"
+    groups:
+      dev-dependencies:
+        patterns:
+          - "*" # Group all updates
   - package-ecosystem: "gradle"
     directory: "/material/"
     schedule:
       interval: "monthly"
+    groups:
+      dev-dependencies:
+        patterns:
+          - "*" # Group all updates
