@@ -11,9 +11,9 @@ export default defineUserConfig({
     viteOptions: {},
     vuePluginOptions: {},
   }),
-  shouldPrefetch: false,
   base: "/learning-kotlin/",
   port: 3001,
+  shouldPrefetch: false,
   locales: {
     "/en/": {
       lang: "en-US", // this will be set as the lang attribute on <html>
@@ -67,7 +67,6 @@ export default defineUserConfig({
       },
     },
   }),
-
   plugins: [
     searchPlugin({
       locales: {
@@ -79,7 +78,10 @@ export default defineUserConfig({
         },
       },
     }),
-    pwaPlugin({}),
+    pwaPlugin({
+      update: "hint",
+      cacheHTML: true,
+    }),
     mediumZoomPlugin({}),
     mdEnhancePlugin({
       imgLazyload: true,
