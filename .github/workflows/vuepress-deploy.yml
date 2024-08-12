@@ -18,7 +18,7 @@ jobs:
         run: cd docs && npm install && npm run docs:build
       # @see https://github.com/crazy-max/ghaction-github-pages
       - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v2
+        uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: gh-pages
           build_dir: docs/src/.vuepress/dist
