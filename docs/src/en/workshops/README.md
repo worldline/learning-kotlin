@@ -13,7 +13,7 @@ Workshop link: [awl.li/am23-kt](https://awl.li/am23-kt)
 ### Agenda
 
 - [Backend development: Rest API with Ktor](../backend-development/#ktor)
-- Optional: [Backend development: Rest API with nodeJS and Kotlin/JS](../backend-development/#ktor)
+- Optional: [Backend development: Rest API with node.js and Kotlin/JS](../backend-development/#ktor)
 - [Front-end development: Kotlin/WASM and Kotlin/JS webapp](../front-development/#kotlin-js-and-kotlin-wasm)
 - [Front-end development: cross-platform Hello world App with Compose multiplatform](../front-development/#compose)
 - [Front-end development: Cross-platform Quiz App with Compose multiplatform](https://worldline.github.io/learning-kotlin-multiplatform/)
@@ -32,7 +32,7 @@ Workshop link: [awl.li/jnation23-kt](https://awl.li/jnation23-kt)
 - [Prerequisutes](../presentation/#prerequisites)
 - Selection of Kotlin's languages features: [null safety](../kotlin-features/#null-safety) and [functions](../kotlin-features/#functions)
 - [Backend development: Rest API with Ktor](../backend-development/#ktor)
-- Optional: [Backend development: Rest API with nodeJS and Kotlin/JS](../backend-development/#ktor)
+- Optional: [Backend development: Rest API with node.js and Kotlin/JS](../backend-development/#ktor)
 - [Front-end development: Kotlin/WASM and Kotlin/JS webapp](../front-development/#kotlin-js-and-kotlin-wasm)
 - [Front-end development: cross-platform Hello world App with Compose multiplatform](../front-development/#compose)
 - [Front-end development: Cross-platform Quiz App with Compose multiplatform](https://worldline.github.io/learning-kotlin-multiplatform/)
@@ -50,7 +50,7 @@ Workshop link: [awl.li/jnation23-kt](https://awl.li/jnation23-kt)
 - [Initiate a cross-platform app](../other-technologies/#pw-add-a-ktor-server-app)
 - Live examples of other Kotlin possibilities:
   - [Backend development: Rest API with Ktor](../backend-development/#ktor)
-  - [Backend development: Rest API with nodeJS and Kotlin/JS](../backend-development/#ktor)
+  - [Backend development: Rest API with node.js and Kotlin/JS](../backend-development/#ktor)
   - [Front-end development: Kotlin/WASM and Kotlin/JS webapp](../front-development/#kotlin-js-and-kotlin-wasm)
 
 ## (2024) MiXit
@@ -73,5 +73,5 @@ Workshop link: [awl.li/jnation23-kt](https://awl.li/jnation23-kt)
   - [Application de quiz avec Ktor + Compose Multiplatform](../other-technologies/#pw-add-a-ktor-server-app)
 - **Autres fonctionnalités**
   - [Kotlin/WASM](../front-development/#kotlin-js-and-kotlin-wasm)
-  - [Développement NodeJS en Kotlin](../backend-development/#nodejs)
+  - [Développement node.js en Kotlin](../backend-development/#node.js)
   - [Coroutines](../kotlin-features-advanced/#concurrency-and-coroutines)

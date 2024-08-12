@@ -154,9 +154,9 @@ DELETE http://127.0.0.1:8080/customer/500
 
 [Cette page contient des étapes détaillées](https://ktor.io/docs/creating-http-apis.html)
 
-## nodejs
+## node.js
 
-Grâce à Kotlin/JS, nous pouvons écrire des applications qui ciblent nodejs en utilisant Kotlin.
+Grâce à Kotlin/JS, nous pouvons écrire des applications qui ciblent node.js en utilisant Kotlin.
 
 On peut même importer des librairies npm à condition de déclarer les API JS que l'on va utiliser en Kotlin.
 C'est ce qu'on appelle une **déclaration externe** (vous pouvez la considérer comme un équivalent des définitions de type de TypeScript) qui déclare les symboles auxquels nous voulons accéder en Kotlin grâce aux annotations [@JsModule](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-js-module/) et [@JsNonModule](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-js-non-module/).
@@ -167,7 +167,7 @@ Heureusement pour nous, le prochain TP utilise la librairie Express pour laquell
 
 ### TP : API Rest avec Kotlin/JS et Express
 
-- Dans IntelliJ, créer un nouveau projet nodejs
+- Dans IntelliJ, créer un nouveau projet node.js
 - Une fois le projet chargé, éditer **build.gradle.ts** comme suit :
   - Mettre la dernière version de Kotlin dans la ligne contenant `kotlin("js")`.
   - Ajoutez ces deux dépendances:
@@ -242,7 +242,7 @@ plugins {
   - Sur Powershell : `.\gradlew.bat bootRun`
   - Tout shell Unix : `.\gradlew bootRun`
   - Ou bien, vérifiez si votre IDE fournit déjà des configurations d'exécution pour les projets Spring Boot.
-- Veuillez tester les routes avec un client REST. Vous pouvez trouver des fichiers **http** ici au [format JetBrains](https://github.com/worldline/learning-kotlin/blob/main/material/spring-boot-kt-api/customer.jetbrains.http) ou [ au format de l'extension REST Client de VSCode](https://github.com/worldline/learning-kotlin/blob/main/material/spring-boot-kt-api/customer.vscode-resclient.http)
+- Veuillez tester les routes avec un client REST. Vous pouvez trouver des fichiers **http** ici au [format JetBrains](https://github.com/worldline/learning-kotlin/blob/main/material/spring-boot-kt-api/customer.jetbrains.http) ou [au format de l'extension REST Client de VSCode](https://github.com/worldline/learning-kotlin/blob/main/material/spring-boot-kt-api/customer.vscode-resclient.http)
 
 ::: details CustomerController.kt
 
@@ -331,7 +331,7 @@ fun getById(@PathVariable id : Long) : Produit {
 ```
 
 En outre, Spring fournit `@ControllerAdvice` pour modifier le message d'exception.
-Vous pouvez voir un [exemple ici] (https://spring.io/guides/tutorials/rest/).
+Vous pouvez voir un [exemple ici] (<https://spring.io/guides/tutorials/rest/>).
 
 :::
 
@@ -426,14 +426,14 @@ interface ProductRepository : JpaRepository<Produit, Long> {
 }
 ```
 
-La [documentation officielle] (https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.query-creation) fournit des explications et des exemples plus détaillés.
+La [documentation officielle] (<https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.query-creation>) fournit des explications et des exemples plus détaillés.
 
 :::
 
 ### Projets terminés
 
 - [Projet Ktor](https://github.com/worldline/learning-kotlin/tree/master/material/ktor-api)
-- [Projet nodejs](https://github.com/worldline/learning-kotlin/tree/master/material/kotlin-nodejs-demo)
+- [Projet node.js](https://github.com/worldline/learning-kotlin/tree/master/material/kotlin-nodejs-demo)
 - [Projet Spring boot](https://github.com/worldline/learning-kotlin/tree/master/material/spring-boot-kt-api)
 
 ## Aller plus loin

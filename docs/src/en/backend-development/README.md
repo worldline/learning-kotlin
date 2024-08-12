@@ -2,7 +2,7 @@
 
 Many frameworks officially support Kotlin: [Spring](https://spring.io/blog/2017/01/04/introducing-kotlin-support-in-spring-framework-5-0), [Quarkus](https://quarkus.io/guides/kotlin), [Ktor](https://github.com/ktorio/ktor), among others [listed here](https://kotlinlang.org/docs/server-overview.html#deploying-kotlin-server-side-applications).
 
-In addition to that, Kotlin is theoretically compatible with any framework that targets the JVM or JS. For example, this tutorial shows [how to use nodejs with Kotlin](https://medium.com/@touskar/une-application-nodejs-avec-kotlin-1969994fb1d2).
+In addition to that, Kotlin is theoretically compatible with any framework that targets the JVM or JS. For example, this tutorial shows [how to use node.js with Kotlin](https://medium.com/@touskar/une-application-node.js-avec-kotlin-1969994fb1d2).
 However, frameworks that do not officially support Kotlin may require some tweaking to use it.
 
 ## Ktor
@@ -280,10 +280,10 @@ You can see an [example here](https://spring.io/guides/tutorials/rest/).
 ```js
 plugins {
     id("org.jetbrains.kotlin.plugin.jpa") version "1.8.10"
-	id("org.springframework.boot") version "3.0.4"
-	id("io.spring.dependency-management") version "1.1.0"
-	kotlin("jvm") version "1.8.10"
-	kotlin("plugin.spring") version "1.8.10"
+ id("org.springframework.boot") version "3.0.4"
+ id("io.spring.dependency-management") version "1.1.0"
+ kotlin("jvm") version "1.8.10"
+ kotlin("plugin.spring") version "1.8.10"
 }
 ```
 
@@ -368,16 +368,16 @@ interface ProductRepository: JpaRepository<Product, Long> {
 
 :::
 
-## NodeJS
+## node.js
 
-Thanks to Kotlin/JS, we can write apps that target nodejs using Kotlin.
+Thanks to Kotlin/JS, we can write apps that target node.js using Kotlin.
 We can even import npm libraries as long as you declare the JS API surface that you'll be using in Kotlin.
 This is called **external declaration** (You can think of it as an equivalent of TypeScript's type definitions) that declares the symbols that we want to access in Kotlin thanks to [@JsModule](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-js-module/) and [@JsNonModule](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-js-non-module/) annotations.
 
 Defining such external declarations can be a hassle and there seems to be no official automatic generator ([dukat](https://github.com/Kotlin/dukat) has been removed in kotlin 1.8.20).
 In that case, we have two options, either we write the external declaration ourselves or import it as a dependency if available. Fortunately for express developers, [chrisnkrueger/kotlin-express](https://github.com/chrisnkrueger/kotlin-express) provides declarations for the express library.
 
-There are two gradle plugins that allow to create nodeJs projects: the `kotlin("js")` one and the `kotlin("multiplatform")` one. The difference between the two plugins is that the former only supports JS or WASM while the latter supports more platforms but requires to configure source sets. Thus, the former may seem easier to setup but the latter is better in the long run because it allows us to get more familiar with Kotlin Multiplatform (KMP).
+There are two gradle plugins that allow to create node.js projects: the `kotlin("js")` one and the `kotlin("multiplatform")` one. The difference between the two plugins is that the former only supports JS or WASM while the latter supports more platforms but requires to configure source sets. Thus, the former may seem easier to setup but the latter is better in the long run because it allows us to get more familiar with Kotlin Multiplatform (KMP).
 
 ### 🧪 Getting started with Kotlin/JS and Express
 
@@ -562,7 +562,7 @@ app.post("/hello") { req, res ->
 
 - [ktor Rest API](https://github.com/worldline/learning-kotlin/tree/master/material/ktor-api)
 - [Spring boot Rest API](https://github.com/worldline/learning-kotlin/tree/master/material/spring-boot-kt-api)
-- The starter and final nodejs projects are available [here](https://github.com/worldline/learning-kotlin/blob/main/material/rest-api-kotlin-nodejs)
+- The starter and final node.js projects are available [here](https://github.com/worldline/learning-kotlin/blob/main/material/rest-api-kotlin-node.js)
 
 ## 📖 Further readings
 
