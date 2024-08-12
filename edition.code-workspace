@@ -11,6 +11,9 @@
     },
     {
       "path": "docs/src/assets"
+    },
+    {
+      "path": ".github"
     }
   ],
   "settings": {}
