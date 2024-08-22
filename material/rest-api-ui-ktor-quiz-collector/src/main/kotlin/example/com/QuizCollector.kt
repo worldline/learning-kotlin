@@ -2,17 +2,21 @@ package example.com
 
 import io.ktor.server.application.*
 import io.ktor.server.html.*
+import io.ktor.server.request.*
+import io.ktor.server.response.*
 import io.ktor.server.routing.*
-import kotlinx.html.body
-import kotlinx.html.h1
-import kotlinx.html.title
+import kotlinx.html.*
 
-val replies = mutableListOf<String>()
+val quizResponses = mutableListOf<QuizResponse>()
 
-fun Application.configureCollector() {
+data class CollectResponse(val score: Int)
+
+fun Application.configureQuizCollector() {
     routing {
         post("/collect") {
-
+            val quizResponse = call.receive<QuizResponse>()
+            quizResponses.add(quizResponse)
+            call.respond(CollectResponse(quizResponse.score))
         }
 
         get("/ui") {
@@ -22,7 +26,18 @@ fun Application.configureCollector() {
                 }
                 body {
                     h1 { +"Quiz Collector" }
-
+                    if (quizResponses.isEmpty()) {
+                        +"No responses yet."
+                    } else {
+                        +"Responses:"
+                        ul {
+                            quizResponses.forEach { quizResponse ->
+                                li {
+                                    +"Score: ${quizResponse.score}"
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

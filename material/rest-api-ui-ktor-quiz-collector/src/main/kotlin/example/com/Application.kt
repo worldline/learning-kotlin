@@ -12,4 +12,5 @@ fun Application.module() {
     configureTemplating()
     configureSerialization()
     configureRouting()
+    configureQuizCollector()
 }
