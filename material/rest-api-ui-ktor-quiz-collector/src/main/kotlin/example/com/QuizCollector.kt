@@ -17,13 +17,23 @@ fun Application.configureQuizCollector() {
             call.respond(CollectResponse(quizResponse.getScore()))
         }
 
-        get("/results") {
+        get("/responses") {
+            call.respond(quizResponses.map { quizResponse ->
+                quizResponse.responses.fold(mutableMapOf<String, String>()) { acc, element ->
+                    acc[element.question] = element.answer
+                    acc
+                }
+            })
+        }
+
+        get("/table2") {
             call.respond(quizResponses)
         }
 
         get("/table") {
-            call.respond(quizResponses.flatMap { it.responses }.groupBy { it.question }
-                .mapValues { it.value.map { it.answer } })
+            val result = quizResponses.flatMap { it.responses }.groupBy { it.question }
+                .mapValues { it.value.map { value -> value.answer } }
+            call.respond(result)
         }
 
         get("/ui") {
