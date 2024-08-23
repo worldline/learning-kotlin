@@ -1,5 +1,7 @@
 package example.com
 
+import kotlinx.serialization.Serializable
+
 
 val correctResponses = mapOf(
     "What is the primary goal of Kotlin Multiplatform?" to "To share code between multiple platforms",
@@ -14,8 +16,15 @@ val correctResponses = mapOf(
     "How does Kotlin Multiplatform differ from Kotlin Native and Kotlin/JS?" to "Kotlin Multiplatform allows sharing code between different platforms using common modules."
 )
 
+@Serializable
 data class QuestionResponse(val question: String, val answer: String)
+
+@Serializable
 data class QuizResponse(val responses: List<QuestionResponse>) {
-    val score: Int = responses.count { response -> correctResponses[response.question] == response.answer }
-    val histogram: Map<String, Int> = responses.groupingBy { it.answer }.eachCount()
+    fun getScore(): Int {
+        return responses.count { response -> correctResponses[response.question] == response.answer }
+    }
 }
+
+@Serializable
+data class CollectResponse(val score: Int)

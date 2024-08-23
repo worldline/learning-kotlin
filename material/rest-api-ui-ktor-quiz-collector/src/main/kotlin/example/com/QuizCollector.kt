@@ -9,14 +9,21 @@ import kotlinx.html.*
 
 val quizResponses = mutableListOf<QuizResponse>()
 
-data class CollectResponse(val score: Int)
-
 fun Application.configureQuizCollector() {
     routing {
-        post("/collect") {
+        post("/respond") {
             val quizResponse = call.receive<QuizResponse>()
             quizResponses.add(quizResponse)
-            call.respond(CollectResponse(quizResponse.score))
+            call.respond(CollectResponse(quizResponse.getScore()))
+        }
+
+        get("/results") {
+            call.respond(quizResponses)
+        }
+
+        get("/table") {
+            call.respond(quizResponses.flatMap { it.responses }.groupBy { it.question }
+                .mapValues { it.value.map { it.answer } })
         }
 
         get("/ui") {
@@ -33,7 +40,7 @@ fun Application.configureQuizCollector() {
                         ul {
                             quizResponses.forEach { quizResponse ->
                                 li {
-                                    +"Score: ${quizResponse.score}"
+                                    +"Score: ${quizResponse.getScore()}"
                                 }
                             }
                         }

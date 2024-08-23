@@ -1,0 +1,26 @@
+meta {
+  name: /respond 1
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/respond
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "responses": [
+      {
+        "question": "What is the primary goal of Kotlin Multiplatform?",
+        "answer": "Muzukashi"
+      },
+      {
+        "question": "How does Kotlin Multiplatform facilitate code sharing between platforms?",
+        "answer": "By sharing business logic and adapting UI"
+      }
+    ]
+  }
+}

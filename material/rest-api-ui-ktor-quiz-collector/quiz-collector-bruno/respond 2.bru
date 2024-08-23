@@ -1,0 +1,58 @@
+meta {
+  name: /respond 2
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/respond
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "responses": [
+      {
+        "question": "What is the primary goal of Kotlin Multiplatform?",
+        "answer": "To share code between multiple platforms"
+      },
+      {
+        "question": "How does Kotlin Multiplatform facilitate code sharing between platforms?",
+        "answer": "By sharing business logic and adapting UI"
+      },
+      {
+        "question": "Which platforms does Kotlin Multiplatform support?",
+        "answer": "Android, iOS, and web"
+      },
+      {
+        "question": "What is a common use case for Kotlin Multiplatform?",
+        "answer": "Developing a cross-platform app"
+      },
+      {
+        "question": "What is a shared code module in Kotlin Multiplatform called?",
+        "answer": "Shared module"
+      },
+      {
+        "question": "How does Kotlin Multiplatform handle platform-specific implementations?",
+        "answer": "Through expect and actual declarations"
+      },
+      {
+        "question": "What languages can be interoperable with Kotlin Multiplatform?",
+        "answer": "Java, JavaScript, Swift"
+      },
+      {
+        "question": "What tooling supports Kotlin Multiplatform development?",
+        "answer": "IntelliJ IDEA, Android Studio"
+      },
+      {
+        "question": "What is the benefit of using Kotlin Multiplatform for mobile development?",
+        "answer": "Code reuse and sharing"
+      },
+      {
+        "question": "How does Kotlin Multiplatform differ from Kotlin Native and Kotlin/JS?",
+        "answer": "Kotlin Multiplatform allows sharing code between different platforms using common modules."
+      }
+    ]
+  }
+}

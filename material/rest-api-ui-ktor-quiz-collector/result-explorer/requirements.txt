@@ -1,0 +1,2 @@
+kotlin-jupyter-kernel==0.12.0.217
+jupyter==1.0.0
