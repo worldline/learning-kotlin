@@ -6,8 +6,7 @@ import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import kotlinx.html.*
-
-val quizResponses = mutableListOf<QuizResponse>()
+import kotlinx.serialization.Serializable
 
 fun Application.configureQuizCollector() {
     routing {
@@ -24,6 +23,16 @@ fun Application.configureQuizCollector() {
                     acc
                 }
             })
+        }
+
+        get("/correct-stats") {
+            @Serializable
+            data class QuestionStats(val question: String, val correct: Int)
+
+            val result = quizResponses.flatMap { it.responses }.groupBy { it.question }
+                .mapValues { it.value.count { qr -> correctResponses[qr.question] == qr.answer } }
+                .map { QuestionStats(it.key, it.value) }
+            call.respond(result)
         }
 
         get("/table2") {

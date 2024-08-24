@@ -1,6 +1,9 @@
 package example.com
 
-import example.com.plugins.*
+import example.com.plugins.configureHTTP
+import example.com.plugins.configureRouting
+import example.com.plugins.configureSerialization
+import example.com.plugins.configureTemplating
 import io.ktor.server.application.*
 
 fun main(args: Array<String>) {
@@ -8,6 +11,7 @@ fun main(args: Array<String>) {
 }
 
 fun Application.module() {
+    quizResponses.addAll(sampleResponses)
     configureHTTP()
     configureTemplating()
     configureSerialization()
