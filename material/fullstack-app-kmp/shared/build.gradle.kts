@@ -48,10 +48,10 @@ kotlin {
                 implementation(compose.material)
                 implementation(compose.runtime)
                 implementation("io.ktor:ktor-client-core:$ktorVersion") // core source of ktor
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4") // For making asynchronous calls
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1") // For making asynchronous calls
                 implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion") // Simplify handling of content type based deserialization
                 implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
-                api("moe.tlaster:precompose:1.3.15")
+                api("moe.tlaster:precompose:1.6.1")
 
             }
         }
@@ -115,6 +115,6 @@ android {
 }
 
 dependencies {
-    implementation("androidx.compose.ui:ui-tooling-preview:1.4.1")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.4.1")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.6.8")
+    debugImplementation("androidx.compose.ui:ui-tooling:1.6.8")
 }
