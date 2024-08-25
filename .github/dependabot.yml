@@ -5,6 +5,15 @@
 
 version: 2
 updates:
+  - package-ecosystem: "github-actions"
+    # Workflow files stored in the default location of `.github/workflows`. (You don't need to specify `/.github/workflows` for `directory`. You can use `directory: "/"`.)
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    groups:
+      dev-dependencies:
+        patterns:
+          - "*" # Group all updates
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/docs/" # Location of package manifests
     schedule:
@@ -14,7 +23,16 @@ updates:
         patterns:
           - "*" # Group all updates
   - package-ecosystem: "gradle"
-    directory: "/material/"
+    directories: 
+      - "/material/*"
+    schedule:
+      interval: "monthly"
+    groups:
+      dev-dependencies:
+        patterns:
+          - "*" # Group all updates
+  - package-ecosystem: "pip"
+    directory: "/material/rest-api-ui-ktor-quiz-collector/result-explorer/"
     schedule:
       interval: "monthly"
     groups:
