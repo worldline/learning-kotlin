@@ -1,9 +1,9 @@
 ktor:
-  development: true
+  #development: true
   application:
     modules:
       - example.com.ApplicationKt.module
   deployment:
-    port: 8080
+    port: "$PORT:8080"
     watch:
       - classes

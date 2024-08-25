@@ -19,14 +19,14 @@ data class QuestionStats(val question: String, val correct: Int)
 
 fun Application.configureQuizCollector() {
     fun getCorrectStats() = quizResponses.flatMap { it.responses }.groupBy { it.question }
-        .mapValues { it.value.count { qr -> correctResponses[qr.question] == qr.answer } }
+        .mapValues { it.value.count { qr -> qr.correctAnwserId == qr.anwserId } }
         .map { QuestionStats(it.key, it.value) }
 
     routing {
         post("/respond") {
             val quizResponse = call.receive<QuizResponse>()
             quizResponses.add(quizResponse)
-            call.respond(CollectResponse(quizResponse.getScore()))
+            call.respond(CollectResponse(quizResponse.score))
         }
 
         get("/responses") {
@@ -50,6 +50,11 @@ fun Application.configureQuizCollector() {
             val result = quizResponses.flatMap { it.responses }.groupBy { it.question }
                 .mapValues { it.value.map { value -> value.answer } }
             call.respond(result)
+        }
+
+        get("/reset") {
+            quizResponses.clear()
+            call.respond(HttpStatusCode.OK)
         }
 
         get("/ui") {

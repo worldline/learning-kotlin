@@ -7,11 +7,11 @@ import example.com.plugins.configureTemplating
 import io.ktor.server.application.*
 
 fun main(args: Array<String>) {
-    io.ktor.server.netty.EngineMain.main(args)
+    io.ktor.server.cio.EngineMain.main(args)
 }
 
 fun Application.module() {
-    quizResponses.addAll(sampleResponses)
+    //quizResponses.addAll(sampleResponses)
     configureHTTP()
     configureTemplating()
     configureSerialization()

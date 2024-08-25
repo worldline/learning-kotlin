@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.ktor)
+    id("org.graalvm.buildtools.native") version "0.9.8"
     id("org.jetbrains.kotlin.plugin.serialization") version "2.0.20"
 }
 
@@ -8,7 +9,7 @@ group = "example.com"
 version = "0.0.1"
 
 application {
-    mainClass.set("io.ktor.server.netty.EngineMain")
+    mainClass.set("io.ktor.server.cio.EngineMain")
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
@@ -32,10 +33,25 @@ dependencies {
     implementation(libs.ktor.server.webjars)
     implementation(libs.jquery)
     implementation(libs.ktor.swagger.ui)
-    implementation(libs.ktor.server.netty)
+    implementation(libs.ktor.server.cio)
     implementation(libs.logback.classic)
     implementation(libs.ktor.server.config.yaml)
     implementation(libs.kandy.lets.plot)
     testImplementation(libs.ktor.server.test.host)
     testImplementation(libs.kotlin.test.junit)
+}
+
+ktor {
+    fatJar {
+        archiveFileName.set("fat.jar")
+    }
+    docker {
+        externalRegistry.set(
+            io.ktor.plugin.features.DockerImageRegistry.dockerHub(
+                appName = provider { "ktor-quiz-collector" },
+                username = providers.environmentVariable("KTOR_IMAGE_REGISTRY_USERNAME"),
+                password = providers.environmentVariable("KTOR_IMAGE_REGISTRY_PASSWORD")
+            )
+        )
+    }
 }
