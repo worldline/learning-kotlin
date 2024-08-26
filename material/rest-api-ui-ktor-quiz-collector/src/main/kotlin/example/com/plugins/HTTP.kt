@@ -17,6 +17,8 @@ fun Application.configureHTTP() {
     }
     install(CORS) {
         allowMethod(HttpMethod.Options)
-        anyHost() // @TODO: Don't do this in production if possible. Try to limit it.
+        allowHeader(HttpHeaders.ContentType)
+        allowHost("verbal-paula-yostane-5911cad1.koyeb.app", schemes = listOf("https"))
+        allowHost("localhost:9091")
     }
 }
