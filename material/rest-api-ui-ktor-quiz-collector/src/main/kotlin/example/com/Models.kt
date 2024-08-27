@@ -166,7 +166,7 @@ val sampleResponses = listOf(
         )
     ),
     QuizResponse(
-        2, "user3",
+        2, "user4",
         listOf(
             QuestionResponse(
                 "What is the primary goal of Kotlin Multiplatform?",
