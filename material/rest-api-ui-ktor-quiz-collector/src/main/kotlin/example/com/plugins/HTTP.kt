@@ -18,6 +18,7 @@ fun Application.configureHTTP() {
     install(CORS) {
         allowMethod(HttpMethod.Options)
         allowHeader(HttpHeaders.ContentType)
+        allowHost("ktor-quiz-qii6.onrender.com", schemes = listOf("https"))
         allowHost("verbal-paula-yostane-5911cad1.koyeb.app", schemes = listOf("https"))
         allowHost("localhost:9091")
     }
