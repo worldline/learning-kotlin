@@ -21,5 +21,6 @@ fun Application.configureHTTP() {
         allowHost("ktor-quiz-qii6.onrender.com", schemes = listOf("https"))
         allowHost("verbal-paula-yostane-5911cad1.koyeb.app", schemes = listOf("https"))
         allowHost("localhost:9091")
+        allowHost("localhost:8080")
     }
 }

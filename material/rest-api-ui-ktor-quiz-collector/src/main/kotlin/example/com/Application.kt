@@ -11,7 +11,7 @@ fun main(args: Array<String>) {
 }
 
 fun Application.module() {
-    //quizResponses.addAll(sampleResponses)
+    quizResponses.addAll(sampleResponses)
     configureHTTP()
     configureTemplating()
     configureSerialization()

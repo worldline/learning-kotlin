@@ -13,13 +13,15 @@ import org.jetbrains.kotlinx.kandy.dsl.plot
 import org.jetbrains.kotlinx.kandy.letsplot.export.toHTML
 import org.jetbrains.kotlinx.kandy.letsplot.export.toSVG
 import org.jetbrains.kotlinx.kandy.letsplot.layers.bars
+import org.jetbrains.kotlinx.kandy.letsplot.layers.barsH
+import org.jetbrains.kotlinx.kandy.letsplot.scales.categoricalColorHue
 
 @Serializable
 data class QuestionStats(val question: String, val correct: Int)
 
 fun Application.configureQuizCollector() {
     fun getCorrectStats() = quizResponses.flatMap { it.responses }.groupBy { it.question }
-        .mapValues { it.value.count { qr -> qr.correctAnwserId == qr.anwserId } }
+        .mapValues { it.value.count { qr -> qr.correctAnswerId == qr.answerId } }
         .map { QuestionStats(it.key, it.value) }
 
     routing {
@@ -27,6 +29,10 @@ fun Application.configureQuizCollector() {
             val quizResponse = call.receive<QuizResponse>()
             quizResponses.add(quizResponse)
             call.respond(CollectResponse(quizResponse.score))
+        }
+
+        get("/raw-responses") {
+            call.respond(quizResponses)
         }
 
         get("/responses") {
@@ -57,7 +63,7 @@ fun Application.configureQuizCollector() {
             call.respond(HttpStatusCode.OK)
         }
 
-        get("/ui") {
+        get("/") {
             call.respondHtml {
                 head {
                     title = "Quiz Collector"
@@ -69,10 +75,15 @@ fun Application.configureQuizCollector() {
                         val statsDataFrame = dataFrameOf("question" to correctStats.map { it.question },
                             "correct" to correctStats.map { it.correct })
                         val content = statsDataFrame.plot {
-                            bars {
+                            barsH {
                                 y("question")
                                 x("correct")
+                                
+                                fillColor("question") {
+                                    scale = categoricalColorHue()
+                                }
                             }
+
                         }.toSVG()
                         unsafe { +content }
                     }
