@@ -1,4 +1,4 @@
-package example.com.plugins
+package com.worldline.training.ktor_quiz_collector.plugins
 
 import io.ktor.http.*
 import io.ktor.server.application.*
@@ -6,6 +6,7 @@ import io.ktor.server.html.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import kotlinx.css.*
+import kotlinx.css.properties.boxShadow
 import kotlinx.html.*
 
 fun Application.configureTemplating() {
@@ -33,7 +34,7 @@ fun Application.configureTemplating() {
                 }
             }
         }
-        
+
         get("/html-css-dsl") {
             call.respondHtml {
                 head {
@@ -50,5 +51,5 @@ fun Application.configureTemplating() {
 }
 
 suspend inline fun ApplicationCall.respondCss(builder: CSSBuilder.() -> Unit) {
-   this.respondText(CSSBuilder().apply(builder).toString(), ContentType.Text.CSS)
+    this.respondText(CSSBuilder().apply(builder).toString(), ContentType.Text.CSS)
 }

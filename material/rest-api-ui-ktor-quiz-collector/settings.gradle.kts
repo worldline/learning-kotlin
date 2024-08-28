@@ -1,1 +1,1 @@
-rootProject.name = "com.worldline.training.quiz-collector"
+rootProject.name = "com.worldline.training.ktor_quiz_collector"

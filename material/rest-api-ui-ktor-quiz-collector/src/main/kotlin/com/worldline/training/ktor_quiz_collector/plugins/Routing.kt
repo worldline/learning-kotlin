@@ -1,4 +1,4 @@
-package example.com.plugins
+package com.worldline.training.ktor_quiz_collector.plugins
 
 import io.github.smiley4.ktorswaggerui.SwaggerUI
 import io.ktor.http.*

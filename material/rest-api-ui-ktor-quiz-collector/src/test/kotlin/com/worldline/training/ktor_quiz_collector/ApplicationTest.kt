@@ -1,6 +1,6 @@
-package example.com
+package com.worldline.training.ktor_quiz_collector
 
-import example.com.plugins.configureRouting
+import com.worldline.training.ktor_quiz_collector.plugins.configureRouting
 import io.ktor.client.request.*
 import io.ktor.http.*
 import io.ktor.server.testing.*

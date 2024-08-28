@@ -1,0 +1,79 @@
+package com.worldline.training.ktor_quiz_collector.routes
+
+import com.worldline.training.ktor_quiz_collector.plugins.respondCss
+import com.worldline.training.ktor_quiz_collector.utils.getCorrectStats
+import com.worldline.training.ktor_quiz_collector.utils.quizResponses
+import io.ktor.http.*
+import io.ktor.server.application.*
+import io.ktor.server.http.content.*
+import io.ktor.server.response.*
+import io.ktor.server.routing.*
+import kotlinx.css.*
+import kotlinx.css.properties.boxShadow
+
+fun Application.configureMiscRoutes() {
+    routing {
+        staticResources("/static", "static")
+
+        get("/styles-graph.css") {
+            call.respondCss {
+                body {
+                    backgroundColor = Color.lightCyan
+                    margin(0.px)
+                    padding(0.px)
+                }
+                h1 {
+                    textAlign = TextAlign.center
+                    backgroundColor = Color.lightGreen
+                    marginTop = 0.px
+                    padding(1.5.rem)
+                }
+                p {
+                    textAlign = TextAlign.center
+                }
+                rule("div") {
+                    display = Display.flex
+                    flexWrap = FlexWrap.wrap
+                    justifyContent = JustifyContent.center
+                    gap = Gap("1rem")
+                }
+                svg {
+                    border = "1px solid black"
+                    boxShadow(Color.black, 2.px, 2.px, 2.px)
+                }
+            }
+        }
+
+        get("/favicon.ico") {
+            val image = call.resolveResource("static/favicon.ico")
+            if (image != null) {
+                call.respond(image)
+            } else {
+                call.respond(HttpStatusCode.NotFound)
+            }
+        }
+
+        get("/responses") {
+            call.respond(quizResponses.map { quizResponse ->
+                quizResponse.responses.fold(mutableMapOf<String, String>()) { acc, element ->
+                    acc[element.question] = element.answer
+                    acc
+                }
+            })
+        }
+
+        get("/correct-stats") {
+            call.respond(getCorrectStats())
+        }
+
+        get("/table2") {
+            call.respond(quizResponses)
+        }
+
+        get("/table") {
+            val result = quizResponses.flatMap { it.responses }.groupBy { it.question }
+                .mapValues { it.value.map { value -> value.answer } }
+            call.respond(result)
+        }
+    }
+}

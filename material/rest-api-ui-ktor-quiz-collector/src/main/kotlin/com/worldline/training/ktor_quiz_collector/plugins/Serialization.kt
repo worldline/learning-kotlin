@@ -1,4 +1,4 @@
-package example.com.plugins
+package com.worldline.training.ktor_quiz_collector.plugins
 
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
@@ -12,7 +12,7 @@ fun Application.configureSerialization() {
     }
     routing {
         get("/json/kotlinx-serialization") {
-                call.respond(mapOf("hello" to "world"))
-            }
+            call.respond(mapOf("hello" to "world"))
+        }
     }
 }
