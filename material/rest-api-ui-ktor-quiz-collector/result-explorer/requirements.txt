@@ -1,5 +1,5 @@
 kotlin-jupyter-kernel==0.12.0.217
-jupyter==1.0.0
+jupyter==1.1.1
 nbconvert==7.16.4
 playwright==1.46.0
 webpdf==1.0
