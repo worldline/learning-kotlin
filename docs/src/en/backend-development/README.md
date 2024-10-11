@@ -564,6 +564,19 @@ app.post("/hello") { req, res ->
 - [Spring boot Rest API](https://github.com/worldline/learning-kotlin/tree/master/material/spring-boot-kt-api)
 - The starter and final nodejs projects are available [here](https://github.com/worldline/learning-kotlin/blob/main/material/rest-api-kotlin-nodejs)
 
+
+## Other frameworks
+
+::: tip Micronaut and Quarkus
+
+Micronaut and Quarkus are two other frameworks that support Kotlin.
+Bootstrap websites are available [here](https://micronaut.io/launch) and [here](https://code.quarkus.io/?b=GRADLE&e=kotlin).
+
+:::
+
+
+
+
 ## 📖 Further readings
 
 These official tutorials go even further:
