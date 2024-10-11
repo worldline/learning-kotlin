@@ -1,0 +1,58 @@
+meta {
+  name: /respond 3
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:8080/respond
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "responses": [
+      {
+        "question": "What is the primary goal of Kotlin Multiplatform?",
+        "answer": "Nashi"
+      },
+      {
+        "question": "How does Kotlin Multiplatform facilitate code sharing between platforms?",
+        "answer": "Don't know"
+      },
+      {
+        "question": "Which platforms does Kotlin Multiplatform support?",
+        "answer": "Windows Phone"
+      },
+      {
+        "question": "What is a common use case for Kotlin Multiplatform?",
+        "answer": "No"
+      },
+      {
+        "question": "What is a shared code module in Kotlin Multiplatform called?",
+        "answer": "Nashi"
+      },
+      {
+        "question": "How does Kotlin Multiplatform handle platform-specific implementations?",
+        "answer": "Copy paste is the best"
+      },
+      {
+        "question": "What languages can be interoperable with Kotlin Multiplatform?",
+        "answer": "Zenbu"
+      },
+      {
+        "question": "What tooling supports Kotlin Multiplatform development?",
+        "answer": "Vim"
+      },
+      {
+        "question": "What is the benefit of using Kotlin Multiplatform for mobile development?",
+        "answer": "Code reuse and sharing"
+      },
+      {
+        "question": "How does Kotlin Multiplatform differ from Kotlin Native and Kotlin/JS?",
+        "answer": "Kotlin Multiplatform allows sharing code between different platforms using common modules."
+      }
+    ]
+  }
+}

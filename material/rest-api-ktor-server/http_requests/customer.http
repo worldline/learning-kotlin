@@ -1,3 +1,7 @@
+@base_customer_url = http://localhost:8082/customer
+###
+GET {{base_customer_url}}
+###
 POST {{base_customer_url}}
 Content-Type: application/json
 
@@ -7,8 +11,6 @@ Content-Type: application/json
   "lastName": "Smith",
   "email": "jane.smith@company.com"
 }
-
-
 ###
 POST {{base_customer_url}}
 Content-Type: application/json
@@ -19,7 +21,6 @@ Content-Type: application/json
   "lastName": "Smith",
   "email": "john.smith@company.com"
 }
-
 ###
 POST {{base_customer_url}}
 Content-Type: application/json
@@ -43,9 +44,7 @@ Accept: application/json
 ###
 GET {{base_customer_url}}/500
 Accept: application/json
-
 ###
-DELETE {{base_customer_url}}/100
-
+DELETE {{base_customer_url}}/
 ###
 DELETE {{base_customer_url}}/500

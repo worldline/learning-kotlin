@@ -10,7 +10,7 @@ features:
   - title: Language features
     details: null safety, extensions, lambdas, Java interoperability and more
   - title: Backend development
-    details: With Ktor, spring and NodeJS
+    details: With Ktor, spring and node.js
   - title: Frontend development
     details: Compose multiplatform, Kotlin/JS, Kotlin/WASM and JVM frameworks
   - title: Cross-platform development

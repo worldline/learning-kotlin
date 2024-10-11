@@ -1,0 +1,10 @@
+ktor:
+  #development: true
+  application:
+    modules:
+      - com.worldline.training.ktor_quiz_collector.ApplicationKt.module
+  deployment:
+    port: "$PORT:8080"
+    watch:
+      - classes
+      - resources

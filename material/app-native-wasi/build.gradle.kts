@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
-    kotlin("multiplatform") version "1.9.20-Beta"
+    kotlin("multiplatform") version "2.1.0-Beta1"
 }
 
 group = "tech.worldline.demo"

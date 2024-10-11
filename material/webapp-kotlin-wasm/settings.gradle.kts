@@ -1,3 +1,7 @@
+rootProject.name = "kotlin-wasm-browser-example"
 
-rootProject.name = "kotlin-wasm-demo"
-
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+}

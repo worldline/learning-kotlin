@@ -31,7 +31,11 @@ class ProductControllerUnitTests(@Autowired val mockMvc: MockMvc,
     fun testWithClassicApproach(){
         mockMvc.perform(get("/product"))
             .andExpect(status().isOk)
-            .andExpect(content().string(containsString("[]")))
+            .andExpect(
+                content().string(
+                    containsString("[]")
+                )
+            )
     }
 
     @Test
@@ -41,6 +45,7 @@ class ProductControllerUnitTests(@Autowired val mockMvc: MockMvc,
             contentType = MediaType.APPLICATION_JSON
         }.andExpect {
             status { isCreated() }
+            content { containsString("[]") }
         }
 
         mockMvc.get("/product/1").andExpect {
