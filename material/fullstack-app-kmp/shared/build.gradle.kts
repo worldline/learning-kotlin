@@ -115,6 +115,6 @@ android {
 }
 
 dependencies {
-    implementation("androidx.compose.ui:ui-tooling-preview:1.7.2")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.7.2")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.7.5")
+    debugImplementation("androidx.compose.ui:ui-tooling:1.7.5")
 }

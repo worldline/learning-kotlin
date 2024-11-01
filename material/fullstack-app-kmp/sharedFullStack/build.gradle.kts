@@ -69,15 +69,15 @@ kotlin {
                 implementation("io.ktor:ktor-server-html-builder-jvm:$ktorVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.11.0")
                 implementation("io.ktor:ktor-server-cors:$ktorVersion")
-                implementation("ch.qos.logback:logback-classic:1.5.8")
+                implementation("ch.qos.logback:logback-classic:1.5.12")
             }
         }
         val jsMain by getting {
             dependencies {
-                val reactVersion = "18.3.1-pre.814"
+                val reactVersion = "18.3.1-pre.822"
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react:$reactVersion")
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom:$reactVersion")
-                implementation("org.jetbrains.kotlin-wrappers:kotlin-emotion:11.13.3-pre.814")
+                implementation("org.jetbrains.kotlin-wrappers:kotlin-emotion:11.13.3-pre.822")
             }
         }
     }
