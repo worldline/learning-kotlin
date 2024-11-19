@@ -1,15 +1,18 @@
 package org.example
 
 import javafx.application.Application
-import javafx.geometry.HPos
 import javafx.stage.Stage
 import ktfx.coroutines.onAction
-import ktfx.dialogs.infoAlert
 import ktfx.launchApplication
 import ktfx.layouts.*
 
 class App : Application() {
+
     override fun start(stage: Stage) {
+        val hello = Hello()
+        hello.sayHello(null) // message: String!
+        hello.sayHelloNullable("hello") // message: String?
+        hello.sayHelloNonNull("message") // message: String
         stage.scene {
             gridPane {
                 hgap = 10.0
@@ -25,6 +28,7 @@ class App : Application() {
             stage.show()
         }
     }
+
     companion object {
         @JvmStatic
         fun main(vararg args: String) = launchApplication<App>(*args)
