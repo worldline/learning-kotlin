@@ -11,12 +11,14 @@
       "file-refs": {
         "{basename}.kt": "material/scripting/jbang/jfxdemo.kt"
       },
+      "description": "Single file JavaFX application",
       "properties": {}
     },
     "jfxkt": {
       "file-refs": {
         "{basename}.kt": "material/scripting/jbang/jfxdemo.qute"
       },
+      "description": "Single file JavaFX application that defined the UI with code (no fxml)",
       "properties": {}
     }
   }
