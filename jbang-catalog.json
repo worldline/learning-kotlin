@@ -2,21 +2,21 @@
   "catalogs": {},
   "aliases": {
     "jfxapp": {
-      "script-ref": "/material/scripting/jbang/jfxdemo.kt",
+      "script-ref": "material/scripting/jbang/jfxdemo.kt",
       "description": "Single file JavaFX application that defined the UI with code (no fxml)"
     }
   },
   "templates": {
     "jfxkt-legacy": {
       "file-refs": {
-        "{basename}.kt": "/material/scripting/jbang/jfxdemo.kt",
+        "{basename}.kt": "material/scripting/jbang/jfxdemo.kt",
         "description": "Single file JavaFX application that defined the UI with code (no fxml)"
       },
       "properties": {}
     },
     "jfxkt": {
       "file-refs": {
-        "{basename}.kt": "/material/scripting/jbang/jfxdemo.qute",
+        "{basename}.kt": "material/scripting/jbang/jfxdemo.qute",
         "description": "Single file JavaFX application that defined the UI with code (no fxml)"
       },
       "properties": {}
