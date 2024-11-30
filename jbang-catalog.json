@@ -4,7 +4,7 @@
     "jfxapp": {
       "script-ref": "/material/scripting/jbang/jfxdemo.kt",
       "description": "Single file JavaFX application that defined the UI with code (no fxml)"
-    },
+    }
   },
   "templates": {
     "jfxkt-legacy": {
