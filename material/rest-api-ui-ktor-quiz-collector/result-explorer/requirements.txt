@@ -1,5 +1,5 @@
-kotlin-jupyter-kernel==0.12.0.217
+kotlin-jupyter-kernel==0.12.0.322
 jupyter==1.1.1
 nbconvert==7.16.4
-playwright==1.47.0
+playwright==1.49.0
 webpdf==1.0
