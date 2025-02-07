@@ -72,7 +72,7 @@ fun Application.configureQuizCollector() {
         get("/no-polling") {
             call.respondHtml {
                 head {
-                    title = "Quiz Collector"
+                    this.title = "Quiz Collector"
                     link(rel = "stylesheet", href = "/styles-graph.css", type = "text/css")
                 }
                 body {
@@ -86,7 +86,8 @@ fun Application.configureQuizCollector() {
         }
         get("/ui/correct") {
             val correctStats = getCorrectStats()
-            val statsDataFrame = dataFrameOf("question" to correctStats.map { it.question },
+            val statsDataFrame = dataFrameOf(
+                "question" to correctStats.map { it.question },
                 "correct" to correctStats.map { it.correct })
             val html = statsDataFrame.plot {
                 bars {
