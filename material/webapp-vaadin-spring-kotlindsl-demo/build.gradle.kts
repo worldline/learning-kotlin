@@ -1,11 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "3.3.4"
-    id("io.spring.dependency-management") version "1.1.6"
-    id("com.vaadin") version "24.4.13"
-    kotlin("jvm") version "2.0.20"
-    kotlin("plugin.spring") version "2.0.20"
+    id("org.springframework.boot") version "3.4.3"
+    id("io.spring.dependency-management") version "1.1.7"
+    id("com.vaadin") version "24.6.5"
+    kotlin("jvm") version "2.1.10"
+    kotlin("plugin.spring") version "2.1.10"
 }
 
 group = "com.worldline"
@@ -24,7 +24,7 @@ extra["vaadinVersion"] = "24.3.9"
 dependencies {
     implementation("com.vaadin:vaadin-spring-boot-starter")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("com.github.mvysny.karibudsl:karibu-dsl:2.1.4")
+    implementation("com.github.mvysny.karibudsl:karibu-dsl:2.3.2")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
