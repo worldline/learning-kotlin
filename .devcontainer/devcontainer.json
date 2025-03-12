@@ -2,5 +2,6 @@
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "features": {
     "ghcr.io/devcontainers-extra/features/kotlin-sdkman:2": {}
-  }
+  },
+  "postCreateCommand": "python -m pip install kotlin-jupyter-kernel"
 }
