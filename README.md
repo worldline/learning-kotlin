@@ -3,7 +3,7 @@
 
 ![qrcode](docs/src/assets/qrcode.gif)
 
-## What?
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/worldline/learning-kotlin?quickstart=1)
 
 This repository contains a small module allowing to discover and learn the very basics of Kotlin.
 The goal of all this content is to give all the necessary information for a developer to start writting Kotlin code.
