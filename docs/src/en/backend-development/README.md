@@ -391,68 +391,90 @@ At the time of writing, I didn't find an official wizard or starter project. So 
 gradle init
 Starting a Gradle Daemon, 1 incompatible and 1 stopped Daemons could not be reused, use --status for details
 
-Select type of project to generate:
-  1: basic
-  2: application
-  3: library
-  4: Gradle plugin
-Enter selection (default: basic) [1..4] 1
+Select type of build to generate:
+  1: Application
+  2: Library
+  3: Gradle plugin
+  4: Basic (build structure only)
+Enter selection (default: Application) [1..4] 1
+
+Select implementation language:
+  1: Java
+  2: Kotlin
+  3: Groovy
+  4: Scala
+  5: C++
+  6: Swift
+Enter selection (default: Java) [1..6] 2
+
+Enter target Java version (min: 7, default: 21): 21
+
+Project name (default: kotlin-expressjs): kotlin-expressjs
+
+Select application structure:
+  1: Single application project
+  2: Application and library project
+Enter selection (default: Single application project) [1..2] 1
 
 Select build script DSL:
   1: Kotlin
   2: Groovy
 Enter selection (default: Kotlin) [1..2] 1
 
-Project name (default: starter): rest-api-kotlin-nodejs
+Select test framework:
+  1: kotlin.test
+  2: JUnit Jupiter
+Enter selection (default: kotlin.test) [1..2] 1
 
-Generate build using new APIs and behavior (some features may change in the next minor release)? (default: no) [yes, no] yes
+Generate build using new APIs and behavior (some features may change in the next minor release)? (default: no) [yes, no] no
 
-
-> Task :init
-To learn more about Gradle by exploring our Samples at https://docs.gradle.org/8.3/samples
-
+...
 BUILD SUCCESSFUL in 24s
-2 actionable tasks: 2 executed
+...
 ```
 
 :::
 
-- In **build.gradle.kts**, add and configure the `kotlin("multiplatform")` plugin. Also add the `express` and `dev.chriskrueger:kotlin-express` dependencies.
+- Open the folder with IntelliJ IDEA.
+- Add these lines to the generated `.gitignore` file.
 
-::: details build.gradle.kts
+    ```
+    .idea
+    node_modules
+    ```
 
-```kts
-plugins {
-    kotlin("multiplatform") version "1.9.20-Beta"
-}
+- Change **app/build.gradle.kts**, as follows.
 
-repositories {
-    mavenCentral()
-}
-
-group = "tech.worldline.demo"
-version = "1.0-SNAPSHOT"
-
-kotlin {
-    js {
-        nodejs {
-        }
-        binaries.executable()
-        useCommonJs()
+    ```kts
+    plugins {
+        kotlin("multiplatform") version "2.2.10"
     }
 
-    sourceSets {
-        val jsMain by getting {
-            dependencies {
-                implementation(npm("express", "> 4.0.0 < 5.0.0"))
-                implementation("dev.chriskrueger:kotlin-express:1.2.0")
+    repositories {
+        mavenCentral()
+    }
+
+    group = "tech.worldline.demo"
+    version = "1.0-SNAPSHOT"
+
+    kotlin {
+        js {
+            nodejs {
+            }
+            binaries.executable()
+            useCommonJs()
+        }
+
+        sourceSets {
+            val jsMain by getting {
+                dependencies {
+                    implementation(npm("express", "> 4.0.0 < 5.0.0"))
+                    implementation("dev.chriskrueger:kotlin-express:1.2.0")
+                }
             }
         }
     }
-}
-```
-
-:::
+    ```
 
 ::: tip Some notes on the build file
 
@@ -461,6 +483,7 @@ kotlin {
 
 :::
 
+- Delete the existing **src/main** folder
 - create a **main.kt** file in **src/jsMain/kotlin** with the following content:
 
 ::: details main.kt
@@ -487,8 +510,13 @@ fun main() {
 
 :::
 
-- Run the task `jsRun` from IntelliJ of from the command line `./gradlew --console=plain jsRun`. The server should start running.
+- Run the task `jsNodeDevelopmentRun` from IntelliJ of from the command line `./gradlew --console=plain jsNodeDevelopmentRun`. The server should start running.
 - Open the **hello** endpoint on [http://localhost:3000/hello](http://localhost:3000/hello)
+
+    ```sh
+    curl http://localhost:3000/hello              
+    [{"id_1":0,"message_1":"I love Kotlin/JS"}]
+    ```
 
 ::: warning Execution failed for task ':kotlinStoreYarnLock'
 
@@ -564,7 +592,6 @@ app.post("/hello") { req, res ->
 - [Spring boot Rest API](https://github.com/worldline/learning-kotlin/tree/master/material/spring-boot-kt-api)
 - The starter and final node.js projects are available [here](https://github.com/worldline/learning-kotlin/blob/main/material/rest-api-kotlin-node.js)
 
-
 ## Other frameworks
 
 ::: tip Micronaut and Quarkus
@@ -573,9 +600,6 @@ Micronaut and Quarkus are two other frameworks that support Kotlin.
 Bootstrap websites are available [here](https://micronaut.io/launch) and [here](https://code.quarkus.io/?b=GRADLE&e=kotlin).
 
 :::
-
-
-
 
 ## 📖 Further readings
 
