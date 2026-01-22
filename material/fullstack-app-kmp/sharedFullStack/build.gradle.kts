@@ -67,17 +67,17 @@ kotlin {
                 implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
                 implementation("io.ktor:ktor-server-netty:$ktorVersion")
                 implementation("io.ktor:ktor-server-html-builder-jvm:$ktorVersion")
-                implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.11.0")
+                implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.12.0")
                 implementation("io.ktor:ktor-server-cors:$ktorVersion")
-                implementation("ch.qos.logback:logback-classic:1.5.8")
+                implementation("ch.qos.logback:logback-classic:1.5.17")
             }
         }
         val jsMain by getting {
             dependencies {
-                val reactVersion = "18.3.1-pre.814"
+                val reactVersion = "19.0.0-pre.860"
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react:$reactVersion")
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom:$reactVersion")
-                implementation("org.jetbrains.kotlin-wrappers:kotlin-emotion:11.13.3-pre.814")
+                implementation("org.jetbrains.kotlin-wrappers:kotlin-emotion:11.14.0-pre.860")
             }
         }
     }
